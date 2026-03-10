@@ -1,0 +1,168 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/prisma"
+}
+
+generator zod {
+  provider = "prisma-zod-generator"
+  output   = "../lib/validator"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum status {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum VerificationStatus {
+  PENDING
+  UNDER_REVIEW
+  VERIFIED
+  REJECTED
+}
+
+enum CollegeType {
+  GOVERNMENT
+  PRIVATE
+  AUTONOMOUS
+  DEEMED
+}
+
+model CollegeAdmin {
+  id        String  @id @default(uuid())
+  name      String
+  email     String  @unique
+  password  String
+  phone     String?
+  collegeId String  @unique
+  college   College @relation(fields: [collegeId], references: [id])
+}
+
+model College {
+  id                   String             @id @default(uuid())
+  name                 String             @unique
+  admin                CollegeAdmin?
+  city                 String
+  state                String
+  country              String             @default("India")
+  affiliatedUniversity String?
+  establisedYear       Int?
+  accrediation         String?
+  regitrationNumber    String?
+  students             Student[]
+  clubs                Club[]
+  faculty              Faculty[]
+  collegeType          CollegeType?
+  followers            Student[]          @relation("StudentFollows")
+  logoUrl              String?
+  websiteUrl           String?
+  verified             VerificationStatus @default(PENDING)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  deletedAt            DateTime?
+  verificationNote     String?
+  verififedTime        DateTime?
+  address              String?
+  pincode              String?
+  phone                String?
+  officialEmail        String?
+  latitude             String?
+  longitude            String?
+}
+
+model Club {
+  id           String          @id @default(uuid())
+  name         String
+  collegeId    String
+  description  String?
+  clubAdmin    clubAdmin?
+  college      College         @relation(fields: [collegeId], references: [id])
+  students     StudentInClub[]
+  cordinatorId String?
+  coordinator  Faculty?        @relation(fields: [cordinatorId], references: [id])
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  role         RoleInClub[]
+  deletedAt    DateTime?
+  category     String
+  onHold       Boolean         @default(true)
+
+  @@unique([collegeId, name])
+}
+
+model Student {
+  id         String          @id @default(uuid())
+  name       String
+  email      String          @unique
+  password   String
+  rollnumber String          @unique
+  collegeId  String?
+  college    College?        @relation(fields: [collegeId], references: [id])
+  follows    College[]       @relation("StudentFollows")
+  clubs      StudentInClub[]
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+  deletedAt  DateTime?
+}
+
+model StudentInClub {
+  id        String     @id @default(uuid())
+  clubId    String
+  studentId String
+  roleId    String
+  student   Student    @relation(fields: [studentId], references: [id])
+  club      Club       @relation(fields: [clubId], references: [id])
+  role      RoleInClub @relation(fields: [roleId], references: [id])
+  status    status     @default(PENDING)
+
+  @@unique([clubId, studentId])
+}
+
+model Faculty {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  password  String
+  collegeId String
+  college   College   @relation(fields: [collegeId], references: [id])
+  club      Club[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model RoleInClub {
+  id      String          @id @default(uuid())
+  name    String
+  clubId  String
+  club    Club            @relation(fields: [clubId], references: [id])
+  members StudentInClub[]
+
+  @@unique([name, clubId])
+}
+
+model clubAdmin {
+  id        String @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String @unique
+  password  String
+  clubId    String @unique
+  club      Club   @relation(fields: [clubId], references: [id])
+}
+
+//models to add
+//applications for club joining
+//events
+//eventRegistrations
+//sponsors
