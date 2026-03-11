@@ -227,6 +227,7 @@ export type ClubWhereInput = {
   students?: Prisma.StudentInClubListRelationFilter
   coordinator?: Prisma.XOR<Prisma.FacultyNullableScalarRelationFilter, Prisma.FacultyWhereInput> | null
   role?: Prisma.RoleInClubListRelationFilter
+  events?: Prisma.EventListRelationFilter
 }
 
 export type ClubOrderByWithRelationInput = {
@@ -245,6 +246,7 @@ export type ClubOrderByWithRelationInput = {
   students?: Prisma.StudentInClubOrderByRelationAggregateInput
   coordinator?: Prisma.FacultyOrderByWithRelationInput
   role?: Prisma.RoleInClubOrderByRelationAggregateInput
+  events?: Prisma.EventOrderByRelationAggregateInput
 }
 
 export type ClubWhereUniqueInput = Prisma.AtLeast<{
@@ -267,6 +269,7 @@ export type ClubWhereUniqueInput = Prisma.AtLeast<{
   students?: Prisma.StudentInClubListRelationFilter
   coordinator?: Prisma.XOR<Prisma.FacultyNullableScalarRelationFilter, Prisma.FacultyWhereInput> | null
   role?: Prisma.RoleInClubListRelationFilter
+  events?: Prisma.EventListRelationFilter
 }, "id" | "collegeId_name">
 
 export type ClubOrderByWithAggregationInput = {
@@ -315,6 +318,7 @@ export type ClubCreateInput = {
   students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateInput = {
@@ -331,6 +335,7 @@ export type ClubUncheckedCreateInput = {
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubUpdateInput = {
@@ -347,6 +352,7 @@ export type ClubUpdateInput = {
   students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateInput = {
@@ -363,6 +369,7 @@ export type ClubUncheckedUpdateInput = {
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
 }
 
 export type ClubCreateManyInput = {
@@ -591,6 +598,20 @@ export type ClubUpdateOneRequiredWithoutClubAdminNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.ClubUpdateToOneWithWhereWithoutClubAdminInput, Prisma.ClubUpdateWithoutClubAdminInput>, Prisma.ClubUncheckedUpdateWithoutClubAdminInput>
 }
 
+export type ClubCreateNestedOneWithoutEventsInput = {
+  create?: Prisma.XOR<Prisma.ClubCreateWithoutEventsInput, Prisma.ClubUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ClubCreateOrConnectWithoutEventsInput
+  connect?: Prisma.ClubWhereUniqueInput
+}
+
+export type ClubUpdateOneRequiredWithoutEventsNestedInput = {
+  create?: Prisma.XOR<Prisma.ClubCreateWithoutEventsInput, Prisma.ClubUncheckedCreateWithoutEventsInput>
+  connectOrCreate?: Prisma.ClubCreateOrConnectWithoutEventsInput
+  upsert?: Prisma.ClubUpsertWithoutEventsInput
+  connect?: Prisma.ClubWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ClubUpdateToOneWithWhereWithoutEventsInput, Prisma.ClubUpdateWithoutEventsInput>, Prisma.ClubUncheckedUpdateWithoutEventsInput>
+}
+
 export type ClubCreateWithoutCollegeInput = {
   id?: string
   name: string
@@ -604,6 +625,7 @@ export type ClubCreateWithoutCollegeInput = {
   students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateWithoutCollegeInput = {
@@ -619,6 +641,7 @@ export type ClubUncheckedCreateWithoutCollegeInput = {
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubCreateOrConnectWithoutCollegeInput = {
@@ -676,6 +699,7 @@ export type ClubCreateWithoutStudentsInput = {
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateWithoutStudentsInput = {
@@ -691,6 +715,7 @@ export type ClubUncheckedCreateWithoutStudentsInput = {
   onHold?: boolean
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubCreateOrConnectWithoutStudentsInput = {
@@ -722,6 +747,7 @@ export type ClubUpdateWithoutStudentsInput = {
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateWithoutStudentsInput = {
@@ -737,6 +763,7 @@ export type ClubUncheckedUpdateWithoutStudentsInput = {
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
 }
 
 export type ClubCreateWithoutCoordinatorInput = {
@@ -752,6 +779,7 @@ export type ClubCreateWithoutCoordinatorInput = {
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateWithoutCoordinatorInput = {
@@ -767,6 +795,7 @@ export type ClubUncheckedCreateWithoutCoordinatorInput = {
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubCreateOrConnectWithoutCoordinatorInput = {
@@ -808,6 +837,7 @@ export type ClubCreateWithoutRoleInput = {
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateWithoutRoleInput = {
@@ -823,6 +853,7 @@ export type ClubUncheckedCreateWithoutRoleInput = {
   onHold?: boolean
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubCreateOrConnectWithoutRoleInput = {
@@ -854,6 +885,7 @@ export type ClubUpdateWithoutRoleInput = {
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateWithoutRoleInput = {
@@ -869,6 +901,7 @@ export type ClubUncheckedUpdateWithoutRoleInput = {
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
 }
 
 export type ClubCreateWithoutClubAdminInput = {
@@ -884,6 +917,7 @@ export type ClubCreateWithoutClubAdminInput = {
   students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+  events?: Prisma.EventCreateNestedManyWithoutClubInput
 }
 
 export type ClubUncheckedCreateWithoutClubAdminInput = {
@@ -899,6 +933,7 @@ export type ClubUncheckedCreateWithoutClubAdminInput = {
   onHold?: boolean
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+  events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
 }
 
 export type ClubCreateOrConnectWithoutClubAdminInput = {
@@ -930,6 +965,7 @@ export type ClubUpdateWithoutClubAdminInput = {
   students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateWithoutClubAdminInput = {
@@ -943,6 +979,87 @@ export type ClubUncheckedUpdateWithoutClubAdminInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   category?: Prisma.StringFieldUpdateOperationsInput | string
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
+  role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
+}
+
+export type ClubCreateWithoutEventsInput = {
+  id?: string
+  name: string
+  description?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  category: string
+  onHold?: boolean
+  clubAdmin?: Prisma.clubAdminCreateNestedOneWithoutClubInput
+  college: Prisma.CollegeCreateNestedOneWithoutClubsInput
+  students?: Prisma.StudentInClubCreateNestedManyWithoutClubInput
+  coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
+  role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
+}
+
+export type ClubUncheckedCreateWithoutEventsInput = {
+  id?: string
+  name: string
+  collegeId: string
+  description?: string | null
+  cordinatorId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  category: string
+  onHold?: boolean
+  clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
+  students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
+  role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
+}
+
+export type ClubCreateOrConnectWithoutEventsInput = {
+  where: Prisma.ClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.ClubCreateWithoutEventsInput, Prisma.ClubUncheckedCreateWithoutEventsInput>
+}
+
+export type ClubUpsertWithoutEventsInput = {
+  update: Prisma.XOR<Prisma.ClubUpdateWithoutEventsInput, Prisma.ClubUncheckedUpdateWithoutEventsInput>
+  create: Prisma.XOR<Prisma.ClubCreateWithoutEventsInput, Prisma.ClubUncheckedCreateWithoutEventsInput>
+  where?: Prisma.ClubWhereInput
+}
+
+export type ClubUpdateToOneWithWhereWithoutEventsInput = {
+  where?: Prisma.ClubWhereInput
+  data: Prisma.XOR<Prisma.ClubUpdateWithoutEventsInput, Prisma.ClubUncheckedUpdateWithoutEventsInput>
+}
+
+export type ClubUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  clubAdmin?: Prisma.clubAdminUpdateOneWithoutClubNestedInput
+  college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
+  students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
+  coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
+  role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+}
+
+export type ClubUncheckedUpdateWithoutEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  collegeId?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cordinatorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
 }
@@ -972,6 +1089,7 @@ export type ClubUpdateWithoutCollegeInput = {
   students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateWithoutCollegeInput = {
@@ -987,6 +1105,7 @@ export type ClubUncheckedUpdateWithoutCollegeInput = {
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateManyWithoutCollegeInput = {
@@ -1026,6 +1145,7 @@ export type ClubUpdateWithoutCoordinatorInput = {
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   students?: Prisma.StudentInClubUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateWithoutCoordinatorInput = {
@@ -1041,6 +1161,7 @@ export type ClubUncheckedUpdateWithoutCoordinatorInput = {
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
+  events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
 }
 
 export type ClubUncheckedUpdateManyWithoutCoordinatorInput = {
@@ -1063,11 +1184,13 @@ export type ClubUncheckedUpdateManyWithoutCoordinatorInput = {
 export type ClubCountOutputType = {
   students: number
   role: number
+  events: number
 }
 
 export type ClubCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   students?: boolean | ClubCountOutputTypeCountStudentsArgs
   role?: boolean | ClubCountOutputTypeCountRoleArgs
+  events?: boolean | ClubCountOutputTypeCountEventsArgs
 }
 
 /**
@@ -1094,6 +1217,13 @@ export type ClubCountOutputTypeCountRoleArgs<ExtArgs extends runtime.Types.Exten
   where?: Prisma.RoleInClubWhereInput
 }
 
+/**
+ * ClubCountOutputType without action
+ */
+export type ClubCountOutputTypeCountEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EventWhereInput
+}
+
 
 export type ClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1111,6 +1241,7 @@ export type ClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   students?: boolean | Prisma.Club$studentsArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
   role?: boolean | Prisma.Club$roleArgs<ExtArgs>
+  events?: boolean | Prisma.Club$eventsArgs<ExtArgs>
   _count?: boolean | Prisma.ClubCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["club"]>
 
@@ -1164,6 +1295,7 @@ export type ClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   students?: boolean | Prisma.Club$studentsArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
   role?: boolean | Prisma.Club$roleArgs<ExtArgs>
+  events?: boolean | Prisma.Club$eventsArgs<ExtArgs>
   _count?: boolean | Prisma.ClubCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1183,6 +1315,7 @@ export type $ClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     students: Prisma.$StudentInClubPayload<ExtArgs>[]
     coordinator: Prisma.$FacultyPayload<ExtArgs> | null
     role: Prisma.$RoleInClubPayload<ExtArgs>[]
+    events: Prisma.$EventPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1594,6 +1727,7 @@ export interface Prisma__ClubClient<T, Null = never, ExtArgs extends runtime.Typ
   students<T extends Prisma.Club$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Club$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentInClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   coordinator<T extends Prisma.Club$coordinatorArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Club$coordinatorArgs<ExtArgs>>): Prisma.Prisma__FacultyClient<runtime.Types.Result.GetResult<Prisma.$FacultyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   role<T extends Prisma.Club$roleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Club$roleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RoleInClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  events<T extends Prisma.Club$eventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Club$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2112,6 +2246,30 @@ export type Club$roleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   take?: number
   skip?: number
   distinct?: Prisma.RoleInClubScalarFieldEnum | Prisma.RoleInClubScalarFieldEnum[]
+}
+
+/**
+ * Club.events
+ */
+export type Club$eventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Event
+   */
+  select?: Prisma.EventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Event
+   */
+  omit?: Prisma.EventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EventInclude<ExtArgs> | null
+  where?: Prisma.EventWhereInput
+  orderBy?: Prisma.EventOrderByWithRelationInput | Prisma.EventOrderByWithRelationInput[]
+  cursor?: Prisma.EventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EventScalarFieldEnum | Prisma.EventScalarFieldEnum[]
 }
 
 /**

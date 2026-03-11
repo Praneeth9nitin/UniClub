@@ -24,11 +24,24 @@ enum status {
   REJECTED
 }
 
+enum mode {
+  ONLINE
+  OFFLINE
+  HYBRID
+}
+
 enum VerificationStatus {
   PENDING
   UNDER_REVIEW
   VERIFIED
   REJECTED
+}
+
+enum eventStatus {
+  UPCOMING
+  ONGOING
+  COMPLETED
+  CANCELLED
 }
 
 enum CollegeType {
@@ -96,6 +109,7 @@ model Club {
   deletedAt    DateTime?
   category     String
   onHold       Boolean         @default(true)
+  events       Event[]
 
   @@unique([collegeId, name])
 }
@@ -159,6 +173,31 @@ model clubAdmin {
   password  String
   clubId    String @unique
   club      Club   @relation(fields: [clubId], references: [id])
+}
+
+model Event {
+  id                   String      @id @default(uuid())
+  name                 String
+  description          String?
+  category             String
+  clubId               String
+  club                 Club        @relation(fields: [clubId], references: [id])
+  date                 DateTime
+  time                 String
+  mode                 mode
+  registrationLink     String?
+  registrationFee      Int?
+  registrationOpen     Boolean     @default(false)
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+  deletedAt            DateTime?
+  venue                String?
+  city                 String?
+  banner               String?
+  capacity             Int?
+  registrationDeadline DateTime?
+  status               eventStatus @default(UPCOMING)
+  isPublic             Boolean     @default(false)
 }
 
 //models to add

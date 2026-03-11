@@ -2,6 +2,7 @@ import { prisma } from "@/lib/singelton"
 import z from "zod"
 import bcrypt from "bcrypt"
 import { createClubSchema } from "@/app/api/club/auth/signup/route"
+import { EventCreateWithoutClubInputObjectSchema } from '@/lib/validator/schemas'
 
 
 
@@ -10,19 +11,20 @@ export const createClub = async (data: z.infer<typeof createClubSchema>) => {
     const result = await prisma.$transaction(async (tx) => {
         let college = await tx.college.findUnique({
             where: {
-                name: data.collegeName
+                name: data.college
             }
         })
+        console.log(!college)
         if (!college) {
             college = await tx.college.create({
                 data: {
-                    name: data.collegeName,
+                    name: data.college,
                     state: data.state,
                     city: data.city
                 }
             })
         }
-        const hashedPassword = await bcrypt.hash(data.adminPassword, 10)
+        const hashedPassword = await bcrypt.hash(data.password, 10)
         const club = await tx.club.create({
             data: {
                 name: data.name,
@@ -38,8 +40,9 @@ export const createClub = async (data: z.infer<typeof createClubSchema>) => {
 
         const clubAdmin = await tx.clubAdmin.create({
             data: {
-                name: data.adminName,
-                email: data.adminEmail,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
                 password: hashedPassword,
                 clubId: club.id
             }
@@ -58,4 +61,27 @@ export const adminLogin = async (email: string, password: string) => {
     if (!clubAdmin) throw new Error("Admin not found")
     if (!await bcrypt.compare(password, clubAdmin.password)) throw new Error("Invalid password")
     return clubAdmin
+}
+
+export const createEvent = async (data: z.infer<typeof EventCreateWithoutClubInputObjectSchema>, clubId: string) => {
+    const event = await prisma.event.create({
+        data: {
+            ...data,
+            club: {
+                connect: {
+                    id: clubId
+                }
+            }
+        }
+    })
+    return event
+}
+
+export const getEvents = async (clubId: string) => {
+    const events = await prisma.event.findMany({
+        where: {
+            clubId
+        }
+    })
+    return events
 }

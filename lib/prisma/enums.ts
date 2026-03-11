@@ -18,6 +18,15 @@ export const status = {
 export type status = (typeof status)[keyof typeof status]
 
 
+export const mode = {
+  ONLINE: 'ONLINE',
+  OFFLINE: 'OFFLINE',
+  HYBRID: 'HYBRID'
+} as const
+
+export type mode = (typeof mode)[keyof typeof mode]
+
+
 export const VerificationStatus = {
   PENDING: 'PENDING',
   UNDER_REVIEW: 'UNDER_REVIEW',
@@ -26,6 +35,16 @@ export const VerificationStatus = {
 } as const
 
 export type VerificationStatus = (typeof VerificationStatus)[keyof typeof VerificationStatus]
+
+
+export const eventStatus = {
+  UPCOMING: 'UPCOMING',
+  ONGOING: 'ONGOING',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type eventStatus = (typeof eventStatus)[keyof typeof eventStatus]
 
 
 export const CollegeType = {

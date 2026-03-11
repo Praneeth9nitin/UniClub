@@ -79,3 +79,8 @@ export type RoleInClub = Prisma.RoleInClubModel
  * 
  */
 export type clubAdmin = Prisma.clubAdminModel
+/**
+ * Model Event
+ * 
+ */
+export type Event = Prisma.EventModel

@@ -26,7 +26,8 @@ export type AggregateClubAdmin = {
 
 export type ClubAdminMinAggregateOutputType = {
   id: string | null
-  name: string | null
+  firstName: string | null
+  lastName: string | null
   email: string | null
   password: string | null
   clubId: string | null
@@ -34,7 +35,8 @@ export type ClubAdminMinAggregateOutputType = {
 
 export type ClubAdminMaxAggregateOutputType = {
   id: string | null
-  name: string | null
+  firstName: string | null
+  lastName: string | null
   email: string | null
   password: string | null
   clubId: string | null
@@ -42,7 +44,8 @@ export type ClubAdminMaxAggregateOutputType = {
 
 export type ClubAdminCountAggregateOutputType = {
   id: number
-  name: number
+  firstName: number
+  lastName: number
   email: number
   password: number
   clubId: number
@@ -52,7 +55,8 @@ export type ClubAdminCountAggregateOutputType = {
 
 export type ClubAdminMinAggregateInputType = {
   id?: true
-  name?: true
+  firstName?: true
+  lastName?: true
   email?: true
   password?: true
   clubId?: true
@@ -60,7 +64,8 @@ export type ClubAdminMinAggregateInputType = {
 
 export type ClubAdminMaxAggregateInputType = {
   id?: true
-  name?: true
+  firstName?: true
+  lastName?: true
   email?: true
   password?: true
   clubId?: true
@@ -68,7 +73,8 @@ export type ClubAdminMaxAggregateInputType = {
 
 export type ClubAdminCountAggregateInputType = {
   id?: true
-  name?: true
+  firstName?: true
+  lastName?: true
   email?: true
   password?: true
   clubId?: true
@@ -149,7 +155,8 @@ export type clubAdminGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 
 export type ClubAdminGroupByOutputType = {
   id: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   clubId: string
@@ -178,7 +185,8 @@ export type clubAdminWhereInput = {
   OR?: Prisma.clubAdminWhereInput[]
   NOT?: Prisma.clubAdminWhereInput | Prisma.clubAdminWhereInput[]
   id?: Prisma.StringFilter<"clubAdmin"> | string
-  name?: Prisma.StringFilter<"clubAdmin"> | string
+  firstName?: Prisma.StringFilter<"clubAdmin"> | string
+  lastName?: Prisma.StringFilter<"clubAdmin"> | string
   email?: Prisma.StringFilter<"clubAdmin"> | string
   password?: Prisma.StringFilter<"clubAdmin"> | string
   clubId?: Prisma.StringFilter<"clubAdmin"> | string
@@ -187,7 +195,8 @@ export type clubAdminWhereInput = {
 
 export type clubAdminOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  firstName?: Prisma.SortOrder
+  lastName?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
@@ -201,14 +210,16 @@ export type clubAdminWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.clubAdminWhereInput | Prisma.clubAdminWhereInput[]
   OR?: Prisma.clubAdminWhereInput[]
   NOT?: Prisma.clubAdminWhereInput | Prisma.clubAdminWhereInput[]
-  name?: Prisma.StringFilter<"clubAdmin"> | string
+  firstName?: Prisma.StringFilter<"clubAdmin"> | string
+  lastName?: Prisma.StringFilter<"clubAdmin"> | string
   password?: Prisma.StringFilter<"clubAdmin"> | string
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
 }, "id" | "email" | "clubId">
 
 export type clubAdminOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  firstName?: Prisma.SortOrder
+  lastName?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
@@ -222,7 +233,8 @@ export type clubAdminScalarWhereWithAggregatesInput = {
   OR?: Prisma.clubAdminScalarWhereWithAggregatesInput[]
   NOT?: Prisma.clubAdminScalarWhereWithAggregatesInput | Prisma.clubAdminScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
-  name?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
+  firstName?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
+  lastName?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
   email?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
   password?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
   clubId?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
@@ -230,7 +242,8 @@ export type clubAdminScalarWhereWithAggregatesInput = {
 
 export type clubAdminCreateInput = {
   id?: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   club: Prisma.ClubCreateNestedOneWithoutClubAdminInput
@@ -238,7 +251,8 @@ export type clubAdminCreateInput = {
 
 export type clubAdminUncheckedCreateInput = {
   id?: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   clubId: string
@@ -246,7 +260,8 @@ export type clubAdminUncheckedCreateInput = {
 
 export type clubAdminUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUpdateOneRequiredWithoutClubAdminNestedInput
@@ -254,7 +269,8 @@ export type clubAdminUpdateInput = {
 
 export type clubAdminUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -262,7 +278,8 @@ export type clubAdminUncheckedUpdateInput = {
 
 export type clubAdminCreateManyInput = {
   id?: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   clubId: string
@@ -270,14 +287,16 @@ export type clubAdminCreateManyInput = {
 
 export type clubAdminUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type clubAdminUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
@@ -290,7 +309,8 @@ export type ClubAdminNullableScalarRelationFilter = {
 
 export type clubAdminCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  firstName?: Prisma.SortOrder
+  lastName?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
@@ -298,7 +318,8 @@ export type clubAdminCountOrderByAggregateInput = {
 
 export type clubAdminMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  firstName?: Prisma.SortOrder
+  lastName?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
@@ -306,7 +327,8 @@ export type clubAdminMaxOrderByAggregateInput = {
 
 export type clubAdminMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
+  firstName?: Prisma.SortOrder
+  lastName?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
@@ -346,14 +368,16 @@ export type clubAdminUncheckedUpdateOneWithoutClubNestedInput = {
 
 export type clubAdminCreateWithoutClubInput = {
   id?: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
 }
 
 export type clubAdminUncheckedCreateWithoutClubInput = {
   id?: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
 }
@@ -376,14 +400,16 @@ export type clubAdminUpdateToOneWithWhereWithoutClubInput = {
 
 export type clubAdminUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type clubAdminUncheckedUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -392,7 +418,8 @@ export type clubAdminUncheckedUpdateWithoutClubInput = {
 
 export type clubAdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  firstName?: boolean
+  lastName?: boolean
   email?: boolean
   password?: boolean
   clubId?: boolean
@@ -401,7 +428,8 @@ export type clubAdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type clubAdminSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  firstName?: boolean
+  lastName?: boolean
   email?: boolean
   password?: boolean
   clubId?: boolean
@@ -410,7 +438,8 @@ export type clubAdminSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
 
 export type clubAdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  name?: boolean
+  firstName?: boolean
+  lastName?: boolean
   email?: boolean
   password?: boolean
   clubId?: boolean
@@ -419,13 +448,14 @@ export type clubAdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 
 export type clubAdminSelectScalar = {
   id?: boolean
-  name?: boolean
+  firstName?: boolean
+  lastName?: boolean
   email?: boolean
   password?: boolean
   clubId?: boolean
 }
 
-export type clubAdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "clubId", ExtArgs["result"]["clubAdmin"]>
+export type clubAdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "password" | "clubId", ExtArgs["result"]["clubAdmin"]>
 export type clubAdminInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }
@@ -443,7 +473,8 @@ export type $clubAdminPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    name: string
+    firstName: string
+    lastName: string
     email: string
     password: string
     clubId: string
@@ -872,7 +903,8 @@ export interface Prisma__clubAdminClient<T, Null = never, ExtArgs extends runtim
  */
 export interface clubAdminFieldRefs {
   readonly id: Prisma.FieldRef<"clubAdmin", 'String'>
-  readonly name: Prisma.FieldRef<"clubAdmin", 'String'>
+  readonly firstName: Prisma.FieldRef<"clubAdmin", 'String'>
+  readonly lastName: Prisma.FieldRef<"clubAdmin", 'String'>
   readonly email: Prisma.FieldRef<"clubAdmin", 'String'>
   readonly password: Prisma.FieldRef<"clubAdmin", 'String'>
   readonly clubId: Prisma.FieldRef<"clubAdmin", 'String'>

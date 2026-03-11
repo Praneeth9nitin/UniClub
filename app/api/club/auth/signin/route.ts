@@ -12,21 +12,24 @@ const signinSchema = z.object({
 export async function POST(req: NextRequest) {
     const body = await req.json()
     try {
-        if (!signinSchema.safeParse(body).success) {
-            throw new Error("invalid credentials")
+        const parsed = signinSchema.safeParse(body)
+        if (!parsed.success) {
+            throw new Error(parsed.error.message)
         }
-        const admin = await adminLogin(body.email, body.password)
-        const token = jwt.sign({ id: admin.id }, `${process.env.JWT_SECRET}`, { expiresIn: "1d" })
+        const admin = await adminLogin(parsed.data.email, parsed.data.password)
+        const token = jwt.sign({ id: admin.id, clubId: admin.clubId }, `${process.env.JWT_SECRET}`, { expiresIn: "1d" })
         const response = NextResponse.json({ message: "user loggedin" }, { status: 200 })
         response.cookies.set({
             name: "clubAdmin",
             value: token,
             httpOnly: true,
             sameSite: "strict",
-            path: "/"
+            path: "/",
+            secure: process.env.NODE_ENV === "production",
+            maxAge: 60 * 60 * 24
         })
         return response
     } catch (error) {
-        return NextResponse.json({ error }, { status: 400 })
+        return NextResponse.json({ error: error instanceof Error ? error.message : "Something went wrong" }, { status: 400 })
     }
 }

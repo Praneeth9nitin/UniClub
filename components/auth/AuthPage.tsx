@@ -344,7 +344,7 @@ function LoginForm({ role, accent }: { role: Role; accent: string }) {
         setLoading(true);
         try {
             // 🔌 Hook your JWT login API here
-            const res = await fetch(`/api/auth/${role}/login`, {
+            const res = await fetch(`/api/${role}/auth/signin`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
@@ -510,12 +510,12 @@ function ClubSignupForm({ accent }: { accent: string }) {
         setLoading(true);
         try {
             // 🔌 Hook your JWT club signup API here
-            const res = await fetch("/api/auth/club/signup", {
+            const res = await fetch("/api/club/auth/signup", {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ...leader, ...club }),
             });
-            if (!res.ok) { const d = await res.json(); setError(d.message || "Something went wrong."); return; }
-            router.push("/dashboard?welcome=true");
+            if (!res.ok) { setError("Something went wrong."); return; }
+            router.push("/dashboard");
         } catch { setError("Something went wrong."); }
         finally { setLoading(false); }
     }
