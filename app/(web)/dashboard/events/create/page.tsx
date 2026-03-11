@@ -39,6 +39,7 @@ export default function CreateEventPage() {
             const res = await fetch("/api/club/event/create", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: "include",
                 body: JSON.stringify({
                     ...form,
                     date: new Date(`${date}T${time}`),
@@ -49,8 +50,7 @@ export default function CreateEventPage() {
             });
 
             if (!res.ok) {
-                const d = await res.json();
-                setError(d.message || "Failed to create event.");
+                setError("Failed to create event.");
                 return;
             }
 

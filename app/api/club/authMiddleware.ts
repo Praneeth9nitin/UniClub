@@ -4,6 +4,7 @@ import { NextRequest } from 'next/server'
 
 export const middleware = async (req: NextRequest) => {
     const token = req.cookies.get("clubAdmin")?.value
+    console.log(req.cookies.getAll())
     if (!token) {
         throw new Error("plz signin");
     }

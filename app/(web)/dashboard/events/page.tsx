@@ -1,11 +1,18 @@
-// app/(dashboard)/dashboard/events/page.tsx
-// ✅ SERVER COMPONENT
 
 import EventAction from "@/components/dasboard/EventAction";
 import Link from "next/link";
 
 // 🔌 Replace with real Prisma query
 async function getClubEvents(clubId: string) {
+    const res = await fetch("/api/club/event/getEvents", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include"
+    })
+    const data = await res.json()
+    console.log(data)
     return [
         { id: "1", title: "Robotics Workshop 2025", date: "2025-03-15", venue: "Lab 204, VIT", registrations: 124, status: "upcoming", category: "Workshop" },
         { id: "2", title: "AI/ML Bootcamp", date: "2025-03-08", venue: "Seminar Hall A", registrations: 89, status: "upcoming", category: "Bootcamp" },
