@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken'
+import { cookies } from 'next/headers'
 import { NextRequest } from 'next/server'
 
 
-export const middleware = async (req: NextRequest) => {
-    const token = req.cookies.get("clubAdmin")?.value
-    console.log(req.cookies.getAll())
+export const middleware = async () => {
+    const token = (await cookies()).get("clubAdmin")?.value
     if (!token) {
         throw new Error("plz signin");
     }

@@ -349,6 +349,7 @@ export type EventWhereInput = {
   status?: Prisma.EnumeventStatusFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
+  registrations?: Prisma.RegistrationsListRelationFilter
 }
 
 export type EventOrderByWithRelationInput = {
@@ -374,6 +375,7 @@ export type EventOrderByWithRelationInput = {
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
   club?: Prisma.ClubOrderByWithRelationInput
+  registrations?: Prisma.RegistrationsOrderByRelationAggregateInput
 }
 
 export type EventWhereUniqueInput = Prisma.AtLeast<{
@@ -402,6 +404,7 @@ export type EventWhereUniqueInput = Prisma.AtLeast<{
   status?: Prisma.EnumeventStatusFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
+  registrations?: Prisma.RegistrationsListRelationFilter
 }, "id">
 
 export type EventOrderByWithAggregationInput = {
@@ -482,6 +485,7 @@ export type EventCreateInput = {
   status?: $Enums.eventStatus
   isPublic?: boolean
   club: Prisma.ClubCreateNestedOneWithoutEventsInput
+  registrations?: Prisma.RegistrationsCreateNestedManyWithoutEventInput
 }
 
 export type EventUncheckedCreateInput = {
@@ -506,6 +510,7 @@ export type EventUncheckedCreateInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutEventInput
 }
 
 export type EventUpdateInput = {
@@ -530,6 +535,7 @@ export type EventUpdateInput = {
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
   club?: Prisma.ClubUpdateOneRequiredWithoutEventsNestedInput
+  registrations?: Prisma.RegistrationsUpdateManyWithoutEventNestedInput
 }
 
 export type EventUncheckedUpdateInput = {
@@ -554,6 +560,7 @@ export type EventUncheckedUpdateInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutEventNestedInput
 }
 
 export type EventCreateManyInput = {
@@ -719,6 +726,11 @@ export type EventSumOrderByAggregateInput = {
   capacity?: Prisma.SortOrder
 }
 
+export type EventScalarRelationFilter = {
+  is?: Prisma.EventWhereInput
+  isNot?: Prisma.EventWhereInput
+}
+
 export type EventCreateNestedManyWithoutClubInput = {
   create?: Prisma.XOR<Prisma.EventCreateWithoutClubInput, Prisma.EventUncheckedCreateWithoutClubInput> | Prisma.EventCreateWithoutClubInput[] | Prisma.EventUncheckedCreateWithoutClubInput[]
   connectOrCreate?: Prisma.EventCreateOrConnectWithoutClubInput | Prisma.EventCreateOrConnectWithoutClubInput[]
@@ -769,6 +781,20 @@ export type EnumeventStatusFieldUpdateOperationsInput = {
   set?: $Enums.eventStatus
 }
 
+export type EventCreateNestedOneWithoutRegistrationsInput = {
+  create?: Prisma.XOR<Prisma.EventCreateWithoutRegistrationsInput, Prisma.EventUncheckedCreateWithoutRegistrationsInput>
+  connectOrCreate?: Prisma.EventCreateOrConnectWithoutRegistrationsInput
+  connect?: Prisma.EventWhereUniqueInput
+}
+
+export type EventUpdateOneRequiredWithoutRegistrationsNestedInput = {
+  create?: Prisma.XOR<Prisma.EventCreateWithoutRegistrationsInput, Prisma.EventUncheckedCreateWithoutRegistrationsInput>
+  connectOrCreate?: Prisma.EventCreateOrConnectWithoutRegistrationsInput
+  upsert?: Prisma.EventUpsertWithoutRegistrationsInput
+  connect?: Prisma.EventWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.EventUpdateToOneWithWhereWithoutRegistrationsInput, Prisma.EventUpdateWithoutRegistrationsInput>, Prisma.EventUncheckedUpdateWithoutRegistrationsInput>
+}
+
 export type EventCreateWithoutClubInput = {
   id?: string
   name: string
@@ -790,6 +816,7 @@ export type EventCreateWithoutClubInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  registrations?: Prisma.RegistrationsCreateNestedManyWithoutEventInput
 }
 
 export type EventUncheckedCreateWithoutClubInput = {
@@ -813,6 +840,7 @@ export type EventUncheckedCreateWithoutClubInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutEventInput
 }
 
 export type EventCreateOrConnectWithoutClubInput = {
@@ -868,6 +896,118 @@ export type EventScalarWhereInput = {
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
 }
 
+export type EventCreateWithoutRegistrationsInput = {
+  id?: string
+  name: string
+  description?: string | null
+  category: string
+  date: Date | string
+  time: string
+  mode: $Enums.mode
+  registrationLink?: string | null
+  registrationFee?: number | null
+  registrationOpen?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  venue?: string | null
+  city?: string | null
+  banner?: string | null
+  capacity?: number | null
+  registrationDeadline?: Date | string | null
+  status?: $Enums.eventStatus
+  isPublic?: boolean
+  club: Prisma.ClubCreateNestedOneWithoutEventsInput
+}
+
+export type EventUncheckedCreateWithoutRegistrationsInput = {
+  id?: string
+  name: string
+  description?: string | null
+  category: string
+  clubId: string
+  date: Date | string
+  time: string
+  mode: $Enums.mode
+  registrationLink?: string | null
+  registrationFee?: number | null
+  registrationOpen?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  deletedAt?: Date | string | null
+  venue?: string | null
+  city?: string | null
+  banner?: string | null
+  capacity?: number | null
+  registrationDeadline?: Date | string | null
+  status?: $Enums.eventStatus
+  isPublic?: boolean
+}
+
+export type EventCreateOrConnectWithoutRegistrationsInput = {
+  where: Prisma.EventWhereUniqueInput
+  create: Prisma.XOR<Prisma.EventCreateWithoutRegistrationsInput, Prisma.EventUncheckedCreateWithoutRegistrationsInput>
+}
+
+export type EventUpsertWithoutRegistrationsInput = {
+  update: Prisma.XOR<Prisma.EventUpdateWithoutRegistrationsInput, Prisma.EventUncheckedUpdateWithoutRegistrationsInput>
+  create: Prisma.XOR<Prisma.EventCreateWithoutRegistrationsInput, Prisma.EventUncheckedCreateWithoutRegistrationsInput>
+  where?: Prisma.EventWhereInput
+}
+
+export type EventUpdateToOneWithWhereWithoutRegistrationsInput = {
+  where?: Prisma.EventWhereInput
+  data: Prisma.XOR<Prisma.EventUpdateWithoutRegistrationsInput, Prisma.EventUncheckedUpdateWithoutRegistrationsInput>
+}
+
+export type EventUpdateWithoutRegistrationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  time?: Prisma.StringFieldUpdateOperationsInput | string
+  mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
+  registrationLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  registrationFee?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  registrationOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  venue?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  banner?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
+  isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  club?: Prisma.ClubUpdateOneRequiredWithoutEventsNestedInput
+}
+
+export type EventUncheckedUpdateWithoutRegistrationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  category?: Prisma.StringFieldUpdateOperationsInput | string
+  clubId?: Prisma.StringFieldUpdateOperationsInput | string
+  date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  time?: Prisma.StringFieldUpdateOperationsInput | string
+  mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
+  registrationLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  registrationFee?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  registrationOpen?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  venue?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  banner?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
+  isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+}
+
 export type EventCreateManyClubInput = {
   id?: string
   name: string
@@ -912,6 +1052,7 @@ export type EventUpdateWithoutClubInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrations?: Prisma.RegistrationsUpdateManyWithoutEventNestedInput
 }
 
 export type EventUncheckedUpdateWithoutClubInput = {
@@ -935,6 +1076,7 @@ export type EventUncheckedUpdateWithoutClubInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutEventNestedInput
 }
 
 export type EventUncheckedUpdateManyWithoutClubInput = {
@@ -961,6 +1103,35 @@ export type EventUncheckedUpdateManyWithoutClubInput = {
 }
 
 
+/**
+ * Count Type EventCountOutputType
+ */
+
+export type EventCountOutputType = {
+  registrations: number
+}
+
+export type EventCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  registrations?: boolean | EventCountOutputTypeCountRegistrationsArgs
+}
+
+/**
+ * EventCountOutputType without action
+ */
+export type EventCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the EventCountOutputType
+   */
+  select?: Prisma.EventCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * EventCountOutputType without action
+ */
+export type EventCountOutputTypeCountRegistrationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RegistrationsWhereInput
+}
+
 
 export type EventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -985,6 +1156,8 @@ export type EventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   status?: boolean
   isPublic?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
+  registrations?: boolean | Prisma.Event$registrationsArgs<ExtArgs>
+  _count?: boolean | Prisma.EventCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["event"]>
 
 export type EventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1064,6 +1237,8 @@ export type EventSelectScalar = {
 export type EventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "category" | "clubId" | "date" | "time" | "mode" | "registrationLink" | "registrationFee" | "registrationOpen" | "createdAt" | "updatedAt" | "deletedAt" | "venue" | "city" | "banner" | "capacity" | "registrationDeadline" | "status" | "isPublic", ExtArgs["result"]["event"]>
 export type EventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
+  registrations?: boolean | Prisma.Event$registrationsArgs<ExtArgs>
+  _count?: boolean | Prisma.EventCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type EventIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
@@ -1076,6 +1251,7 @@ export type $EventPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name: "Event"
   objects: {
     club: Prisma.$ClubPayload<ExtArgs>
+    registrations: Prisma.$RegistrationsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1494,6 +1670,7 @@ readonly fields: EventFieldRefs;
 export interface Prisma__EventClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   club<T extends Prisma.ClubDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClubDefaultArgs<ExtArgs>>): Prisma.Prisma__ClubClient<runtime.Types.Result.GetResult<Prisma.$ClubPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  registrations<T extends Prisma.Event$registrationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Event$registrationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegistrationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1937,6 +2114,30 @@ export type EventDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Limit how many Events to delete.
    */
   limit?: number
+}
+
+/**
+ * Event.registrations
+ */
+export type Event$registrationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Registrations
+   */
+  select?: Prisma.RegistrationsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Registrations
+   */
+  omit?: Prisma.RegistrationsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RegistrationsInclude<ExtArgs> | null
+  where?: Prisma.RegistrationsWhereInput
+  orderBy?: Prisma.RegistrationsOrderByWithRelationInput | Prisma.RegistrationsOrderByWithRelationInput[]
+  cursor?: Prisma.RegistrationsWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RegistrationsScalarFieldEnum | Prisma.RegistrationsScalarFieldEnum[]
 }
 
 /**

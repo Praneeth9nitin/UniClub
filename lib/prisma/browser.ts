@@ -62,3 +62,8 @@ export type clubAdmin = Prisma.clubAdminModel
  * 
  */
 export type Event = Prisma.EventModel
+/**
+ * Model Registrations
+ * 
+ */
+export type Registrations = Prisma.RegistrationsModel

@@ -80,8 +80,45 @@ export const createEvent = async (data: z.infer<typeof EventCreateWithoutClubInp
 export const getEvents = async (clubId: string) => {
     const events = await prisma.event.findMany({
         where: {
-            clubId
+            clubId,
+            deletedAt: null
         }
     })
     return events
+}
+
+export const getEvent = async (eventId: string, clubId: string) => {
+    const event = await prisma.event.findUnique({
+        where: {
+            id: eventId,
+            deletedAt: null,
+            clubId
+        }
+    })
+    return event
+}
+
+export const deleteEvent = async (eventId: string, clubId: string) => {
+    const event = await prisma.event.update({
+        where: {
+            id: eventId,
+            clubId
+        },
+        data: {
+            deletedAt: new Date()
+        }
+    })
+    return event
+}
+
+export const updateEvent = async (clubId: string, eventId: string, data: z.infer<typeof EventCreateWithoutClubInputObjectSchema>) => {
+    const event = await prisma.event.update({
+        where: {
+            id: eventId,
+            clubId
+        },
+        data: data
+    })
+    if (!event) throw new Error("Event not found")
+    return event
 }

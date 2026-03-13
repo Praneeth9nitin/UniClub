@@ -392,7 +392,8 @@ export const ModelName = {
   Faculty: 'Faculty',
   RoleInClub: 'RoleInClub',
   clubAdmin: 'clubAdmin',
-  Event: 'Event'
+  Event: 'Event',
+  Registrations: 'Registrations'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -408,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "collegeAdmin" | "college" | "club" | "student" | "studentInClub" | "faculty" | "roleInClub" | "clubAdmin" | "event"
+    modelProps: "collegeAdmin" | "college" | "club" | "student" | "studentInClub" | "faculty" | "roleInClub" | "clubAdmin" | "event" | "registrations"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1078,6 +1079,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Registrations: {
+      payload: Prisma.$RegistrationsPayload<ExtArgs>
+      fields: Prisma.RegistrationsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.RegistrationsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.RegistrationsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        findFirst: {
+          args: Prisma.RegistrationsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.RegistrationsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        findMany: {
+          args: Prisma.RegistrationsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>[]
+        }
+        create: {
+          args: Prisma.RegistrationsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        createMany: {
+          args: Prisma.RegistrationsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.RegistrationsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>[]
+        }
+        delete: {
+          args: Prisma.RegistrationsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        update: {
+          args: Prisma.RegistrationsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        deleteMany: {
+          args: Prisma.RegistrationsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.RegistrationsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.RegistrationsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>[]
+        }
+        upsert: {
+          args: Prisma.RegistrationsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RegistrationsPayload>
+        }
+        aggregate: {
+          args: Prisma.RegistrationsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateRegistrations>
+        }
+        groupBy: {
+          args: Prisma.RegistrationsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RegistrationsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.RegistrationsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RegistrationsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1261,6 +1336,18 @@ export const EventScalarFieldEnum = {
 } as const
 
 export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
+
+
+export const RegistrationsScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  eventId: 'eventId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
+} as const
+
+export type RegistrationsScalarFieldEnum = (typeof RegistrationsScalarFieldEnum)[keyof typeof RegistrationsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1529,6 +1616,7 @@ export type GlobalOmitConfig = {
   roleInClub?: Prisma.RoleInClubOmit
   clubAdmin?: Prisma.clubAdminOmit
   event?: Prisma.EventOmit
+  registrations?: Prisma.RegistrationsOmit
 }
 
 /* Types for Logging */

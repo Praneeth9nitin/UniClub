@@ -59,7 +59,8 @@ export const ModelName = {
   Faculty: 'Faculty',
   RoleInClub: 'RoleInClub',
   clubAdmin: 'clubAdmin',
-  Event: 'Event'
+  Event: 'Event',
+  Registrations: 'Registrations'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -222,6 +223,18 @@ export const EventScalarFieldEnum = {
 } as const
 
 export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
+
+
+export const RegistrationsScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  eventId: 'eventId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
+} as const
+
+export type RegistrationsScalarFieldEnum = (typeof RegistrationsScalarFieldEnum)[keyof typeof RegistrationsScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -1,37 +1,26 @@
 
+import { middleware } from "@/app/api/club/authMiddleware";
 import EventAction from "@/components/dasboard/EventAction";
+import { getEvents } from "@/services/club.services";
 import Link from "next/link";
 
 // 🔌 Replace with real Prisma query
 async function getClubEvents(clubId: string) {
-    const res = await fetch("/api/club/event/getEvents", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        credentials: "include"
-    })
-    const data = await res.json()
-    console.log(data)
-    return [
-        { id: "1", title: "Robotics Workshop 2025", date: "2025-03-15", venue: "Lab 204, VIT", registrations: 124, status: "upcoming", category: "Workshop" },
-        { id: "2", title: "AI/ML Bootcamp", date: "2025-03-08", venue: "Seminar Hall A", registrations: 89, status: "upcoming", category: "Bootcamp" },
-        { id: "3", title: "Circuit Design Hackathon", date: "2025-02-20", venue: "Innovation Hub", registrations: 203, status: "completed", category: "Hackathon" },
-        { id: "4", title: "Tech Talk — Industry Pros", date: "2025-02-10", venue: "Auditorium", registrations: 156, status: "completed", category: "Talk" },
-        { id: "5", title: "PCB Design Workshop", date: "2025-01-25", venue: "Lab 108", registrations: 67, status: "completed", category: "Workshop" },
-    ];
+    const res = await getEvents(clubId)
+    return res
 }
 
 const STATUS_STYLE: Record<string, { bg: string; color: string }> = {
-    upcoming: { bg: "rgba(108,99,255,0.15)", color: "#a09dff" },
-    completed: { bg: "rgba(67,233,123,0.15)", color: "#43e97b" },
-    cancelled: { bg: "rgba(255,101,132,0.15)", color: "#ff8fa3" },
+    UPCOMING: { bg: "rgba(108,99,255,0.15)", color: "#a09dff" },
+    COMPLETED: { bg: "rgba(67,233,123,0.15)", color: "#43e97b" },
+    CANCELLED: { bg: "rgba(255,101,132,0.15)", color: "#ff8fa3" },
 };
 
 export default async function EventsPage() {
-    const events = await getClubEvents("club-id-from-token");
-    const upcoming = events.filter(e => e.status === "upcoming");
-    const completed = events.filter(e => e.status === "completed");
+    const session = await middleware()
+    const events = await getClubEvents(session.clubId)
+    const upcoming = events.filter(e => e.status === "UPCOMING");
+    const completed = events.filter(e => e.status === "COMPLETED");
 
     return (
         <div className="max-w-4xl mx-auto">
@@ -114,7 +103,7 @@ function EventRow({ event, isLast }: { event: any; isLast: boolean }) {
 
             {/* Info */}
             <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium truncate mb-0.5">{event.title}</div>
+                <div className="text-sm font-medium truncate mb-0.5">{event.name}</div>
                 <div className="text-xs font-light" style={{ color: "var(--muted)" }}>
                     📍 {event.venue} · 🎟️ {event.registrations} registered
                 </div>

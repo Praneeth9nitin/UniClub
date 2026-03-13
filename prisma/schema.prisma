@@ -110,23 +110,26 @@ model Club {
   category     String
   onHold       Boolean         @default(true)
   events       Event[]
+  followers    Student[]       @relation("StudentFollowsClub")
 
   @@unique([collegeId, name])
 }
 
 model Student {
-  id         String          @id @default(uuid())
-  name       String
-  email      String          @unique
-  password   String
-  rollnumber String          @unique
-  collegeId  String?
-  college    College?        @relation(fields: [collegeId], references: [id])
-  follows    College[]       @relation("StudentFollows")
-  clubs      StudentInClub[]
-  createdAt  DateTime        @default(now())
-  updatedAt  DateTime        @updatedAt
-  deletedAt  DateTime?
+  id            String          @id @default(uuid())
+  name          String
+  email         String          @unique
+  password      String
+  rollnumber    String          @unique
+  collegeId     String?
+  college       College?        @relation(fields: [collegeId], references: [id])
+  follows       College[]       @relation("StudentFollows")
+  clubs         StudentInClub[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  deletedAt     DateTime?
+  followsClub   Club[]          @relation("StudentFollowsClub")
+  registrations Registrations[]
 }
 
 model StudentInClub {
@@ -176,28 +179,40 @@ model clubAdmin {
 }
 
 model Event {
-  id                   String      @id @default(uuid())
+  id                   String          @id @default(uuid())
   name                 String
   description          String?
   category             String
   clubId               String
-  club                 Club        @relation(fields: [clubId], references: [id])
+  club                 Club            @relation(fields: [clubId], references: [id])
   date                 DateTime
   time                 String
   mode                 mode
   registrationLink     String?
   registrationFee      Int?
-  registrationOpen     Boolean     @default(false)
-  createdAt            DateTime    @default(now())
-  updatedAt            DateTime    @updatedAt
+  registrationOpen     Boolean         @default(false)
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
   deletedAt            DateTime?
   venue                String?
   city                 String?
   banner               String?
   capacity             Int?
   registrationDeadline DateTime?
-  status               eventStatus @default(UPCOMING)
-  isPublic             Boolean     @default(false)
+  status               eventStatus     @default(UPCOMING)
+  isPublic             Boolean         @default(false)
+  registrations        Registrations[]
+}
+
+model Registrations {
+  id        String    @id @default(uuid())
+  studentId String
+  eventId   String
+  student   Student   @relation(fields: [studentId], references: [id])
+  event     Event     @relation(fields: [eventId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 }
 
 //models to add
