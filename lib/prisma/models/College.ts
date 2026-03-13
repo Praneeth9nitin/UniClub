@@ -39,26 +39,26 @@ export type CollegeMinAggregateOutputType = {
   name: string | null
   city: string | null
   state: string | null
-  country: string | null
-  affiliatedUniversity: string | null
-  establisedYear: number | null
-  accrediation: string | null
-  regitrationNumber: string | null
   collegeType: $Enums.CollegeType | null
   logoUrl: string | null
   websiteUrl: string | null
-  verified: $Enums.VerificationStatus | null
   createdAt: Date | null
   updatedAt: Date | null
-  deletedAt: Date | null
-  verificationNote: string | null
-  verififedTime: Date | null
+  country: string | null
+  accrediation: string | null
   address: string | null
-  pincode: string | null
-  phone: string | null
-  officialEmail: string | null
+  affiliatedUniversity: string | null
+  deletedAt: Date | null
+  establisedYear: number | null
   latitude: string | null
   longitude: string | null
+  officialEmail: string | null
+  phone: string | null
+  pincode: string | null
+  regitrationNumber: string | null
+  verificationNote: string | null
+  verififedTime: Date | null
+  verified: $Enums.VerificationStatus | null
 }
 
 export type CollegeMaxAggregateOutputType = {
@@ -66,26 +66,26 @@ export type CollegeMaxAggregateOutputType = {
   name: string | null
   city: string | null
   state: string | null
-  country: string | null
-  affiliatedUniversity: string | null
-  establisedYear: number | null
-  accrediation: string | null
-  regitrationNumber: string | null
   collegeType: $Enums.CollegeType | null
   logoUrl: string | null
   websiteUrl: string | null
-  verified: $Enums.VerificationStatus | null
   createdAt: Date | null
   updatedAt: Date | null
-  deletedAt: Date | null
-  verificationNote: string | null
-  verififedTime: Date | null
+  country: string | null
+  accrediation: string | null
   address: string | null
-  pincode: string | null
-  phone: string | null
-  officialEmail: string | null
+  affiliatedUniversity: string | null
+  deletedAt: Date | null
+  establisedYear: number | null
   latitude: string | null
   longitude: string | null
+  officialEmail: string | null
+  phone: string | null
+  pincode: string | null
+  regitrationNumber: string | null
+  verificationNote: string | null
+  verififedTime: Date | null
+  verified: $Enums.VerificationStatus | null
 }
 
 export type CollegeCountAggregateOutputType = {
@@ -93,26 +93,26 @@ export type CollegeCountAggregateOutputType = {
   name: number
   city: number
   state: number
-  country: number
-  affiliatedUniversity: number
-  establisedYear: number
-  accrediation: number
-  regitrationNumber: number
   collegeType: number
   logoUrl: number
   websiteUrl: number
-  verified: number
   createdAt: number
   updatedAt: number
-  deletedAt: number
-  verificationNote: number
-  verififedTime: number
+  country: number
+  accrediation: number
   address: number
-  pincode: number
-  phone: number
-  officialEmail: number
+  affiliatedUniversity: number
+  deletedAt: number
+  establisedYear: number
   latitude: number
   longitude: number
+  officialEmail: number
+  phone: number
+  pincode: number
+  regitrationNumber: number
+  verificationNote: number
+  verififedTime: number
+  verified: number
   _all: number
 }
 
@@ -130,26 +130,26 @@ export type CollegeMinAggregateInputType = {
   name?: true
   city?: true
   state?: true
-  country?: true
-  affiliatedUniversity?: true
-  establisedYear?: true
-  accrediation?: true
-  regitrationNumber?: true
   collegeType?: true
   logoUrl?: true
   websiteUrl?: true
-  verified?: true
   createdAt?: true
   updatedAt?: true
-  deletedAt?: true
-  verificationNote?: true
-  verififedTime?: true
+  country?: true
+  accrediation?: true
   address?: true
-  pincode?: true
-  phone?: true
-  officialEmail?: true
+  affiliatedUniversity?: true
+  deletedAt?: true
+  establisedYear?: true
   latitude?: true
   longitude?: true
+  officialEmail?: true
+  phone?: true
+  pincode?: true
+  regitrationNumber?: true
+  verificationNote?: true
+  verififedTime?: true
+  verified?: true
 }
 
 export type CollegeMaxAggregateInputType = {
@@ -157,26 +157,26 @@ export type CollegeMaxAggregateInputType = {
   name?: true
   city?: true
   state?: true
-  country?: true
-  affiliatedUniversity?: true
-  establisedYear?: true
-  accrediation?: true
-  regitrationNumber?: true
   collegeType?: true
   logoUrl?: true
   websiteUrl?: true
-  verified?: true
   createdAt?: true
   updatedAt?: true
-  deletedAt?: true
-  verificationNote?: true
-  verififedTime?: true
+  country?: true
+  accrediation?: true
   address?: true
-  pincode?: true
-  phone?: true
-  officialEmail?: true
+  affiliatedUniversity?: true
+  deletedAt?: true
+  establisedYear?: true
   latitude?: true
   longitude?: true
+  officialEmail?: true
+  phone?: true
+  pincode?: true
+  regitrationNumber?: true
+  verificationNote?: true
+  verififedTime?: true
+  verified?: true
 }
 
 export type CollegeCountAggregateInputType = {
@@ -184,26 +184,26 @@ export type CollegeCountAggregateInputType = {
   name?: true
   city?: true
   state?: true
-  country?: true
-  affiliatedUniversity?: true
-  establisedYear?: true
-  accrediation?: true
-  regitrationNumber?: true
   collegeType?: true
   logoUrl?: true
   websiteUrl?: true
-  verified?: true
   createdAt?: true
   updatedAt?: true
-  deletedAt?: true
-  verificationNote?: true
-  verififedTime?: true
+  country?: true
+  accrediation?: true
   address?: true
-  pincode?: true
-  phone?: true
-  officialEmail?: true
+  affiliatedUniversity?: true
+  deletedAt?: true
+  establisedYear?: true
   latitude?: true
   longitude?: true
+  officialEmail?: true
+  phone?: true
+  pincode?: true
+  regitrationNumber?: true
+  verificationNote?: true
+  verififedTime?: true
+  verified?: true
   _all?: true
 }
 
@@ -298,26 +298,26 @@ export type CollegeGroupByOutputType = {
   name: string
   city: string
   state: string
-  country: string
-  affiliatedUniversity: string | null
-  establisedYear: number | null
-  accrediation: string | null
-  regitrationNumber: string | null
   collegeType: $Enums.CollegeType | null
   logoUrl: string | null
   websiteUrl: string | null
-  verified: $Enums.VerificationStatus
   createdAt: Date
   updatedAt: Date
-  deletedAt: Date | null
-  verificationNote: string | null
-  verififedTime: Date | null
+  country: string
+  accrediation: string | null
   address: string | null
-  pincode: string | null
-  phone: string | null
-  officialEmail: string | null
+  affiliatedUniversity: string | null
+  deletedAt: Date | null
+  establisedYear: number | null
   latitude: string | null
   longitude: string | null
+  officialEmail: string | null
+  phone: string | null
+  pincode: string | null
+  regitrationNumber: string | null
+  verificationNote: string | null
+  verififedTime: Date | null
+  verified: $Enums.VerificationStatus
   _count: CollegeCountAggregateOutputType | null
   _avg: CollegeAvgAggregateOutputType | null
   _sum: CollegeSumAggregateOutputType | null
@@ -348,30 +348,30 @@ export type CollegeWhereInput = {
   name?: Prisma.StringFilter<"College"> | string
   city?: Prisma.StringFilter<"College"> | string
   state?: Prisma.StringFilter<"College"> | string
-  country?: Prisma.StringFilter<"College"> | string
-  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
-  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
-  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
-  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
   collegeType?: Prisma.EnumCollegeTypeNullableFilter<"College"> | $Enums.CollegeType | null
   logoUrl?: Prisma.StringNullableFilter<"College"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"College"> | string | null
-  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"College"> | Date | string
-  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
-  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
-  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  country?: Prisma.StringFilter<"College"> | string
+  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
   address?: Prisma.StringNullableFilter<"College"> | string | null
-  pincode?: Prisma.StringNullableFilter<"College"> | string | null
-  phone?: Prisma.StringNullableFilter<"College"> | string | null
-  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
+  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
   latitude?: Prisma.StringNullableFilter<"College"> | string | null
   longitude?: Prisma.StringNullableFilter<"College"> | string | null
-  admin?: Prisma.XOR<Prisma.CollegeAdminNullableScalarRelationFilter, Prisma.CollegeAdminWhereInput> | null
-  students?: Prisma.StudentListRelationFilter
+  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  phone?: Prisma.StringNullableFilter<"College"> | string | null
+  pincode?: Prisma.StringNullableFilter<"College"> | string | null
+  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
+  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
+  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
   clubs?: Prisma.ClubListRelationFilter
+  admin?: Prisma.XOR<Prisma.CollegeAdminNullableScalarRelationFilter, Prisma.CollegeAdminWhereInput> | null
   faculty?: Prisma.FacultyListRelationFilter
+  students?: Prisma.StudentListRelationFilter
   followers?: Prisma.StudentListRelationFilter
 }
 
@@ -380,30 +380,30 @@ export type CollegeOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  affiliatedUniversity?: Prisma.SortOrderInput | Prisma.SortOrder
-  establisedYear?: Prisma.SortOrderInput | Prisma.SortOrder
-  accrediation?: Prisma.SortOrderInput | Prisma.SortOrder
-  regitrationNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   collegeType?: Prisma.SortOrderInput | Prisma.SortOrder
   logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  verified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  verificationNote?: Prisma.SortOrderInput | Prisma.SortOrder
-  verififedTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  country?: Prisma.SortOrder
+  accrediation?: Prisma.SortOrderInput | Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
-  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone?: Prisma.SortOrderInput | Prisma.SortOrder
-  officialEmail?: Prisma.SortOrderInput | Prisma.SortOrder
+  affiliatedUniversity?: Prisma.SortOrderInput | Prisma.SortOrder
+  deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  establisedYear?: Prisma.SortOrderInput | Prisma.SortOrder
   latitude?: Prisma.SortOrderInput | Prisma.SortOrder
   longitude?: Prisma.SortOrderInput | Prisma.SortOrder
-  admin?: Prisma.CollegeAdminOrderByWithRelationInput
-  students?: Prisma.StudentOrderByRelationAggregateInput
+  officialEmail?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
+  regitrationNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  verificationNote?: Prisma.SortOrderInput | Prisma.SortOrder
+  verififedTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  verified?: Prisma.SortOrder
   clubs?: Prisma.ClubOrderByRelationAggregateInput
+  admin?: Prisma.CollegeAdminOrderByWithRelationInput
   faculty?: Prisma.FacultyOrderByRelationAggregateInput
+  students?: Prisma.StudentOrderByRelationAggregateInput
   followers?: Prisma.StudentOrderByRelationAggregateInput
 }
 
@@ -415,30 +415,30 @@ export type CollegeWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.CollegeWhereInput | Prisma.CollegeWhereInput[]
   city?: Prisma.StringFilter<"College"> | string
   state?: Prisma.StringFilter<"College"> | string
-  country?: Prisma.StringFilter<"College"> | string
-  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
-  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
-  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
-  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
   collegeType?: Prisma.EnumCollegeTypeNullableFilter<"College"> | $Enums.CollegeType | null
   logoUrl?: Prisma.StringNullableFilter<"College"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"College"> | string | null
-  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"College"> | Date | string
-  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
-  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
-  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  country?: Prisma.StringFilter<"College"> | string
+  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
   address?: Prisma.StringNullableFilter<"College"> | string | null
-  pincode?: Prisma.StringNullableFilter<"College"> | string | null
-  phone?: Prisma.StringNullableFilter<"College"> | string | null
-  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
+  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
   latitude?: Prisma.StringNullableFilter<"College"> | string | null
   longitude?: Prisma.StringNullableFilter<"College"> | string | null
-  admin?: Prisma.XOR<Prisma.CollegeAdminNullableScalarRelationFilter, Prisma.CollegeAdminWhereInput> | null
-  students?: Prisma.StudentListRelationFilter
+  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  phone?: Prisma.StringNullableFilter<"College"> | string | null
+  pincode?: Prisma.StringNullableFilter<"College"> | string | null
+  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
+  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
+  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
   clubs?: Prisma.ClubListRelationFilter
+  admin?: Prisma.XOR<Prisma.CollegeAdminNullableScalarRelationFilter, Prisma.CollegeAdminWhereInput> | null
   faculty?: Prisma.FacultyListRelationFilter
+  students?: Prisma.StudentListRelationFilter
   followers?: Prisma.StudentListRelationFilter
 }, "id" | "name">
 
@@ -447,26 +447,26 @@ export type CollegeOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  affiliatedUniversity?: Prisma.SortOrderInput | Prisma.SortOrder
-  establisedYear?: Prisma.SortOrderInput | Prisma.SortOrder
-  accrediation?: Prisma.SortOrderInput | Prisma.SortOrder
-  regitrationNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   collegeType?: Prisma.SortOrderInput | Prisma.SortOrder
   logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  verified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  verificationNote?: Prisma.SortOrderInput | Prisma.SortOrder
-  verififedTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  country?: Prisma.SortOrder
+  accrediation?: Prisma.SortOrderInput | Prisma.SortOrder
   address?: Prisma.SortOrderInput | Prisma.SortOrder
-  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone?: Prisma.SortOrderInput | Prisma.SortOrder
-  officialEmail?: Prisma.SortOrderInput | Prisma.SortOrder
+  affiliatedUniversity?: Prisma.SortOrderInput | Prisma.SortOrder
+  deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  establisedYear?: Prisma.SortOrderInput | Prisma.SortOrder
   latitude?: Prisma.SortOrderInput | Prisma.SortOrder
   longitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  officialEmail?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
+  regitrationNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  verificationNote?: Prisma.SortOrderInput | Prisma.SortOrder
+  verififedTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  verified?: Prisma.SortOrder
   _count?: Prisma.CollegeCountOrderByAggregateInput
   _avg?: Prisma.CollegeAvgOrderByAggregateInput
   _max?: Prisma.CollegeMaxOrderByAggregateInput
@@ -482,26 +482,26 @@ export type CollegeScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"College"> | string
   city?: Prisma.StringWithAggregatesFilter<"College"> | string
   state?: Prisma.StringWithAggregatesFilter<"College"> | string
-  country?: Prisma.StringWithAggregatesFilter<"College"> | string
-  affiliatedUniversity?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  establisedYear?: Prisma.IntNullableWithAggregatesFilter<"College"> | number | null
-  accrediation?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  regitrationNumber?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
   collegeType?: Prisma.EnumCollegeTypeNullableWithAggregatesFilter<"College"> | $Enums.CollegeType | null
   logoUrl?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
   websiteUrl?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  verified?: Prisma.EnumVerificationStatusWithAggregatesFilter<"College"> | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"College"> | Date | string
-  deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"College"> | Date | string | null
-  verificationNote?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  verififedTime?: Prisma.DateTimeNullableWithAggregatesFilter<"College"> | Date | string | null
+  country?: Prisma.StringWithAggregatesFilter<"College"> | string
+  accrediation?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
   address?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  pincode?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  phone?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
-  officialEmail?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  affiliatedUniversity?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"College"> | Date | string | null
+  establisedYear?: Prisma.IntNullableWithAggregatesFilter<"College"> | number | null
   latitude?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
   longitude?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  officialEmail?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  phone?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  pincode?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  regitrationNumber?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  verificationNote?: Prisma.StringNullableWithAggregatesFilter<"College"> | string | null
+  verififedTime?: Prisma.DateTimeNullableWithAggregatesFilter<"College"> | Date | string | null
+  verified?: Prisma.EnumVerificationStatusWithAggregatesFilter<"College"> | $Enums.VerificationStatus
 }
 
 export type CollegeCreateInput = {
@@ -509,30 +509,30 @@ export type CollegeCreateInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentCreateNestedManyWithoutFollowsInput
 }
 
@@ -541,30 +541,30 @@ export type CollegeUncheckedCreateInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyUncheckedCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentUncheckedCreateNestedManyWithoutFollowsInput
 }
 
@@ -573,30 +573,30 @@ export type CollegeUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUpdateManyWithoutFollowsNestedInput
 }
 
@@ -605,30 +605,30 @@ export type CollegeUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUncheckedUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUncheckedUpdateManyWithoutFollowsNestedInput
 }
 
@@ -637,26 +637,26 @@ export type CollegeCreateManyInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
 }
 
 export type CollegeUpdateManyMutationInput = {
@@ -664,26 +664,26 @@ export type CollegeUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
 }
 
 export type CollegeUncheckedUpdateManyInput = {
@@ -691,26 +691,26 @@ export type CollegeUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
 }
 
 export type CollegeScalarRelationFilter = {
@@ -723,26 +723,26 @@ export type CollegeCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  affiliatedUniversity?: Prisma.SortOrder
-  establisedYear?: Prisma.SortOrder
-  accrediation?: Prisma.SortOrder
-  regitrationNumber?: Prisma.SortOrder
   collegeType?: Prisma.SortOrder
   logoUrl?: Prisma.SortOrder
   websiteUrl?: Prisma.SortOrder
-  verified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  deletedAt?: Prisma.SortOrder
-  verificationNote?: Prisma.SortOrder
-  verififedTime?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  accrediation?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  officialEmail?: Prisma.SortOrder
+  affiliatedUniversity?: Prisma.SortOrder
+  deletedAt?: Prisma.SortOrder
+  establisedYear?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  officialEmail?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  regitrationNumber?: Prisma.SortOrder
+  verificationNote?: Prisma.SortOrder
+  verififedTime?: Prisma.SortOrder
+  verified?: Prisma.SortOrder
 }
 
 export type CollegeAvgOrderByAggregateInput = {
@@ -754,26 +754,26 @@ export type CollegeMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  affiliatedUniversity?: Prisma.SortOrder
-  establisedYear?: Prisma.SortOrder
-  accrediation?: Prisma.SortOrder
-  regitrationNumber?: Prisma.SortOrder
   collegeType?: Prisma.SortOrder
   logoUrl?: Prisma.SortOrder
   websiteUrl?: Prisma.SortOrder
-  verified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  deletedAt?: Prisma.SortOrder
-  verificationNote?: Prisma.SortOrder
-  verififedTime?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  accrediation?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  officialEmail?: Prisma.SortOrder
+  affiliatedUniversity?: Prisma.SortOrder
+  deletedAt?: Prisma.SortOrder
+  establisedYear?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  officialEmail?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  regitrationNumber?: Prisma.SortOrder
+  verificationNote?: Prisma.SortOrder
+  verififedTime?: Prisma.SortOrder
+  verified?: Prisma.SortOrder
 }
 
 export type CollegeMinOrderByAggregateInput = {
@@ -781,26 +781,26 @@ export type CollegeMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  affiliatedUniversity?: Prisma.SortOrder
-  establisedYear?: Prisma.SortOrder
-  accrediation?: Prisma.SortOrder
-  regitrationNumber?: Prisma.SortOrder
   collegeType?: Prisma.SortOrder
   logoUrl?: Prisma.SortOrder
   websiteUrl?: Prisma.SortOrder
-  verified?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  deletedAt?: Prisma.SortOrder
-  verificationNote?: Prisma.SortOrder
-  verififedTime?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  accrediation?: Prisma.SortOrder
   address?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
-  phone?: Prisma.SortOrder
-  officialEmail?: Prisma.SortOrder
+  affiliatedUniversity?: Prisma.SortOrder
+  deletedAt?: Prisma.SortOrder
+  establisedYear?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  officialEmail?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  regitrationNumber?: Prisma.SortOrder
+  verificationNote?: Prisma.SortOrder
+  verififedTime?: Prisma.SortOrder
+  verified?: Prisma.SortOrder
 }
 
 export type CollegeSumOrderByAggregateInput = {
@@ -836,20 +836,8 @@ export type CollegeUpdateOneRequiredWithoutAdminNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CollegeUpdateToOneWithWhereWithoutAdminInput, Prisma.CollegeUpdateWithoutAdminInput>, Prisma.CollegeUncheckedUpdateWithoutAdminInput>
 }
 
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type NullableEnumCollegeTypeFieldUpdateOperationsInput = {
   set?: $Enums.CollegeType | null
-}
-
-export type EnumVerificationStatusFieldUpdateOperationsInput = {
-  set?: $Enums.VerificationStatus
 }
 
 export type DateTimeFieldUpdateOperationsInput = {
@@ -858,6 +846,18 @@ export type DateTimeFieldUpdateOperationsInput = {
 
 export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
+}
+
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type EnumVerificationStatusFieldUpdateOperationsInput = {
+  set?: $Enums.VerificationStatus
 }
 
 export type CollegeCreateNestedOneWithoutClubsInput = {
@@ -947,29 +947,29 @@ export type CollegeCreateWithoutAdminInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
   faculty?: Prisma.FacultyCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentCreateNestedManyWithoutFollowsInput
 }
 
@@ -978,29 +978,29 @@ export type CollegeUncheckedCreateWithoutAdminInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
   faculty?: Prisma.FacultyUncheckedCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentUncheckedCreateNestedManyWithoutFollowsInput
 }
 
@@ -1025,29 +1025,29 @@ export type CollegeUpdateWithoutAdminInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1056,29 +1056,29 @@ export type CollegeUncheckedUpdateWithoutAdminInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUncheckedUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUncheckedUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1087,29 +1087,29 @@ export type CollegeCreateWithoutClubsInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
   faculty?: Prisma.FacultyCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentCreateNestedManyWithoutFollowsInput
 }
 
@@ -1118,29 +1118,29 @@ export type CollegeUncheckedCreateWithoutClubsInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
   faculty?: Prisma.FacultyUncheckedCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentUncheckedCreateNestedManyWithoutFollowsInput
 }
 
@@ -1165,29 +1165,29 @@ export type CollegeUpdateWithoutClubsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1196,29 +1196,29 @@ export type CollegeUncheckedUpdateWithoutClubsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUncheckedUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUncheckedUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1227,28 +1227,28 @@ export type CollegeCreateWithoutStudentsInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentCreateNestedManyWithoutFollowsInput
 }
@@ -1258,28 +1258,28 @@ export type CollegeUncheckedCreateWithoutStudentsInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyUncheckedCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentUncheckedCreateNestedManyWithoutFollowsInput
 }
@@ -1294,30 +1294,30 @@ export type CollegeCreateWithoutFollowersInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
 }
 
 export type CollegeUncheckedCreateWithoutFollowersInput = {
@@ -1325,30 +1325,30 @@ export type CollegeUncheckedCreateWithoutFollowersInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
-  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
-  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
+  admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
   faculty?: Prisma.FacultyUncheckedCreateNestedManyWithoutCollegeInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
 }
 
 export type CollegeCreateOrConnectWithoutFollowersInput = {
@@ -1372,28 +1372,28 @@ export type CollegeUpdateWithoutStudentsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUpdateManyWithoutFollowsNestedInput
 }
@@ -1403,28 +1403,28 @@ export type CollegeUncheckedUpdateWithoutStudentsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUncheckedUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUncheckedUpdateManyWithoutFollowsNestedInput
 }
@@ -1453,26 +1453,26 @@ export type CollegeScalarWhereInput = {
   name?: Prisma.StringFilter<"College"> | string
   city?: Prisma.StringFilter<"College"> | string
   state?: Prisma.StringFilter<"College"> | string
-  country?: Prisma.StringFilter<"College"> | string
-  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
-  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
-  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
-  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
   collegeType?: Prisma.EnumCollegeTypeNullableFilter<"College"> | $Enums.CollegeType | null
   logoUrl?: Prisma.StringNullableFilter<"College"> | string | null
   websiteUrl?: Prisma.StringNullableFilter<"College"> | string | null
-  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"College"> | Date | string
-  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
-  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
-  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  country?: Prisma.StringFilter<"College"> | string
+  accrediation?: Prisma.StringNullableFilter<"College"> | string | null
   address?: Prisma.StringNullableFilter<"College"> | string | null
-  pincode?: Prisma.StringNullableFilter<"College"> | string | null
-  phone?: Prisma.StringNullableFilter<"College"> | string | null
-  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  affiliatedUniversity?: Prisma.StringNullableFilter<"College"> | string | null
+  deletedAt?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  establisedYear?: Prisma.IntNullableFilter<"College"> | number | null
   latitude?: Prisma.StringNullableFilter<"College"> | string | null
   longitude?: Prisma.StringNullableFilter<"College"> | string | null
+  officialEmail?: Prisma.StringNullableFilter<"College"> | string | null
+  phone?: Prisma.StringNullableFilter<"College"> | string | null
+  pincode?: Prisma.StringNullableFilter<"College"> | string | null
+  regitrationNumber?: Prisma.StringNullableFilter<"College"> | string | null
+  verificationNote?: Prisma.StringNullableFilter<"College"> | string | null
+  verififedTime?: Prisma.DateTimeNullableFilter<"College"> | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFilter<"College"> | $Enums.VerificationStatus
 }
 
 export type CollegeCreateWithoutFacultyInput = {
@@ -1480,29 +1480,29 @@ export type CollegeCreateWithoutFacultyInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
+  clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
   admin?: Prisma.CollegeAdminCreateNestedOneWithoutCollegeInput
   students?: Prisma.StudentCreateNestedManyWithoutCollegeInput
-  clubs?: Prisma.ClubCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentCreateNestedManyWithoutFollowsInput
 }
 
@@ -1511,29 +1511,29 @@ export type CollegeUncheckedCreateWithoutFacultyInput = {
   name: string
   city: string
   state: string
-  country?: string
-  affiliatedUniversity?: string | null
-  establisedYear?: number | null
-  accrediation?: string | null
-  regitrationNumber?: string | null
   collegeType?: $Enums.CollegeType | null
   logoUrl?: string | null
   websiteUrl?: string | null
-  verified?: $Enums.VerificationStatus
   createdAt?: Date | string
   updatedAt?: Date | string
-  deletedAt?: Date | string | null
-  verificationNote?: string | null
-  verififedTime?: Date | string | null
+  country?: string
+  accrediation?: string | null
   address?: string | null
-  pincode?: string | null
-  phone?: string | null
-  officialEmail?: string | null
+  affiliatedUniversity?: string | null
+  deletedAt?: Date | string | null
+  establisedYear?: number | null
   latitude?: string | null
   longitude?: string | null
+  officialEmail?: string | null
+  phone?: string | null
+  pincode?: string | null
+  regitrationNumber?: string | null
+  verificationNote?: string | null
+  verififedTime?: Date | string | null
+  verified?: $Enums.VerificationStatus
+  clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
   admin?: Prisma.CollegeAdminUncheckedCreateNestedOneWithoutCollegeInput
   students?: Prisma.StudentUncheckedCreateNestedManyWithoutCollegeInput
-  clubs?: Prisma.ClubUncheckedCreateNestedManyWithoutCollegeInput
   followers?: Prisma.StudentUncheckedCreateNestedManyWithoutFollowsInput
 }
 
@@ -1558,29 +1558,29 @@ export type CollegeUpdateWithoutFacultyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+  clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
   admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
   students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
-  clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1589,29 +1589,29 @@ export type CollegeUncheckedUpdateWithoutFacultyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
+  clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
   admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
   students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
-  clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
   followers?: Prisma.StudentUncheckedUpdateManyWithoutFollowsNestedInput
 }
 
@@ -1620,30 +1620,30 @@ export type CollegeUpdateWithoutFollowersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUpdateManyWithoutCollegeNestedInput
 }
 
 export type CollegeUncheckedUpdateWithoutFollowersInput = {
@@ -1651,30 +1651,30 @@ export type CollegeUncheckedUpdateWithoutFollowersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
-  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   clubs?: Prisma.ClubUncheckedUpdateManyWithoutCollegeNestedInput
+  admin?: Prisma.CollegeAdminUncheckedUpdateOneWithoutCollegeNestedInput
   faculty?: Prisma.FacultyUncheckedUpdateManyWithoutCollegeNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutCollegeNestedInput
 }
 
 export type CollegeUncheckedUpdateManyWithoutFollowersInput = {
@@ -1682,26 +1682,26 @@ export type CollegeUncheckedUpdateManyWithoutFollowersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   state?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   collegeType?: Prisma.NullableEnumCollegeTypeFieldUpdateOperationsInput | $Enums.CollegeType | null
   logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  accrediation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  affiliatedUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  establisedYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   latitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   longitude?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  officialEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  regitrationNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verificationNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  verififedTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  verified?: Prisma.EnumVerificationStatusFieldUpdateOperationsInput | $Enums.VerificationStatus
 }
 
 
@@ -1710,16 +1710,16 @@ export type CollegeUncheckedUpdateManyWithoutFollowersInput = {
  */
 
 export type CollegeCountOutputType = {
-  students: number
   clubs: number
   faculty: number
+  students: number
   followers: number
 }
 
 export type CollegeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  students?: boolean | CollegeCountOutputTypeCountStudentsArgs
   clubs?: boolean | CollegeCountOutputTypeCountClubsArgs
   faculty?: boolean | CollegeCountOutputTypeCountFacultyArgs
+  students?: boolean | CollegeCountOutputTypeCountStudentsArgs
   followers?: boolean | CollegeCountOutputTypeCountFollowersArgs
 }
 
@@ -1731,13 +1731,6 @@ export type CollegeCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
    * Select specific fields to fetch from the CollegeCountOutputType
    */
   select?: Prisma.CollegeCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * CollegeCountOutputType without action
- */
-export type CollegeCountOutputTypeCountStudentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.StudentWhereInput
 }
 
 /**
@@ -1757,6 +1750,13 @@ export type CollegeCountOutputTypeCountFacultyArgs<ExtArgs extends runtime.Types
 /**
  * CollegeCountOutputType without action
  */
+export type CollegeCountOutputTypeCountStudentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentWhereInput
+}
+
+/**
+ * CollegeCountOutputType without action
+ */
 export type CollegeCountOutputTypeCountFollowersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.StudentWhereInput
 }
@@ -1767,30 +1767,30 @@ export type CollegeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   city?: boolean
   state?: boolean
-  country?: boolean
-  affiliatedUniversity?: boolean
-  establisedYear?: boolean
-  accrediation?: boolean
-  regitrationNumber?: boolean
   collegeType?: boolean
   logoUrl?: boolean
   websiteUrl?: boolean
-  verified?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  deletedAt?: boolean
-  verificationNote?: boolean
-  verififedTime?: boolean
+  country?: boolean
+  accrediation?: boolean
   address?: boolean
-  pincode?: boolean
-  phone?: boolean
-  officialEmail?: boolean
+  affiliatedUniversity?: boolean
+  deletedAt?: boolean
+  establisedYear?: boolean
   latitude?: boolean
   longitude?: boolean
-  admin?: boolean | Prisma.College$adminArgs<ExtArgs>
-  students?: boolean | Prisma.College$studentsArgs<ExtArgs>
+  officialEmail?: boolean
+  phone?: boolean
+  pincode?: boolean
+  regitrationNumber?: boolean
+  verificationNote?: boolean
+  verififedTime?: boolean
+  verified?: boolean
   clubs?: boolean | Prisma.College$clubsArgs<ExtArgs>
+  admin?: boolean | Prisma.College$adminArgs<ExtArgs>
   faculty?: boolean | Prisma.College$facultyArgs<ExtArgs>
+  students?: boolean | Prisma.College$studentsArgs<ExtArgs>
   followers?: boolean | Prisma.College$followersArgs<ExtArgs>
   _count?: boolean | Prisma.CollegeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["college"]>
@@ -1800,26 +1800,26 @@ export type CollegeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   city?: boolean
   state?: boolean
-  country?: boolean
-  affiliatedUniversity?: boolean
-  establisedYear?: boolean
-  accrediation?: boolean
-  regitrationNumber?: boolean
   collegeType?: boolean
   logoUrl?: boolean
   websiteUrl?: boolean
-  verified?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  deletedAt?: boolean
-  verificationNote?: boolean
-  verififedTime?: boolean
+  country?: boolean
+  accrediation?: boolean
   address?: boolean
-  pincode?: boolean
-  phone?: boolean
-  officialEmail?: boolean
+  affiliatedUniversity?: boolean
+  deletedAt?: boolean
+  establisedYear?: boolean
   latitude?: boolean
   longitude?: boolean
+  officialEmail?: boolean
+  phone?: boolean
+  pincode?: boolean
+  regitrationNumber?: boolean
+  verificationNote?: boolean
+  verififedTime?: boolean
+  verified?: boolean
 }, ExtArgs["result"]["college"]>
 
 export type CollegeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1827,26 +1827,26 @@ export type CollegeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   city?: boolean
   state?: boolean
-  country?: boolean
-  affiliatedUniversity?: boolean
-  establisedYear?: boolean
-  accrediation?: boolean
-  regitrationNumber?: boolean
   collegeType?: boolean
   logoUrl?: boolean
   websiteUrl?: boolean
-  verified?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  deletedAt?: boolean
-  verificationNote?: boolean
-  verififedTime?: boolean
+  country?: boolean
+  accrediation?: boolean
   address?: boolean
-  pincode?: boolean
-  phone?: boolean
-  officialEmail?: boolean
+  affiliatedUniversity?: boolean
+  deletedAt?: boolean
+  establisedYear?: boolean
   latitude?: boolean
   longitude?: boolean
+  officialEmail?: boolean
+  phone?: boolean
+  pincode?: boolean
+  regitrationNumber?: boolean
+  verificationNote?: boolean
+  verififedTime?: boolean
+  verified?: boolean
 }, ExtArgs["result"]["college"]>
 
 export type CollegeSelectScalar = {
@@ -1854,34 +1854,34 @@ export type CollegeSelectScalar = {
   name?: boolean
   city?: boolean
   state?: boolean
-  country?: boolean
-  affiliatedUniversity?: boolean
-  establisedYear?: boolean
-  accrediation?: boolean
-  regitrationNumber?: boolean
   collegeType?: boolean
   logoUrl?: boolean
   websiteUrl?: boolean
-  verified?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  deletedAt?: boolean
-  verificationNote?: boolean
-  verififedTime?: boolean
+  country?: boolean
+  accrediation?: boolean
   address?: boolean
-  pincode?: boolean
-  phone?: boolean
-  officialEmail?: boolean
+  affiliatedUniversity?: boolean
+  deletedAt?: boolean
+  establisedYear?: boolean
   latitude?: boolean
   longitude?: boolean
+  officialEmail?: boolean
+  phone?: boolean
+  pincode?: boolean
+  regitrationNumber?: boolean
+  verificationNote?: boolean
+  verififedTime?: boolean
+  verified?: boolean
 }
 
-export type CollegeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "city" | "state" | "country" | "affiliatedUniversity" | "establisedYear" | "accrediation" | "regitrationNumber" | "collegeType" | "logoUrl" | "websiteUrl" | "verified" | "createdAt" | "updatedAt" | "deletedAt" | "verificationNote" | "verififedTime" | "address" | "pincode" | "phone" | "officialEmail" | "latitude" | "longitude", ExtArgs["result"]["college"]>
+export type CollegeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "city" | "state" | "collegeType" | "logoUrl" | "websiteUrl" | "createdAt" | "updatedAt" | "country" | "accrediation" | "address" | "affiliatedUniversity" | "deletedAt" | "establisedYear" | "latitude" | "longitude" | "officialEmail" | "phone" | "pincode" | "regitrationNumber" | "verificationNote" | "verififedTime" | "verified", ExtArgs["result"]["college"]>
 export type CollegeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  admin?: boolean | Prisma.College$adminArgs<ExtArgs>
-  students?: boolean | Prisma.College$studentsArgs<ExtArgs>
   clubs?: boolean | Prisma.College$clubsArgs<ExtArgs>
+  admin?: boolean | Prisma.College$adminArgs<ExtArgs>
   faculty?: boolean | Prisma.College$facultyArgs<ExtArgs>
+  students?: boolean | Prisma.College$studentsArgs<ExtArgs>
   followers?: boolean | Prisma.College$followersArgs<ExtArgs>
   _count?: boolean | Prisma.CollegeCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -1891,10 +1891,10 @@ export type CollegeIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $CollegePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "College"
   objects: {
-    admin: Prisma.$CollegeAdminPayload<ExtArgs> | null
-    students: Prisma.$StudentPayload<ExtArgs>[]
     clubs: Prisma.$ClubPayload<ExtArgs>[]
+    admin: Prisma.$CollegeAdminPayload<ExtArgs> | null
     faculty: Prisma.$FacultyPayload<ExtArgs>[]
+    students: Prisma.$StudentPayload<ExtArgs>[]
     followers: Prisma.$StudentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1902,26 +1902,26 @@ export type $CollegePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     name: string
     city: string
     state: string
-    country: string
-    affiliatedUniversity: string | null
-    establisedYear: number | null
-    accrediation: string | null
-    regitrationNumber: string | null
     collegeType: $Enums.CollegeType | null
     logoUrl: string | null
     websiteUrl: string | null
-    verified: $Enums.VerificationStatus
     createdAt: Date
     updatedAt: Date
-    deletedAt: Date | null
-    verificationNote: string | null
-    verififedTime: Date | null
+    country: string
+    accrediation: string | null
     address: string | null
-    pincode: string | null
-    phone: string | null
-    officialEmail: string | null
+    affiliatedUniversity: string | null
+    deletedAt: Date | null
+    establisedYear: number | null
     latitude: string | null
     longitude: string | null
+    officialEmail: string | null
+    phone: string | null
+    pincode: string | null
+    regitrationNumber: string | null
+    verificationNote: string | null
+    verififedTime: Date | null
+    verified: $Enums.VerificationStatus
   }, ExtArgs["result"]["college"]>
   composites: {}
 }
@@ -2316,10 +2316,10 @@ readonly fields: CollegeFieldRefs;
  */
 export interface Prisma__CollegeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  admin<T extends Prisma.College$adminArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$adminArgs<ExtArgs>>): Prisma.Prisma__CollegeAdminClient<runtime.Types.Result.GetResult<Prisma.$CollegeAdminPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  students<T extends Prisma.College$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   clubs<T extends Prisma.College$clubsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$clubsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  admin<T extends Prisma.College$adminArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$adminArgs<ExtArgs>>): Prisma.Prisma__CollegeAdminClient<runtime.Types.Result.GetResult<Prisma.$CollegeAdminPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   faculty<T extends Prisma.College$facultyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$facultyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FacultyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  students<T extends Prisma.College$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   followers<T extends Prisma.College$followersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$followersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2354,26 +2354,26 @@ export interface CollegeFieldRefs {
   readonly name: Prisma.FieldRef<"College", 'String'>
   readonly city: Prisma.FieldRef<"College", 'String'>
   readonly state: Prisma.FieldRef<"College", 'String'>
-  readonly country: Prisma.FieldRef<"College", 'String'>
-  readonly affiliatedUniversity: Prisma.FieldRef<"College", 'String'>
-  readonly establisedYear: Prisma.FieldRef<"College", 'Int'>
-  readonly accrediation: Prisma.FieldRef<"College", 'String'>
-  readonly regitrationNumber: Prisma.FieldRef<"College", 'String'>
   readonly collegeType: Prisma.FieldRef<"College", 'CollegeType'>
   readonly logoUrl: Prisma.FieldRef<"College", 'String'>
   readonly websiteUrl: Prisma.FieldRef<"College", 'String'>
-  readonly verified: Prisma.FieldRef<"College", 'VerificationStatus'>
   readonly createdAt: Prisma.FieldRef<"College", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"College", 'DateTime'>
-  readonly deletedAt: Prisma.FieldRef<"College", 'DateTime'>
-  readonly verificationNote: Prisma.FieldRef<"College", 'String'>
-  readonly verififedTime: Prisma.FieldRef<"College", 'DateTime'>
+  readonly country: Prisma.FieldRef<"College", 'String'>
+  readonly accrediation: Prisma.FieldRef<"College", 'String'>
   readonly address: Prisma.FieldRef<"College", 'String'>
-  readonly pincode: Prisma.FieldRef<"College", 'String'>
-  readonly phone: Prisma.FieldRef<"College", 'String'>
-  readonly officialEmail: Prisma.FieldRef<"College", 'String'>
+  readonly affiliatedUniversity: Prisma.FieldRef<"College", 'String'>
+  readonly deletedAt: Prisma.FieldRef<"College", 'DateTime'>
+  readonly establisedYear: Prisma.FieldRef<"College", 'Int'>
   readonly latitude: Prisma.FieldRef<"College", 'String'>
   readonly longitude: Prisma.FieldRef<"College", 'String'>
+  readonly officialEmail: Prisma.FieldRef<"College", 'String'>
+  readonly phone: Prisma.FieldRef<"College", 'String'>
+  readonly pincode: Prisma.FieldRef<"College", 'String'>
+  readonly regitrationNumber: Prisma.FieldRef<"College", 'String'>
+  readonly verificationNote: Prisma.FieldRef<"College", 'String'>
+  readonly verififedTime: Prisma.FieldRef<"College", 'DateTime'>
+  readonly verified: Prisma.FieldRef<"College", 'VerificationStatus'>
 }
     
 
@@ -2762,49 +2762,6 @@ export type CollegeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * College.admin
- */
-export type College$adminArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the CollegeAdmin
-   */
-  select?: Prisma.CollegeAdminSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the CollegeAdmin
-   */
-  omit?: Prisma.CollegeAdminOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.CollegeAdminInclude<ExtArgs> | null
-  where?: Prisma.CollegeAdminWhereInput
-}
-
-/**
- * College.students
- */
-export type College$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Student
-   */
-  select?: Prisma.StudentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Student
-   */
-  omit?: Prisma.StudentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.StudentInclude<ExtArgs> | null
-  where?: Prisma.StudentWhereInput
-  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
-  cursor?: Prisma.StudentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
-}
-
-/**
  * College.clubs
  */
 export type College$clubsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2829,6 +2786,25 @@ export type College$clubsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 }
 
 /**
+ * College.admin
+ */
+export type College$adminArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the CollegeAdmin
+   */
+  select?: Prisma.CollegeAdminSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the CollegeAdmin
+   */
+  omit?: Prisma.CollegeAdminOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CollegeAdminInclude<ExtArgs> | null
+  where?: Prisma.CollegeAdminWhereInput
+}
+
+/**
  * College.faculty
  */
 export type College$facultyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2850,6 +2826,30 @@ export type College$facultyArgs<ExtArgs extends runtime.Types.Extensions.Interna
   take?: number
   skip?: number
   distinct?: Prisma.FacultyScalarFieldEnum | Prisma.FacultyScalarFieldEnum[]
+}
+
+/**
+ * College.students
+ */
+export type College$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Student
+   */
+  select?: Prisma.StudentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Student
+   */
+  omit?: Prisma.StudentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInclude<ExtArgs> | null
+  where?: Prisma.StudentWhereInput
+  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
+  cursor?: Prisma.StudentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
 }
 
 /**

@@ -40,7 +40,6 @@ export type EventMinAggregateOutputType = {
   id: string | null
   name: string | null
   description: string | null
-  category: string | null
   clubId: string | null
   date: Date | null
   time: string | null
@@ -58,13 +57,13 @@ export type EventMinAggregateOutputType = {
   registrationDeadline: Date | null
   status: $Enums.eventStatus | null
   isPublic: boolean | null
+  category: string | null
 }
 
 export type EventMaxAggregateOutputType = {
   id: string | null
   name: string | null
   description: string | null
-  category: string | null
   clubId: string | null
   date: Date | null
   time: string | null
@@ -82,13 +81,13 @@ export type EventMaxAggregateOutputType = {
   registrationDeadline: Date | null
   status: $Enums.eventStatus | null
   isPublic: boolean | null
+  category: string | null
 }
 
 export type EventCountAggregateOutputType = {
   id: number
   name: number
   description: number
-  category: number
   clubId: number
   date: number
   time: number
@@ -106,6 +105,7 @@ export type EventCountAggregateOutputType = {
   registrationDeadline: number
   status: number
   isPublic: number
+  category: number
   _all: number
 }
 
@@ -124,7 +124,6 @@ export type EventMinAggregateInputType = {
   id?: true
   name?: true
   description?: true
-  category?: true
   clubId?: true
   date?: true
   time?: true
@@ -142,13 +141,13 @@ export type EventMinAggregateInputType = {
   registrationDeadline?: true
   status?: true
   isPublic?: true
+  category?: true
 }
 
 export type EventMaxAggregateInputType = {
   id?: true
   name?: true
   description?: true
-  category?: true
   clubId?: true
   date?: true
   time?: true
@@ -166,13 +165,13 @@ export type EventMaxAggregateInputType = {
   registrationDeadline?: true
   status?: true
   isPublic?: true
+  category?: true
 }
 
 export type EventCountAggregateInputType = {
   id?: true
   name?: true
   description?: true
-  category?: true
   clubId?: true
   date?: true
   time?: true
@@ -190,6 +189,7 @@ export type EventCountAggregateInputType = {
   registrationDeadline?: true
   status?: true
   isPublic?: true
+  category?: true
   _all?: true
 }
 
@@ -283,7 +283,6 @@ export type EventGroupByOutputType = {
   id: string
   name: string
   description: string | null
-  category: string
   clubId: string
   date: Date
   time: string
@@ -301,6 +300,7 @@ export type EventGroupByOutputType = {
   registrationDeadline: Date | null
   status: $Enums.eventStatus
   isPublic: boolean
+  category: string
   _count: EventCountAggregateOutputType | null
   _avg: EventAvgAggregateOutputType | null
   _sum: EventSumAggregateOutputType | null
@@ -330,7 +330,6 @@ export type EventWhereInput = {
   id?: Prisma.StringFilter<"Event"> | string
   name?: Prisma.StringFilter<"Event"> | string
   description?: Prisma.StringNullableFilter<"Event"> | string | null
-  category?: Prisma.StringFilter<"Event"> | string
   clubId?: Prisma.StringFilter<"Event"> | string
   date?: Prisma.DateTimeFilter<"Event"> | Date | string
   time?: Prisma.StringFilter<"Event"> | string
@@ -348,6 +347,7 @@ export type EventWhereInput = {
   registrationDeadline?: Prisma.DateTimeNullableFilter<"Event"> | Date | string | null
   status?: Prisma.EnumeventStatusFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
+  category?: Prisma.StringFilter<"Event"> | string
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
   registrations?: Prisma.RegistrationsListRelationFilter
 }
@@ -356,7 +356,6 @@ export type EventOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  category?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
   date?: Prisma.SortOrder
   time?: Prisma.SortOrder
@@ -374,6 +373,7 @@ export type EventOrderByWithRelationInput = {
   registrationDeadline?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
+  category?: Prisma.SortOrder
   club?: Prisma.ClubOrderByWithRelationInput
   registrations?: Prisma.RegistrationsOrderByRelationAggregateInput
 }
@@ -385,7 +385,6 @@ export type EventWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.EventWhereInput | Prisma.EventWhereInput[]
   name?: Prisma.StringFilter<"Event"> | string
   description?: Prisma.StringNullableFilter<"Event"> | string | null
-  category?: Prisma.StringFilter<"Event"> | string
   clubId?: Prisma.StringFilter<"Event"> | string
   date?: Prisma.DateTimeFilter<"Event"> | Date | string
   time?: Prisma.StringFilter<"Event"> | string
@@ -403,6 +402,7 @@ export type EventWhereUniqueInput = Prisma.AtLeast<{
   registrationDeadline?: Prisma.DateTimeNullableFilter<"Event"> | Date | string | null
   status?: Prisma.EnumeventStatusFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
+  category?: Prisma.StringFilter<"Event"> | string
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
   registrations?: Prisma.RegistrationsListRelationFilter
 }, "id">
@@ -411,7 +411,6 @@ export type EventOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  category?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
   date?: Prisma.SortOrder
   time?: Prisma.SortOrder
@@ -429,6 +428,7 @@ export type EventOrderByWithAggregationInput = {
   registrationDeadline?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
+  category?: Prisma.SortOrder
   _count?: Prisma.EventCountOrderByAggregateInput
   _avg?: Prisma.EventAvgOrderByAggregateInput
   _max?: Prisma.EventMaxOrderByAggregateInput
@@ -443,7 +443,6 @@ export type EventScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Event"> | string
   name?: Prisma.StringWithAggregatesFilter<"Event"> | string
   description?: Prisma.StringNullableWithAggregatesFilter<"Event"> | string | null
-  category?: Prisma.StringWithAggregatesFilter<"Event"> | string
   clubId?: Prisma.StringWithAggregatesFilter<"Event"> | string
   date?: Prisma.DateTimeWithAggregatesFilter<"Event"> | Date | string
   time?: Prisma.StringWithAggregatesFilter<"Event"> | string
@@ -461,13 +460,13 @@ export type EventScalarWhereWithAggregatesInput = {
   registrationDeadline?: Prisma.DateTimeNullableWithAggregatesFilter<"Event"> | Date | string | null
   status?: Prisma.EnumeventStatusWithAggregatesFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolWithAggregatesFilter<"Event"> | boolean
+  category?: Prisma.StringWithAggregatesFilter<"Event"> | string
 }
 
 export type EventCreateInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   date: Date | string
   time: string
   mode: $Enums.mode
@@ -484,6 +483,7 @@ export type EventCreateInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
   club: Prisma.ClubCreateNestedOneWithoutEventsInput
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutEventInput
 }
@@ -492,7 +492,6 @@ export type EventUncheckedCreateInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   clubId: string
   date: Date | string
   time: string
@@ -510,6 +509,7 @@ export type EventUncheckedCreateInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutEventInput
 }
 
@@ -517,7 +517,6 @@ export type EventUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -534,6 +533,7 @@ export type EventUpdateInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUpdateOneRequiredWithoutEventsNestedInput
   registrations?: Prisma.RegistrationsUpdateManyWithoutEventNestedInput
 }
@@ -542,7 +542,6 @@ export type EventUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
@@ -560,6 +559,7 @@ export type EventUncheckedUpdateInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutEventNestedInput
 }
 
@@ -567,7 +567,6 @@ export type EventCreateManyInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   clubId: string
   date: Date | string
   time: string
@@ -585,13 +584,13 @@ export type EventCreateManyInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
 }
 
 export type EventUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -608,13 +607,13 @@ export type EventUpdateManyMutationInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type EventUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
@@ -632,6 +631,7 @@ export type EventUncheckedUpdateManyInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type EventListRelationFilter = {
@@ -648,7 +648,6 @@ export type EventCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  category?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
   date?: Prisma.SortOrder
   time?: Prisma.SortOrder
@@ -666,6 +665,7 @@ export type EventCountOrderByAggregateInput = {
   registrationDeadline?: Prisma.SortOrder
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type EventAvgOrderByAggregateInput = {
@@ -677,7 +677,6 @@ export type EventMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  category?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
   date?: Prisma.SortOrder
   time?: Prisma.SortOrder
@@ -695,13 +694,13 @@ export type EventMaxOrderByAggregateInput = {
   registrationDeadline?: Prisma.SortOrder
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type EventMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  category?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
   date?: Prisma.SortOrder
   time?: Prisma.SortOrder
@@ -719,6 +718,7 @@ export type EventMinOrderByAggregateInput = {
   registrationDeadline?: Prisma.SortOrder
   status?: Prisma.SortOrder
   isPublic?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type EventSumOrderByAggregateInput = {
@@ -799,7 +799,6 @@ export type EventCreateWithoutClubInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   date: Date | string
   time: string
   mode: $Enums.mode
@@ -816,6 +815,7 @@ export type EventCreateWithoutClubInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutEventInput
 }
 
@@ -823,7 +823,6 @@ export type EventUncheckedCreateWithoutClubInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   date: Date | string
   time: string
   mode: $Enums.mode
@@ -840,6 +839,7 @@ export type EventUncheckedCreateWithoutClubInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutEventInput
 }
 
@@ -876,7 +876,6 @@ export type EventScalarWhereInput = {
   id?: Prisma.StringFilter<"Event"> | string
   name?: Prisma.StringFilter<"Event"> | string
   description?: Prisma.StringNullableFilter<"Event"> | string | null
-  category?: Prisma.StringFilter<"Event"> | string
   clubId?: Prisma.StringFilter<"Event"> | string
   date?: Prisma.DateTimeFilter<"Event"> | Date | string
   time?: Prisma.StringFilter<"Event"> | string
@@ -894,13 +893,13 @@ export type EventScalarWhereInput = {
   registrationDeadline?: Prisma.DateTimeNullableFilter<"Event"> | Date | string | null
   status?: Prisma.EnumeventStatusFilter<"Event"> | $Enums.eventStatus
   isPublic?: Prisma.BoolFilter<"Event"> | boolean
+  category?: Prisma.StringFilter<"Event"> | string
 }
 
 export type EventCreateWithoutRegistrationsInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   date: Date | string
   time: string
   mode: $Enums.mode
@@ -917,6 +916,7 @@ export type EventCreateWithoutRegistrationsInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
   club: Prisma.ClubCreateNestedOneWithoutEventsInput
 }
 
@@ -924,7 +924,6 @@ export type EventUncheckedCreateWithoutRegistrationsInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   clubId: string
   date: Date | string
   time: string
@@ -942,6 +941,7 @@ export type EventUncheckedCreateWithoutRegistrationsInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
 }
 
 export type EventCreateOrConnectWithoutRegistrationsInput = {
@@ -964,7 +964,6 @@ export type EventUpdateWithoutRegistrationsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -981,6 +980,7 @@ export type EventUpdateWithoutRegistrationsInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUpdateOneRequiredWithoutEventsNestedInput
 }
 
@@ -988,7 +988,6 @@ export type EventUncheckedUpdateWithoutRegistrationsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1006,13 +1005,13 @@ export type EventUncheckedUpdateWithoutRegistrationsInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type EventCreateManyClubInput = {
   id?: string
   name: string
   description?: string | null
-  category: string
   date: Date | string
   time: string
   mode: $Enums.mode
@@ -1029,13 +1028,13 @@ export type EventCreateManyClubInput = {
   registrationDeadline?: Date | string | null
   status?: $Enums.eventStatus
   isPublic?: boolean
+  category: string
 }
 
 export type EventUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -1052,6 +1051,7 @@ export type EventUpdateWithoutClubInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutEventNestedInput
 }
 
@@ -1059,7 +1059,6 @@ export type EventUncheckedUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -1076,6 +1075,7 @@ export type EventUncheckedUpdateWithoutClubInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutEventNestedInput
 }
 
@@ -1083,7 +1083,6 @@ export type EventUncheckedUpdateManyWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  category?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   time?: Prisma.StringFieldUpdateOperationsInput | string
   mode?: Prisma.EnummodeFieldUpdateOperationsInput | $Enums.mode
@@ -1100,6 +1099,7 @@ export type EventUncheckedUpdateManyWithoutClubInput = {
   registrationDeadline?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumeventStatusFieldUpdateOperationsInput | $Enums.eventStatus
   isPublic?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -1137,7 +1137,6 @@ export type EventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   id?: boolean
   name?: boolean
   description?: boolean
-  category?: boolean
   clubId?: boolean
   date?: boolean
   time?: boolean
@@ -1155,6 +1154,7 @@ export type EventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   registrationDeadline?: boolean
   status?: boolean
   isPublic?: boolean
+  category?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   registrations?: boolean | Prisma.Event$registrationsArgs<ExtArgs>
   _count?: boolean | Prisma.EventCountOutputTypeDefaultArgs<ExtArgs>
@@ -1164,7 +1164,6 @@ export type EventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   name?: boolean
   description?: boolean
-  category?: boolean
   clubId?: boolean
   date?: boolean
   time?: boolean
@@ -1182,6 +1181,7 @@ export type EventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   registrationDeadline?: boolean
   status?: boolean
   isPublic?: boolean
+  category?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["event"]>
 
@@ -1189,7 +1189,6 @@ export type EventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   name?: boolean
   description?: boolean
-  category?: boolean
   clubId?: boolean
   date?: boolean
   time?: boolean
@@ -1207,6 +1206,7 @@ export type EventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   registrationDeadline?: boolean
   status?: boolean
   isPublic?: boolean
+  category?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["event"]>
 
@@ -1214,7 +1214,6 @@ export type EventSelectScalar = {
   id?: boolean
   name?: boolean
   description?: boolean
-  category?: boolean
   clubId?: boolean
   date?: boolean
   time?: boolean
@@ -1232,9 +1231,10 @@ export type EventSelectScalar = {
   registrationDeadline?: boolean
   status?: boolean
   isPublic?: boolean
+  category?: boolean
 }
 
-export type EventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "category" | "clubId" | "date" | "time" | "mode" | "registrationLink" | "registrationFee" | "registrationOpen" | "createdAt" | "updatedAt" | "deletedAt" | "venue" | "city" | "banner" | "capacity" | "registrationDeadline" | "status" | "isPublic", ExtArgs["result"]["event"]>
+export type EventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "description" | "clubId" | "date" | "time" | "mode" | "registrationLink" | "registrationFee" | "registrationOpen" | "createdAt" | "updatedAt" | "deletedAt" | "venue" | "city" | "banner" | "capacity" | "registrationDeadline" | "status" | "isPublic" | "category", ExtArgs["result"]["event"]>
 export type EventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   registrations?: boolean | Prisma.Event$registrationsArgs<ExtArgs>
@@ -1257,7 +1257,6 @@ export type $EventPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     id: string
     name: string
     description: string | null
-    category: string
     clubId: string
     date: Date
     time: string
@@ -1275,6 +1274,7 @@ export type $EventPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     registrationDeadline: Date | null
     status: $Enums.eventStatus
     isPublic: boolean
+    category: string
   }, ExtArgs["result"]["event"]>
   composites: {}
 }
@@ -1703,7 +1703,6 @@ export interface EventFieldRefs {
   readonly id: Prisma.FieldRef<"Event", 'String'>
   readonly name: Prisma.FieldRef<"Event", 'String'>
   readonly description: Prisma.FieldRef<"Event", 'String'>
-  readonly category: Prisma.FieldRef<"Event", 'String'>
   readonly clubId: Prisma.FieldRef<"Event", 'String'>
   readonly date: Prisma.FieldRef<"Event", 'DateTime'>
   readonly time: Prisma.FieldRef<"Event", 'String'>
@@ -1721,6 +1720,7 @@ export interface EventFieldRefs {
   readonly registrationDeadline: Prisma.FieldRef<"Event", 'DateTime'>
   readonly status: Prisma.FieldRef<"Event", 'eventStatus'>
   readonly isPublic: Prisma.FieldRef<"Event", 'Boolean'>
+  readonly category: Prisma.FieldRef<"Event", 'String'>
 }
     
 

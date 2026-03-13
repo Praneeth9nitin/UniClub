@@ -182,9 +182,9 @@ export type StudentInClubWhereInput = {
   studentId?: Prisma.StringFilter<"StudentInClub"> | string
   roleId?: Prisma.StringFilter<"StudentInClub"> | string
   status?: Prisma.EnumstatusFilter<"StudentInClub"> | $Enums.status
-  student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
   role?: Prisma.XOR<Prisma.RoleInClubScalarRelationFilter, Prisma.RoleInClubWhereInput>
+  student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
 }
 
 export type StudentInClubOrderByWithRelationInput = {
@@ -193,9 +193,9 @@ export type StudentInClubOrderByWithRelationInput = {
   studentId?: Prisma.SortOrder
   roleId?: Prisma.SortOrder
   status?: Prisma.SortOrder
-  student?: Prisma.StudentOrderByWithRelationInput
   club?: Prisma.ClubOrderByWithRelationInput
   role?: Prisma.RoleInClubOrderByWithRelationInput
+  student?: Prisma.StudentOrderByWithRelationInput
 }
 
 export type StudentInClubWhereUniqueInput = Prisma.AtLeast<{
@@ -208,9 +208,9 @@ export type StudentInClubWhereUniqueInput = Prisma.AtLeast<{
   studentId?: Prisma.StringFilter<"StudentInClub"> | string
   roleId?: Prisma.StringFilter<"StudentInClub"> | string
   status?: Prisma.EnumstatusFilter<"StudentInClub"> | $Enums.status
-  student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
   role?: Prisma.XOR<Prisma.RoleInClubScalarRelationFilter, Prisma.RoleInClubWhereInput>
+  student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
 }, "id" | "clubId_studentId">
 
 export type StudentInClubOrderByWithAggregationInput = {
@@ -238,9 +238,9 @@ export type StudentInClubScalarWhereWithAggregatesInput = {
 export type StudentInClubCreateInput = {
   id?: string
   status?: $Enums.status
-  student: Prisma.StudentCreateNestedOneWithoutClubsInput
   club: Prisma.ClubCreateNestedOneWithoutStudentsInput
   role: Prisma.RoleInClubCreateNestedOneWithoutMembersInput
+  student: Prisma.StudentCreateNestedOneWithoutClubsInput
 }
 
 export type StudentInClubUncheckedCreateInput = {
@@ -254,9 +254,9 @@ export type StudentInClubUncheckedCreateInput = {
 export type StudentInClubUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumstatusFieldUpdateOperationsInput | $Enums.status
-  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
   club?: Prisma.ClubUpdateOneRequiredWithoutStudentsNestedInput
   role?: Prisma.RoleInClubUpdateOneRequiredWithoutMembersNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
 }
 
 export type StudentInClubUncheckedUpdateInput = {
@@ -460,8 +460,8 @@ export type StudentInClubUncheckedUpdateManyWithoutRoleNestedInput = {
 export type StudentInClubCreateWithoutClubInput = {
   id?: string
   status?: $Enums.status
-  student: Prisma.StudentCreateNestedOneWithoutClubsInput
   role: Prisma.RoleInClubCreateNestedOneWithoutMembersInput
+  student: Prisma.StudentCreateNestedOneWithoutClubsInput
 }
 
 export type StudentInClubUncheckedCreateWithoutClubInput = {
@@ -551,8 +551,8 @@ export type StudentInClubUpdateManyWithWhereWithoutStudentInput = {
 export type StudentInClubCreateWithoutRoleInput = {
   id?: string
   status?: $Enums.status
-  student: Prisma.StudentCreateNestedOneWithoutClubsInput
   club: Prisma.ClubCreateNestedOneWithoutStudentsInput
+  student: Prisma.StudentCreateNestedOneWithoutClubsInput
 }
 
 export type StudentInClubUncheckedCreateWithoutRoleInput = {
@@ -598,8 +598,8 @@ export type StudentInClubCreateManyClubInput = {
 export type StudentInClubUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumstatusFieldUpdateOperationsInput | $Enums.status
-  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
   role?: Prisma.RoleInClubUpdateOneRequiredWithoutMembersNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
 }
 
 export type StudentInClubUncheckedUpdateWithoutClubInput = {
@@ -654,8 +654,8 @@ export type StudentInClubCreateManyRoleInput = {
 export type StudentInClubUpdateWithoutRoleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   status?: Prisma.EnumstatusFieldUpdateOperationsInput | $Enums.status
-  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
   club?: Prisma.ClubUpdateOneRequiredWithoutStudentsNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutClubsNestedInput
 }
 
 export type StudentInClubUncheckedUpdateWithoutRoleInput = {
@@ -680,9 +680,9 @@ export type StudentInClubSelect<ExtArgs extends runtime.Types.Extensions.Interna
   studentId?: boolean
   roleId?: boolean
   status?: boolean
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["studentInClub"]>
 
 export type StudentInClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -691,9 +691,9 @@ export type StudentInClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types
   studentId?: boolean
   roleId?: boolean
   status?: boolean
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["studentInClub"]>
 
 export type StudentInClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -702,9 +702,9 @@ export type StudentInClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
   studentId?: boolean
   roleId?: boolean
   status?: boolean
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["studentInClub"]>
 
 export type StudentInClubSelectScalar = {
@@ -717,27 +717,27 @@ export type StudentInClubSelectScalar = {
 
 export type StudentInClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clubId" | "studentId" | "roleId" | "status", ExtArgs["result"]["studentInClub"]>
 export type StudentInClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }
 export type StudentInClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }
 export type StudentInClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
   role?: boolean | Prisma.RoleInClubDefaultArgs<ExtArgs>
+  student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
 }
 
 export type $StudentInClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "StudentInClub"
   objects: {
-    student: Prisma.$StudentPayload<ExtArgs>
     club: Prisma.$ClubPayload<ExtArgs>
     role: Prisma.$RoleInClubPayload<ExtArgs>
+    student: Prisma.$StudentPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1139,9 +1139,9 @@ readonly fields: StudentInClubFieldRefs;
  */
 export interface Prisma__StudentInClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  student<T extends Prisma.StudentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentDefaultArgs<ExtArgs>>): Prisma.Prisma__StudentClient<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   club<T extends Prisma.ClubDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClubDefaultArgs<ExtArgs>>): Prisma.Prisma__ClubClient<runtime.Types.Result.GetResult<Prisma.$ClubPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   role<T extends Prisma.RoleInClubDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RoleInClubDefaultArgs<ExtArgs>>): Prisma.Prisma__RoleInClubClient<runtime.Types.Result.GetResult<Prisma.$RoleInClubPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  student<T extends Prisma.StudentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentDefaultArgs<ExtArgs>>): Prisma.Prisma__StudentClient<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

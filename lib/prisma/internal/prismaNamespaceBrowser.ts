@@ -96,26 +96,26 @@ export const CollegeScalarFieldEnum = {
   name: 'name',
   city: 'city',
   state: 'state',
-  country: 'country',
-  affiliatedUniversity: 'affiliatedUniversity',
-  establisedYear: 'establisedYear',
-  accrediation: 'accrediation',
-  regitrationNumber: 'regitrationNumber',
   collegeType: 'collegeType',
   logoUrl: 'logoUrl',
   websiteUrl: 'websiteUrl',
-  verified: 'verified',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
+  country: 'country',
+  accrediation: 'accrediation',
+  address: 'address',
+  affiliatedUniversity: 'affiliatedUniversity',
   deletedAt: 'deletedAt',
+  establisedYear: 'establisedYear',
+  latitude: 'latitude',
+  longitude: 'longitude',
+  officialEmail: 'officialEmail',
+  phone: 'phone',
+  pincode: 'pincode',
+  regitrationNumber: 'regitrationNumber',
   verificationNote: 'verificationNote',
   verififedTime: 'verififedTime',
-  address: 'address',
-  pincode: 'pincode',
-  phone: 'phone',
-  officialEmail: 'officialEmail',
-  latitude: 'latitude',
-  longitude: 'longitude'
+  verified: 'verified'
 } as const
 
 export type CollegeScalarFieldEnum = (typeof CollegeScalarFieldEnum)[keyof typeof CollegeScalarFieldEnum]
@@ -130,8 +130,8 @@ export const ClubScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt',
-  category: 'category',
-  onHold: 'onHold'
+  onHold: 'onHold',
+  category: 'category'
 } as const
 
 export type ClubScalarFieldEnum = (typeof ClubScalarFieldEnum)[keyof typeof ClubScalarFieldEnum]
@@ -166,12 +166,12 @@ export type StudentInClubScalarFieldEnum = (typeof StudentInClubScalarFieldEnum)
 export const FacultyScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  email: 'email',
-  password: 'password',
   collegeId: 'collegeId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  deletedAt: 'deletedAt'
+  deletedAt: 'deletedAt',
+  email: 'email',
+  password: 'password'
 } as const
 
 export type FacultyScalarFieldEnum = (typeof FacultyScalarFieldEnum)[keyof typeof FacultyScalarFieldEnum]
@@ -202,7 +202,6 @@ export const EventScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
-  category: 'category',
   clubId: 'clubId',
   date: 'date',
   time: 'time',
@@ -219,7 +218,8 @@ export const EventScalarFieldEnum = {
   capacity: 'capacity',
   registrationDeadline: 'registrationDeadline',
   status: 'status',
-  isPublic: 'isPublic'
+  isPublic: 'isPublic',
+  category: 'category'
 } as const
 
 export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]

@@ -5,9 +5,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { uploadToCloudinary } from "@/services/cloudinaryconfig";
 
 const CATEGORIES = ["Workshop", "Hackathon", "Talk", "Bootcamp", "Cultural", "Sports", "Social", "Other"];
 const MODES = ["ONLINE", "OFFLINE", "HYBRID"];
+
+
 
 const inputBase: React.CSSProperties = {
     background: "#13131a",
@@ -72,6 +75,7 @@ function SectionDivider({ title }: { title: string }) {
 
 export default function CreateEventPage() {
     const router = useRouter();
+    const [uploadPreview, setUploadPreview] = useState("")
     const [form, setForm] = useState({
         name: "",
         description: "",
@@ -95,6 +99,15 @@ export default function CreateEventPage() {
 
     const overLimit = form.description.length > 500;
 
+    async function handleBannerUpload(e: React.ChangeEvent<HTMLInputElement>) {
+        setLoading(true);
+        const file = e.target.files?.[0]
+        if (!file) return
+        const secure_url = await uploadToCloudinary(file)
+        setForm(p => ({ ...p, banner: secure_url }))
+        setUploadPreview(URL.createObjectURL(file))
+    }
+
     async function handleSubmit() {
         setError("");
         const { name, description, venue, date, time, category, mode } = form;
@@ -103,7 +116,6 @@ export default function CreateEventPage() {
         }
         if (overLimit) { setError("Description must be under 500 characters."); return; }
 
-        setLoading(true);
         try {
             const res = await fetch("/api/club/event/create", {
                 method: "POST",
@@ -347,7 +359,14 @@ export default function CreateEventPage() {
                         {/* Banner URL */}
                         <div style={{ marginBottom: "1.75rem" }}>
                             <Label text="Banner Image URL" />
-                            <input type="url" style={inputBase}
+                            {uploadPreview && (
+                                <img src={uploadPreview} alt="preview"
+                                    style={{
+                                        width: "100%", height: 160, objectFit: "cover",
+                                        borderRadius: "0.5rem", marginBottom: "0.75rem"
+                                    }} />
+                            )}
+                            <input type="file" multiple={false} style={inputBase}
                                 placeholder="https://res.cloudinary.com/..."
                                 value={form.banner} onChange={upd("banner")}
                                 onFocus={onFocus} onBlur={onBlur} />
@@ -376,7 +395,7 @@ export default function CreateEventPage() {
                             >
                                 Cancel
                             </a>
-                            <button onClick={handleSubmit} disabled={loading} style={{
+                            <button onClick={() => { handleBannerUpload; handleSubmit; }} disabled={loading} style={{
                                 flex: 1,
                                 padding: "0.7rem 1.25rem",
                                 borderRadius: "0.6rem",

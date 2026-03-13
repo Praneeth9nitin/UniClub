@@ -27,34 +27,34 @@ export type AggregateFaculty = {
 export type FacultyMinAggregateOutputType = {
   id: string | null
   name: string | null
-  email: string | null
-  password: string | null
   collegeId: string | null
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
+  email: string | null
+  password: string | null
 }
 
 export type FacultyMaxAggregateOutputType = {
   id: string | null
   name: string | null
-  email: string | null
-  password: string | null
   collegeId: string | null
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
+  email: string | null
+  password: string | null
 }
 
 export type FacultyCountAggregateOutputType = {
   id: number
   name: number
-  email: number
-  password: number
   collegeId: number
   createdAt: number
   updatedAt: number
   deletedAt: number
+  email: number
+  password: number
   _all: number
 }
 
@@ -62,34 +62,34 @@ export type FacultyCountAggregateOutputType = {
 export type FacultyMinAggregateInputType = {
   id?: true
   name?: true
-  email?: true
-  password?: true
   collegeId?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  email?: true
+  password?: true
 }
 
 export type FacultyMaxAggregateInputType = {
   id?: true
   name?: true
-  email?: true
-  password?: true
   collegeId?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  email?: true
+  password?: true
 }
 
 export type FacultyCountAggregateInputType = {
   id?: true
   name?: true
-  email?: true
-  password?: true
   collegeId?: true
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  email?: true
+  password?: true
   _all?: true
 }
 
@@ -168,12 +168,12 @@ export type FacultyGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 export type FacultyGroupByOutputType = {
   id: string
   name: string
-  email: string
-  password: string
   collegeId: string
   createdAt: Date
   updatedAt: Date
   deletedAt: Date | null
+  email: string
+  password: string
   _count: FacultyCountAggregateOutputType | null
   _min: FacultyMinAggregateOutputType | null
   _max: FacultyMaxAggregateOutputType | null
@@ -200,27 +200,27 @@ export type FacultyWhereInput = {
   NOT?: Prisma.FacultyWhereInput | Prisma.FacultyWhereInput[]
   id?: Prisma.StringFilter<"Faculty"> | string
   name?: Prisma.StringFilter<"Faculty"> | string
-  email?: Prisma.StringFilter<"Faculty"> | string
-  password?: Prisma.StringFilter<"Faculty"> | string
   collegeId?: Prisma.StringFilter<"Faculty"> | string
   createdAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Faculty"> | Date | string | null
-  college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
+  email?: Prisma.StringFilter<"Faculty"> | string
+  password?: Prisma.StringFilter<"Faculty"> | string
   club?: Prisma.ClubListRelationFilter
+  college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
 }
 
 export type FacultyOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  college?: Prisma.CollegeOrderByWithRelationInput
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   club?: Prisma.ClubOrderByRelationAggregateInput
+  college?: Prisma.CollegeOrderByWithRelationInput
 }
 
 export type FacultyWhereUniqueInput = Prisma.AtLeast<{
@@ -230,24 +230,24 @@ export type FacultyWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.FacultyWhereInput[]
   NOT?: Prisma.FacultyWhereInput | Prisma.FacultyWhereInput[]
   name?: Prisma.StringFilter<"Faculty"> | string
-  password?: Prisma.StringFilter<"Faculty"> | string
   collegeId?: Prisma.StringFilter<"Faculty"> | string
   createdAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Faculty"> | Date | string | null
-  college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
+  password?: Prisma.StringFilter<"Faculty"> | string
   club?: Prisma.ClubListRelationFilter
+  college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
 }, "id" | "email">
 
 export type FacultyOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
   _count?: Prisma.FacultyCountOrderByAggregateInput
   _max?: Prisma.FacultyMaxOrderByAggregateInput
   _min?: Prisma.FacultyMinOrderByAggregateInput
@@ -259,92 +259,92 @@ export type FacultyScalarWhereWithAggregatesInput = {
   NOT?: Prisma.FacultyScalarWhereWithAggregatesInput | Prisma.FacultyScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
   name?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
-  email?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
-  password?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
   collegeId?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Faculty"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Faculty"> | Date | string
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Faculty"> | Date | string | null
+  email?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
+  password?: Prisma.StringWithAggregatesFilter<"Faculty"> | string
 }
 
 export type FacultyCreateInput = {
   id?: string
   name: string
-  email: string
-  password: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
-  college: Prisma.CollegeCreateNestedOneWithoutFacultyInput
+  email: string
+  password: string
   club?: Prisma.ClubCreateNestedManyWithoutCoordinatorInput
+  college: Prisma.CollegeCreateNestedOneWithoutFacultyInput
 }
 
 export type FacultyUncheckedCreateInput = {
   id?: string
   name: string
-  email: string
-  password: string
   collegeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
   club?: Prisma.ClubUncheckedCreateNestedManyWithoutCoordinatorInput
 }
 
 export type FacultyUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  college?: Prisma.CollegeUpdateOneRequiredWithoutFacultyNestedInput
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUpdateManyWithoutCoordinatorNestedInput
+  college?: Prisma.CollegeUpdateOneRequiredWithoutFacultyNestedInput
 }
 
 export type FacultyUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   collegeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUncheckedUpdateManyWithoutCoordinatorNestedInput
 }
 
 export type FacultyCreateManyInput = {
   id?: string
   name: string
-  email: string
-  password: string
   collegeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
 }
 
 export type FacultyUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type FacultyUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   collegeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type FacultyListRelationFilter = {
@@ -365,34 +365,34 @@ export type FacultyNullableScalarRelationFilter = {
 export type FacultyCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
 }
 
 export type FacultyMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
 }
 
 export type FacultyMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
 }
 
 export type FacultyCreateNestedManyWithoutCollegeInput = {
@@ -456,22 +456,22 @@ export type FacultyUpdateOneWithoutClubNestedInput = {
 export type FacultyCreateWithoutCollegeInput = {
   id?: string
   name: string
-  email: string
-  password: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
   club?: Prisma.ClubCreateNestedManyWithoutCoordinatorInput
 }
 
 export type FacultyUncheckedCreateWithoutCollegeInput = {
   id?: string
   name: string
-  email: string
-  password: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
   club?: Prisma.ClubUncheckedCreateNestedManyWithoutCoordinatorInput
 }
 
@@ -507,34 +507,34 @@ export type FacultyScalarWhereInput = {
   NOT?: Prisma.FacultyScalarWhereInput | Prisma.FacultyScalarWhereInput[]
   id?: Prisma.StringFilter<"Faculty"> | string
   name?: Prisma.StringFilter<"Faculty"> | string
-  email?: Prisma.StringFilter<"Faculty"> | string
-  password?: Prisma.StringFilter<"Faculty"> | string
   collegeId?: Prisma.StringFilter<"Faculty"> | string
   createdAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Faculty"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Faculty"> | Date | string | null
+  email?: Prisma.StringFilter<"Faculty"> | string
+  password?: Prisma.StringFilter<"Faculty"> | string
 }
 
 export type FacultyCreateWithoutClubInput = {
   id?: string
   name: string
-  email: string
-  password: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
   college: Prisma.CollegeCreateNestedOneWithoutFacultyInput
 }
 
 export type FacultyUncheckedCreateWithoutClubInput = {
   id?: string
   name: string
-  email: string
-  password: string
   collegeId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
 }
 
 export type FacultyCreateOrConnectWithoutClubInput = {
@@ -556,65 +556,65 @@ export type FacultyUpdateToOneWithWhereWithoutClubInput = {
 export type FacultyUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   college?: Prisma.CollegeUpdateOneRequiredWithoutFacultyNestedInput
 }
 
 export type FacultyUncheckedUpdateWithoutClubInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   collegeId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type FacultyCreateManyCollegeInput = {
   id?: string
   name: string
-  email: string
-  password: string
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  email: string
+  password: string
 }
 
 export type FacultyUpdateWithoutCollegeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUpdateManyWithoutCoordinatorNestedInput
 }
 
 export type FacultyUncheckedUpdateWithoutCollegeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
   club?: Prisma.ClubUncheckedUpdateManyWithoutCoordinatorNestedInput
 }
 
 export type FacultyUncheckedUpdateManyWithoutCollegeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  email?: Prisma.StringFieldUpdateOperationsInput | string
-  password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -651,56 +651,56 @@ export type FacultyCountOutputTypeCountClubArgs<ExtArgs extends runtime.Types.Ex
 export type FacultySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  email?: boolean
-  password?: boolean
   collegeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
-  college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
+  email?: boolean
+  password?: boolean
   club?: boolean | Prisma.Faculty$clubArgs<ExtArgs>
+  college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.FacultyCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["faculty"]>
 
 export type FacultySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  email?: boolean
-  password?: boolean
   collegeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  email?: boolean
+  password?: boolean
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["faculty"]>
 
 export type FacultySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  email?: boolean
-  password?: boolean
   collegeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  email?: boolean
+  password?: boolean
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["faculty"]>
 
 export type FacultySelectScalar = {
   id?: boolean
   name?: boolean
-  email?: boolean
-  password?: boolean
   collegeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  email?: boolean
+  password?: boolean
 }
 
-export type FacultyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "collegeId" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["faculty"]>
+export type FacultyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "createdAt" | "updatedAt" | "deletedAt" | "email" | "password", ExtArgs["result"]["faculty"]>
 export type FacultyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   club?: boolean | Prisma.Faculty$clubArgs<ExtArgs>
+  college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.FacultyCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type FacultyIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -713,18 +713,18 @@ export type FacultyIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $FacultyPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Faculty"
   objects: {
-    college: Prisma.$CollegePayload<ExtArgs>
     club: Prisma.$ClubPayload<ExtArgs>[]
+    college: Prisma.$CollegePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     name: string
-    email: string
-    password: string
     collegeId: string
     createdAt: Date
     updatedAt: Date
     deletedAt: Date | null
+    email: string
+    password: string
   }, ExtArgs["result"]["faculty"]>
   composites: {}
 }
@@ -1119,8 +1119,8 @@ readonly fields: FacultyFieldRefs;
  */
 export interface Prisma__FacultyClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  college<T extends Prisma.CollegeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CollegeDefaultArgs<ExtArgs>>): Prisma.Prisma__CollegeClient<runtime.Types.Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   club<T extends Prisma.Faculty$clubArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Faculty$clubArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  college<T extends Prisma.CollegeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CollegeDefaultArgs<ExtArgs>>): Prisma.Prisma__CollegeClient<runtime.Types.Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1152,12 +1152,12 @@ export interface Prisma__FacultyClient<T, Null = never, ExtArgs extends runtime.
 export interface FacultyFieldRefs {
   readonly id: Prisma.FieldRef<"Faculty", 'String'>
   readonly name: Prisma.FieldRef<"Faculty", 'String'>
-  readonly email: Prisma.FieldRef<"Faculty", 'String'>
-  readonly password: Prisma.FieldRef<"Faculty", 'String'>
   readonly collegeId: Prisma.FieldRef<"Faculty", 'String'>
   readonly createdAt: Prisma.FieldRef<"Faculty", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Faculty", 'DateTime'>
   readonly deletedAt: Prisma.FieldRef<"Faculty", 'DateTime'>
+  readonly email: Prisma.FieldRef<"Faculty", 'String'>
+  readonly password: Prisma.FieldRef<"Faculty", 'String'>
 }
     
 
