@@ -22,8 +22,8 @@ export function DashboardSidebar() {
     }
 
     return (
-        <aside className="hidden md:flex flex-col w-56 shrink-0 relative"
-            style={{ background: "var(--surface)", borderRight: "1px solid var(--border)" }}>
+        <aside className="hidden md:flex flex-col w-56 shrink-0 relative left-0 top-0"
+            style={{ background: "var(--surface)", borderRight: "1px solid var(--border)", padding: "10px" }}>
 
             {/* Subtle orb */}
             <div className="absolute pointer-events-none rounded-full"

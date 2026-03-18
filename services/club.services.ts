@@ -2,7 +2,7 @@ import { prisma } from "@/lib/singelton"
 import z from "zod"
 import bcrypt from "bcrypt"
 import { createClubSchema } from "@/app/api/club/auth/signup/route"
-import { EventCreateWithoutClubInputObjectSchema } from '@/lib/validator/schemas'
+import { ClubCreateWithoutFollowersInputObjectZodSchema, EventCreateWithoutClubInputObjectSchema } from '@/lib/validator/schemas'
 
 
 
@@ -82,9 +82,24 @@ export const getEvents = async (clubId: string) => {
         where: {
             clubId,
             deletedAt: null
+        },
+        include: {
+            registrations: true
         }
     })
     return events
+}
+
+export const getClub = async (clubId: string) => {
+    const club = await prisma.club.findUnique({
+        where: {
+            id: clubId
+        },
+        include: {
+            followers: true
+        }
+    })
+    return club
 }
 
 export const getEvent = async (eventId: string, clubId: string) => {
@@ -121,4 +136,39 @@ export const updateEvent = async (clubId: string, eventId: string, data: z.infer
     })
     if (!event) throw new Error("Event not found")
     return event
+}
+
+export const getCollege = async (clubId: string) => {
+    const club = await getClub(clubId)
+    if (!club) throw new Error("Club not found")
+    const college = await prisma.college.findUnique({
+        where: {
+            id: club.collegeId
+        }
+    })
+    return college
+}
+
+
+export const getRegistrations = async (clubId: string) => {
+    const events = await getEvents(clubId)
+    const registrations = await prisma.registrations.findMany({
+        where: {
+            eventId: {
+                in: events.map((event) => event.id)
+            }
+        }
+    })
+    return { registrations, events }
+}
+
+export const updateClub = async (clubId: string, data: z.infer<typeof ClubCreateWithoutFollowersInputObjectZodSchema>) => {
+    console.log(data)
+    const club = await prisma.club.update({
+        where: {
+            id: clubId
+        },
+        data
+    })
+    return club
 }

@@ -23,7 +23,7 @@ export default async function EventsPage() {
     const completed = events.filter(e => e.status === "COMPLETED");
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6" style={{ padding: "10px" }}>
 
             {/* Header */}
             <div className="fade-up flex items-center justify-between mb-6 flex-wrap gap-4">
@@ -34,7 +34,7 @@ export default async function EventsPage() {
                     </p>
                 </div>
                 <Link href="/dashboard/events/create"
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:brightness-110"
+                    className="flex items-center justify-center gap-2 px-5 py-10 w-28 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:brightness-110"
                     style={{ background: "#ff6584", textDecoration: "none" }}>
                     + Create Event
                 </Link>
@@ -90,7 +90,7 @@ function EventRow({ event, isLast }: { event: any; isLast: boolean }) {
     const s = STATUS_STYLE[event.status];
     return (
         <div className="event-row flex items-center gap-4 px-5 py-4"
-            style={{ background: "var(--surface)", borderBottom: isLast ? "none" : "1px solid var(--border)" }}>
+            style={{ background: "var(--surface)", borderBottom: isLast ? "none" : "1px solid var(--border)", padding: "5px" }}>
             {/* Date */}
             <div className="w-10 text-center shrink-0">
                 <div className="font-display font-bold text-lg leading-none" style={{ color: "#ff6584" }}>
@@ -111,13 +111,13 @@ function EventRow({ event, isLast }: { event: any; isLast: boolean }) {
 
             {/* Category */}
             <span className="hidden sm:block text-xs px-2 py-1 rounded-md font-medium shrink-0"
-                style={{ background: "rgba(255,255,255,0.05)", color: "var(--muted)", border: "1px solid var(--border)" }}>
+                style={{ background: "rgba(255,255,255,0.05)", color: "var(--muted)", border: "1px solid var(--border)", padding: "5px" }}>
                 {event.category}
             </span>
 
             {/* Status */}
             <span className="text-xs px-2.5 py-1 rounded-full font-medium shrink-0"
-                style={{ background: s.bg, color: s.color }}>
+                style={{ background: s.bg, color: s.color, padding: "5px" }}>
                 {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
             </span>
 

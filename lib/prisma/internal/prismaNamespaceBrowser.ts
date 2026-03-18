@@ -131,7 +131,12 @@ export const ClubScalarFieldEnum = {
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt',
   onHold: 'onHold',
-  category: 'category'
+  category: 'category',
+  instagramUrl: 'instagramUrl',
+  twitterUrl: 'twitterUrl',
+  linkedinUrl: 'linkedinUrl',
+  youtubeUrl: 'youtubeUrl',
+  websiteUrl: 'websiteUrl'
 } as const
 
 export type ClubScalarFieldEnum = (typeof ClubScalarFieldEnum)[keyof typeof ClubScalarFieldEnum]
@@ -139,7 +144,8 @@ export type ClubScalarFieldEnum = (typeof ClubScalarFieldEnum)[keyof typeof Club
 
 export const StudentScalarFieldEnum = {
   id: 'id',
-  name: 'name',
+  firstName: 'firstName',
+  lastName: 'lastName',
   email: 'email',
   password: 'password',
   rollnumber: 'rollnumber',

@@ -391,7 +391,7 @@ function LoginForm({ role, accent }: { role: Role; accent: string }) {
 // ── STUDENT SIGNUP FORM ────────────────────────────────────────────────────
 function StudentSignupForm({ accent }: { accent: string }) {
     const router = useRouter();
-    const [form, setForm] = useState({ firstName: "", lastName: "", email: "", rollNumber: "", college: "", password: "" });
+    const [form, setForm] = useState({ firstName: "", lastName: "", email: "", password: "" });
     const [terms, setTerms] = useState(false);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -401,8 +401,8 @@ function StudentSignupForm({ accent }: { accent: string }) {
 
     async function submit() {
         setError("");
-        const { firstName, lastName, email, rollNumber, college, password } = form;
-        if (!firstName || !lastName || !email || !rollNumber || !college || !password) { setError("Please fill in all fields."); return; }
+        const { firstName, lastName, email, password } = form;
+        if (!firstName || !lastName || !email || !password) { setError("Please fill in all fields."); return; }
         if (!/\S+@\S+\.\S+/.test(email)) { setError("Enter a valid email."); return; }
         if (password.length < 8) { setError("Password must be at least 8 characters."); return; }
         if (!terms) { setError("Please accept the terms to continue."); return; }
@@ -410,9 +410,9 @@ function StudentSignupForm({ accent }: { accent: string }) {
         setLoading(true);
         try {
             // 🔌 Hook your JWT student signup API here
-            const res = await fetch("/api/auth/student/signup", {
+            const res = await fetch("/api/student/auth/signup", {
                 method: "POST", headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, role: "student" }),
+                body: JSON.stringify({ ...form }),
             });
             if (!res.ok) { const d = await res.json(); setError(d.message || "Something went wrong."); return; }
             router.push("/feed");
@@ -441,24 +441,6 @@ function StudentSignupForm({ accent }: { accent: string }) {
                 <input type="email" placeholder="arjun@student.srmist.edu.in" value={form.email}
                     onChange={upd("email")} className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200"
                     style={inputBase} onFocus={onFocusAccent(accent)} onBlur={onBlurReset} />
-            </div>
-
-            <div className="mb-4">
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "#7a7a9a" }}>Roll number</label>
-                <input type="text" placeholder="RA2011003010001" value={form.rollNumber}
-                    onChange={upd("rollNumber")} className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200"
-                    style={inputBase} onFocus={onFocusAccent(accent)} onBlur={onBlurReset} />
-            </div>
-
-            <div className="mb-4">
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "#7a7a9a" }}>College</label>
-                <select value={form.college} onChange={upd("college")}
-                    className="w-full px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200"
-                    style={{ ...inputBase, appearance: "none" as const }}
-                    onFocus={onFocusAccent(accent)} onBlur={onBlurReset}>
-                    <option value="" disabled>Select your college</option>
-                    {COLLEGES.map(c => <option key={c} value={c} style={{ background: "#13131a" }}>{c}</option>)}
-                </select>
             </div>
 
             <div className="mb-5">

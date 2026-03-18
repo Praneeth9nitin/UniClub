@@ -1,65 +1,63 @@
-
+import { middleware } from "@/app/api/club/authMiddleware";
+import { getClub, getCollege, getEvents } from "@/services/club.services";
 import Link from "next/link";
 
-// 🔌 Replace with real Prisma queries
 async function getDashboardData(clubId: string) {
-    // const club = await prisma.club.findUnique({ where: { id: clubId }, include: { ... } })
+    const events = await getEvents(clubId);
+    const club = await getClub(clubId);
+    const college = await getCollege(clubId);
     return {
-        club: { name: "VIT Robotics Club", college: "VIT Chennai", category: "Technology", verified: false, followersCount: 248 },
-        stats: { totalEvents: 12, upcomingEvents: 3, totalRegistrations: 847, followersCount: 248 },
-        recentEvents: [
-            { id: "1", title: "Robotics Workshop 2025", date: "2025-03-15", registrations: 124, status: "upcoming" },
-            { id: "2", title: "AI/ML Bootcamp", date: "2025-03-08", registrations: 89, status: "upcoming" },
-            { id: "3", title: "Circuit Design Hackathon", date: "2025-02-20", registrations: 203, status: "completed" },
-            { id: "4", title: "Tech Talk — Industry Pros", date: "2025-02-10", registrations: 156, status: "completed" },
-        ],
+        club,
+        stats: { totalEvents: events?.length, upcomingEvents: events?.filter((event) => event.status === "UPCOMING").length, totalRegistrations: events?.reduce((acc, event) => acc + event.registrations.length, 0) || 0, followersCount: club?.followers.length },
+        recentEvents: events,
+        college
     };
 }
 
 const STATUS_STYLE: Record<string, { bg: string; color: string; label: string }> = {
-    upcoming: { bg: "rgba(108,99,255,0.15)", color: "#a09dff", label: "Upcoming" },
-    completed: { bg: "rgba(67,233,123,0.15)", color: "#43e97b", label: "Completed" },
-    cancelled: { bg: "rgba(255,101,132,0.15)", color: "#ff8fa3", label: "Cancelled" },
+    UPCOMING: { bg: "rgba(108,99,255,0.15)", color: "#a09dff", label: "Upcoming" },
+    COMPLETED: { bg: "rgba(67,233,123,0.15)", color: "#43e97b", label: "Completed" },
+    CANCELLED: { bg: "rgba(255,101,132,0.15)", color: "#ff8fa3", label: "Cancelled" },
 };
 
 export default async function DashboardPage() {
-    // 🔌 Get clubId from your JWT / session
-    const data = await getDashboardData("club-id-from-token");
-    const { club, stats, recentEvents } = data;
+    const session = await middleware()
+    const data = await getDashboardData(session.clubId);
+    const { club, stats, recentEvents, college } = data;
 
     const statCards = [
-        { icon: "👥", label: "Followers", value: stats.followersCount, color: "#ff6584", change: "+12 this week" },
+        { icon: "👥", label: "Followers", value: stats.followersCount, color: "#ff6584", change: "All time" },
         { icon: "📅", label: "Total Events", value: stats.totalEvents, color: "#6c63ff", change: `${stats.upcomingEvents} upcoming` },
         { icon: "🎟️", label: "Registrations", value: stats.totalRegistrations, color: "#43e97b", change: "All time" },
         { icon: "📈", label: "Avg per Event", value: Math.round(stats.totalRegistrations / stats.totalEvents), color: "#ffc107", change: "registrations" },
     ];
 
     return (
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto flex flex-col gap-6" style={{ padding: "10px" }}>
 
             {/* Welcome banner */}
-            <div className="fade-up mb-6 rounded-2xl p-6 relative overflow-hidden"
-                style={{ background: "linear-gradient(135deg, rgba(255,101,132,0.12), rgba(108,99,255,0.08))", border: "1px solid rgba(255,101,132,0.2)" }}>
+            <div className="fade-up mb-6 rounded-2xl relative overflow-hidden"
+                style={{ background: "linear-gradient(135deg, rgba(255,101,132,0.12), rgba(108,99,255,0.08))", border: "1px solid rgba(255,101,132,0.2)", padding: "10px" }}>
                 <div className="absolute pointer-events-none rounded-full"
                     style={{ width: 300, height: 300, background: "#ff6584", filter: "blur(100px)", opacity: 0.07, top: -100, right: -50 }} />
-                <div className="relative z-10 flex items-start justify-between flex-wrap gap-4">
+                <div className="flex items-center justify-between flex-wrap gap-4">
                     <div>
                         <div className="flex items-center gap-2 mb-1">
-                            <h2 className="font-display font-bold text-xl" style={{ letterSpacing: "-0.02em" }}>{club.name}</h2>
-                            {!club.verified && (
-                                <span className="px-2 py-0.5 rounded-full text-xs font-medium"
-                                    style={{ background: "rgba(255,193,7,0.15)", color: "#ffc107", border: "1px solid rgba(255,193,7,0.3)" }}>
+                            <h2 className="font-display font-bold text-xl" style={{ letterSpacing: "-0.02em" }}>{club?.name}</h2>
+                            {club?.onHold && (
+                                <span className="flex items-center justify-center px-2 py-0.5 rounded-full text-xs font-medium"
+                                    style={{ background: "rgba(255,193,7,0.15)", color: "#ffc107", border: "1px solid rgba(255,193,7,0.3)", padding: "3px" }}>
                                     ⏳ Pending
                                 </span>
                             )}
                         </div>
                         <p className="text-sm font-light" style={{ color: "var(--muted)" }}>
-                            {club.college} · {club.category}
+                            {college?.name} · {club?.category}
                         </p>
                     </div>
                     <Link href="/dashboard/events/create"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5"
-                        style={{ background: "#ff6584", textDecoration: "none" }}>
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-2xl text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5"
+                        style={{ background: "#ff6584", textDecoration: "none", padding: "5px" }}>
                         + Create Event
                     </Link>
                 </div>
@@ -70,16 +68,16 @@ export default async function DashboardPage() {
                 {statCards.map((s, i) => (
                     <div key={s.label}
                         className={`stat-card fade-up fade-up-${i + 1} rounded-xl p-5`}
-                        style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                        style={{ background: "var(--surface)", border: "1px solid var(--border)", padding: "5px" }}>
                         <div className="flex items-center justify-between mb-3">
                             <span className="text-xl">{s.icon}</span>
                             <div className="text-xs px-2 py-0.5 rounded-full font-medium"
-                                style={{ background: `${s.color}18`, color: s.color }}>
+                                style={{ background: `${s.color}18`, color: s.color, padding: "5px" }}>
                                 {s.change}
                             </div>
                         </div>
                         <div className="font-display font-bold text-2xl mb-0.5" style={{ color: s.color }}>
-                            {s.value.toLocaleString()}
+                            {s.value?.toLocaleString()}
                         </div>
                         <div className="text-xs font-light" style={{ color: "var(--muted)" }}>{s.label}</div>
                     </div>
@@ -93,7 +91,7 @@ export default async function DashboardPage() {
                 <div className="lg:col-span-2 fade-up fade-up-3 rounded-xl overflow-hidden"
                     style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
                     <div className="flex items-center justify-between px-5 py-4"
-                        style={{ borderBottom: "1px solid var(--border)" }}>
+                        style={{ borderBottom: "1px solid var(--border)", padding: "3px" }}>
                         <div className="font-display font-semibold text-sm">Recent Events</div>
                         <Link href="/dashboard/events" className="text-xs font-medium hover:underline"
                             style={{ color: "#ff6584", textDecoration: "none" }}>
@@ -107,7 +105,7 @@ export default async function DashboardPage() {
                             return (
                                 <div key={event.id}
                                     className="event-row flex items-center gap-4 px-5 py-4"
-                                    style={{ borderBottom: i < recentEvents.length - 1 ? "1px solid var(--border)" : "none" }}>
+                                    style={{ borderBottom: i < recentEvents.length - 1 ? "1px solid var(--border)" : "none", padding: "5px" }}>
                                     {/* Date block */}
                                     <div className="w-10 text-center shrink-0">
                                         <div className="font-display font-bold text-lg leading-none" style={{ color: "#ff6584" }}>
@@ -120,22 +118,22 @@ export default async function DashboardPage() {
 
                                     {/* Info */}
                                     <div className="flex-1 min-w-0">
-                                        <div className="text-sm font-medium truncate mb-0.5">{event.title}</div>
+                                        <div className="text-sm font-medium truncate mb-0.5">{event?.name}</div>
                                         <div className="text-xs font-light" style={{ color: "var(--muted)" }}>
-                                            {event.registrations} registrations
+                                            {event?.registrations.length} registrations
                                         </div>
                                     </div>
 
                                     {/* Status */}
                                     <span className="text-xs px-2.5 py-1 rounded-full font-medium shrink-0"
-                                        style={{ background: s.bg, color: s.color }}>
+                                        style={{ background: s.bg, color: s.color, padding: "5px" }}>
                                         {s.label}
                                     </span>
 
                                     {/* Edit */}
                                     <Link href={`/dashboard/events/${event.id}/edit`}
                                         className="text-xs font-medium px-3 py-1.5 rounded-lg transition-all duration-200 hover:border-violet-500 hover:text-violet-400 shrink-0"
-                                        style={{ border: "1px solid var(--border)", color: "var(--muted)", textDecoration: "none" }}>
+                                        style={{ border: "1px solid var(--border)", color: "var(--muted)", textDecoration: "none", padding: "5px" }}>
                                         Edit
                                     </Link>
                                 </div>
@@ -148,7 +146,7 @@ export default async function DashboardPage() {
                 <div className="fade-up fade-up-4 flex flex-col gap-4">
 
                     {/* Actions */}
-                    <div className="rounded-xl overflow-hidden" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                    <div className="rounded-xl overflow-hidden" style={{ background: "var(--surface)", border: "1px solid var(--border)", padding: "5px" }}>
                         <div className="px-5 py-4 font-display font-semibold text-sm" style={{ borderBottom: "1px solid var(--border)" }}>
                             Quick Actions
                         </div>
@@ -160,7 +158,7 @@ export default async function DashboardPage() {
                             ].map((a) => (
                                 <Link key={a.href} href={a.href}
                                     className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:brightness-110"
-                                    style={{ background: `${a.color}10`, border: `1px solid ${a.color}25`, color: a.color, textDecoration: "none" }}>
+                                    style={{ background: `${a.color}10`, border: `1px solid ${a.color}25`, color: a.color, textDecoration: "none", padding: "5px" }}>
                                     <span>{a.icon}</span>
                                     {a.label}
                                     <span className="ml-auto text-xs opacity-60">→</span>
@@ -170,7 +168,7 @@ export default async function DashboardPage() {
                     </div>
 
                     {/* Verification status */}
-                    <div className="rounded-xl p-5" style={{ background: "rgba(255,193,7,0.06)", border: "1px solid rgba(255,193,7,0.2)" }}>
+                    <div className="rounded-xl p-5" style={{ background: "rgba(255,193,7,0.06)", border: "1px solid rgba(255,193,7,0.2)", padding: "5px" }}>
                         <div className="flex items-center gap-2 mb-2">
                             <span>⏳</span>
                             <div className="font-display font-semibold text-sm" style={{ color: "#ffc107" }}>Verification Pending</div>

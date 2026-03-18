@@ -18,6 +18,7 @@ export const createClubSchema = z.object({
 
 export async function POST(req: NextRequest) {
     const body = await req.json()
+    console.log(body)
     try {
         const parsed = createClubSchema.safeParse(body)
         if (!parsed.success) {
@@ -37,6 +38,7 @@ export async function POST(req: NextRequest) {
         })
         return response
     } catch (error) {
+        console.log(error)
         return NextResponse.json({ message: error instanceof Error ? error.message : "Something went wrong" }, { status: 400 })
     }
 }

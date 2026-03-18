@@ -71,6 +71,11 @@ model Club {
   role         RoleInClub[]
   students     StudentInClub[]
   clubAdmin    clubAdmin?
+  instagramUrl String?
+  twitterUrl   String?
+  linkedinUrl  String?
+  youtubeUrl   String?
+  websiteUrl   String?
   followers    Student[]       @relation("StudentFollowsClub")
 
   @@unique([collegeId, name])
@@ -78,10 +83,11 @@ model Club {
 
 model Student {
   id            String          @id @default(uuid())
-  name          String
+  firstName     String
+  lastName      String
   email         String          @unique
   password      String
-  rollnumber    String          @unique
+  rollnumber    String?         @unique
   collegeId     String?
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt

@@ -5,6 +5,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { uploadToCloudinary } from "@/services/cloudinaryconfig"
 
 const CATEGORIES = ["Workshop", "Hackathon", "Talk", "Bootcamp", "Cultural", "Sports", "Social", "Academic", "Other"]
 const MODES = ["OFFLINE", "ONLINE", "HYBRID"]
@@ -94,10 +95,17 @@ export function EditEventForm({
     const [form, setForm] = useState<FormState>(initial)
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
+    const [fileToUpload, setFileToUpload] = useState<File | null>(null)
     const [loading, setLoading] = useState(false)
 
-    const isDirty = JSON.stringify(form) !== JSON.stringify(initial)
+    const isDirty = (JSON.stringify(form) !== JSON.stringify(initial) || fileToUpload !== null)
     const overLimit = form.description.length > 500
+
+    const handleBanner = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]
+        if (!file) return
+        setFileToUpload(file)
+    }
 
     function upd(k: keyof FormState) {
         return (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
@@ -115,12 +123,17 @@ export function EditEventForm({
 
         setLoading(true)
         try {
+            let secure_url = ""
+            if (fileToUpload) {
+                secure_url = await uploadToCloudinary(fileToUpload!)
+            }
             const res = await fetch(`/api/club/event/${eventId}`, {
                 method: "PATCH", credentials: "include",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...form,
                     date: new Date(`${form.date}T${form.time}`).toISOString(),
+                    banner: secure_url,
                     capacity: form.capacity ? Number(form.capacity) : null,
                     registrationFee: form.registrationFee ? Number(form.registrationFee) : 0,
                     registrationDeadline: form.registrationDeadline ? new Date(form.registrationDeadline).toISOString() : null,
@@ -250,8 +263,7 @@ export function EditEventForm({
                 <Section title="Media" />
 
                 <Field label="Banner Image URL" hint="Upload to Cloudinary first, paste URL here">
-                    <input type="url" style={IS} placeholder="https://res.cloudinary.com/..."
-                        value={form.banner} onChange={upd("banner")} onFocus={onF} onBlur={onB} />
+                    <input type="file" style={IS} placeholder="https://res.cloudinary.com/..." onChange={handleBanner} onFocus={onF} onBlur={onB} />
                 </Field>
 
             </div>{/* end grid */}

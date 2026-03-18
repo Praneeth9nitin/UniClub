@@ -35,6 +35,11 @@ export type ClubMinAggregateOutputType = {
   deletedAt: Date | null
   onHold: boolean | null
   category: string | null
+  instagramUrl: string | null
+  twitterUrl: string | null
+  linkedinUrl: string | null
+  youtubeUrl: string | null
+  websiteUrl: string | null
 }
 
 export type ClubMaxAggregateOutputType = {
@@ -48,6 +53,11 @@ export type ClubMaxAggregateOutputType = {
   deletedAt: Date | null
   onHold: boolean | null
   category: string | null
+  instagramUrl: string | null
+  twitterUrl: string | null
+  linkedinUrl: string | null
+  youtubeUrl: string | null
+  websiteUrl: string | null
 }
 
 export type ClubCountAggregateOutputType = {
@@ -61,6 +71,11 @@ export type ClubCountAggregateOutputType = {
   deletedAt: number
   onHold: number
   category: number
+  instagramUrl: number
+  twitterUrl: number
+  linkedinUrl: number
+  youtubeUrl: number
+  websiteUrl: number
   _all: number
 }
 
@@ -76,6 +91,11 @@ export type ClubMinAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  linkedinUrl?: true
+  youtubeUrl?: true
+  websiteUrl?: true
 }
 
 export type ClubMaxAggregateInputType = {
@@ -89,6 +109,11 @@ export type ClubMaxAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  linkedinUrl?: true
+  youtubeUrl?: true
+  websiteUrl?: true
 }
 
 export type ClubCountAggregateInputType = {
@@ -102,6 +127,11 @@ export type ClubCountAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  instagramUrl?: true
+  twitterUrl?: true
+  linkedinUrl?: true
+  youtubeUrl?: true
+  websiteUrl?: true
   _all?: true
 }
 
@@ -188,6 +218,11 @@ export type ClubGroupByOutputType = {
   deletedAt: Date | null
   onHold: boolean
   category: string
+  instagramUrl: string | null
+  twitterUrl: string | null
+  linkedinUrl: string | null
+  youtubeUrl: string | null
+  websiteUrl: string | null
   _count: ClubCountAggregateOutputType | null
   _min: ClubMinAggregateOutputType | null
   _max: ClubMaxAggregateOutputType | null
@@ -222,6 +257,11 @@ export type ClubWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  websiteUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
   coordinator?: Prisma.XOR<Prisma.FacultyNullableScalarRelationFilter, Prisma.FacultyWhereInput> | null
   events?: Prisma.EventListRelationFilter
@@ -242,6 +282,11 @@ export type ClubOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   college?: Prisma.CollegeOrderByWithRelationInput
   coordinator?: Prisma.FacultyOrderByWithRelationInput
   events?: Prisma.EventOrderByRelationAggregateInput
@@ -266,6 +311,11 @@ export type ClubWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  websiteUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
   coordinator?: Prisma.XOR<Prisma.FacultyNullableScalarRelationFilter, Prisma.FacultyWhereInput> | null
   events?: Prisma.EventListRelationFilter
@@ -286,6 +336,11 @@ export type ClubOrderByWithAggregationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ClubCountOrderByAggregateInput
   _max?: Prisma.ClubMaxOrderByAggregateInput
   _min?: Prisma.ClubMinOrderByAggregateInput
@@ -305,6 +360,11 @@ export type ClubScalarWhereWithAggregatesInput = {
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolWithAggregatesFilter<"Club"> | boolean
   category?: Prisma.StringWithAggregatesFilter<"Club"> | string
+  instagramUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
+  twitterUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
+  linkedinUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
+  youtubeUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
+  websiteUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
 }
 
 export type ClubCreateInput = {
@@ -316,6 +376,11 @@ export type ClubCreateInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
@@ -336,6 +401,11 @@ export type ClubUncheckedCreateInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
@@ -352,6 +422,11 @@ export type ClubUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
@@ -372,6 +447,11 @@ export type ClubUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
@@ -390,6 +470,11 @@ export type ClubCreateManyInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
 }
 
 export type ClubUpdateManyMutationInput = {
@@ -401,6 +486,11 @@ export type ClubUpdateManyMutationInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ClubUncheckedUpdateManyInput = {
@@ -414,6 +504,11 @@ export type ClubUncheckedUpdateManyInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ClubListRelationFilter = {
@@ -442,6 +537,11 @@ export type ClubCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
 }
 
 export type ClubMaxOrderByAggregateInput = {
@@ -455,6 +555,11 @@ export type ClubMaxOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
 }
 
 export type ClubMinOrderByAggregateInput = {
@@ -468,6 +573,11 @@ export type ClubMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  instagramUrl?: Prisma.SortOrder
+  twitterUrl?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  youtubeUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
 }
 
 export type ClubScalarRelationFilter = {
@@ -666,6 +776,11 @@ export type ClubCreateWithoutCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
@@ -684,6 +799,11 @@ export type ClubUncheckedCreateWithoutCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
@@ -731,6 +851,11 @@ export type ClubScalarWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  youtubeUrl?: Prisma.StringNullableFilter<"Club"> | string | null
+  websiteUrl?: Prisma.StringNullableFilter<"Club"> | string | null
 }
 
 export type ClubCreateWithoutFollowersInput = {
@@ -742,6 +867,11 @@ export type ClubCreateWithoutFollowersInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
@@ -761,6 +891,11 @@ export type ClubUncheckedCreateWithoutFollowersInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
@@ -797,6 +932,11 @@ export type ClubCreateWithoutStudentsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
@@ -816,6 +956,11 @@ export type ClubUncheckedCreateWithoutStudentsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
@@ -847,6 +992,11 @@ export type ClubUpdateWithoutStudentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
@@ -866,6 +1016,11 @@ export type ClubUncheckedUpdateWithoutStudentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
@@ -881,6 +1036,11 @@ export type ClubCreateWithoutCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
@@ -899,6 +1059,11 @@ export type ClubUncheckedCreateWithoutCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
@@ -941,6 +1106,11 @@ export type ClubCreateWithoutRoleInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
@@ -960,6 +1130,11 @@ export type ClubUncheckedCreateWithoutRoleInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
@@ -991,6 +1166,11 @@ export type ClubUpdateWithoutRoleInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
@@ -1010,6 +1190,11 @@ export type ClubUncheckedUpdateWithoutRoleInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
@@ -1025,6 +1210,11 @@ export type ClubCreateWithoutClubAdminInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   events?: Prisma.EventCreateNestedManyWithoutClubInput
@@ -1044,6 +1234,11 @@ export type ClubUncheckedCreateWithoutClubAdminInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   events?: Prisma.EventUncheckedCreateNestedManyWithoutClubInput
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
@@ -1075,6 +1270,11 @@ export type ClubUpdateWithoutClubAdminInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
@@ -1094,6 +1294,11 @@ export type ClubUncheckedUpdateWithoutClubAdminInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
@@ -1109,6 +1314,11 @@ export type ClubCreateWithoutEventsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   college: Prisma.CollegeCreateNestedOneWithoutClubsInput
   coordinator?: Prisma.FacultyCreateNestedOneWithoutClubInput
   role?: Prisma.RoleInClubCreateNestedManyWithoutClubInput
@@ -1128,6 +1338,11 @@ export type ClubUncheckedCreateWithoutEventsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
   role?: Prisma.RoleInClubUncheckedCreateNestedManyWithoutClubInput
   students?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutClubInput
   clubAdmin?: Prisma.clubAdminUncheckedCreateNestedOneWithoutClubInput
@@ -1159,6 +1374,11 @@ export type ClubUpdateWithoutEventsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
@@ -1178,6 +1398,11 @@ export type ClubUncheckedUpdateWithoutEventsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
   clubAdmin?: Prisma.clubAdminUncheckedUpdateOneWithoutClubNestedInput
@@ -1194,6 +1419,11 @@ export type ClubCreateManyCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
 }
 
 export type ClubUpdateWithoutCollegeInput = {
@@ -1205,6 +1435,11 @@ export type ClubUpdateWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
@@ -1223,6 +1458,11 @@ export type ClubUncheckedUpdateWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
@@ -1240,6 +1480,11 @@ export type ClubUncheckedUpdateManyWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ClubUpdateWithoutFollowersInput = {
@@ -1251,6 +1496,11 @@ export type ClubUpdateWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   coordinator?: Prisma.FacultyUpdateOneWithoutClubNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
@@ -1270,6 +1520,11 @@ export type ClubUncheckedUpdateWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
@@ -1287,6 +1542,11 @@ export type ClubUncheckedUpdateManyWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ClubCreateManyCoordinatorInput = {
@@ -1299,6 +1559,11 @@ export type ClubCreateManyCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  instagramUrl?: string | null
+  twitterUrl?: string | null
+  linkedinUrl?: string | null
+  youtubeUrl?: string | null
+  websiteUrl?: string | null
 }
 
 export type ClubUpdateWithoutCoordinatorInput = {
@@ -1310,6 +1575,11 @@ export type ClubUpdateWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   college?: Prisma.CollegeUpdateOneRequiredWithoutClubsNestedInput
   events?: Prisma.EventUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUpdateManyWithoutClubNestedInput
@@ -1328,6 +1598,11 @@ export type ClubUncheckedUpdateWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   events?: Prisma.EventUncheckedUpdateManyWithoutClubNestedInput
   role?: Prisma.RoleInClubUncheckedUpdateManyWithoutClubNestedInput
   students?: Prisma.StudentInClubUncheckedUpdateManyWithoutClubNestedInput
@@ -1345,6 +1620,11 @@ export type ClubUncheckedUpdateManyWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  youtubeUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  websiteUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -1416,6 +1696,11 @@ export type ClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  linkedinUrl?: boolean
+  youtubeUrl?: boolean
+  websiteUrl?: boolean
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
   events?: boolean | Prisma.Club$eventsArgs<ExtArgs>
@@ -1437,6 +1722,11 @@ export type ClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  linkedinUrl?: boolean
+  youtubeUrl?: boolean
+  websiteUrl?: boolean
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
 }, ExtArgs["result"]["club"]>
@@ -1452,6 +1742,11 @@ export type ClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  linkedinUrl?: boolean
+  youtubeUrl?: boolean
+  websiteUrl?: boolean
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
 }, ExtArgs["result"]["club"]>
@@ -1467,9 +1762,14 @@ export type ClubSelectScalar = {
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  instagramUrl?: boolean
+  twitterUrl?: boolean
+  linkedinUrl?: boolean
+  youtubeUrl?: boolean
+  websiteUrl?: boolean
 }
 
-export type ClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "description" | "cordinatorId" | "createdAt" | "updatedAt" | "deletedAt" | "onHold" | "category", ExtArgs["result"]["club"]>
+export type ClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "description" | "cordinatorId" | "createdAt" | "updatedAt" | "deletedAt" | "onHold" | "category" | "instagramUrl" | "twitterUrl" | "linkedinUrl" | "youtubeUrl" | "websiteUrl", ExtArgs["result"]["club"]>
 export type ClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
@@ -1511,6 +1811,11 @@ export type $ClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     deletedAt: Date | null
     onHold: boolean
     category: string
+    instagramUrl: string | null
+    twitterUrl: string | null
+    linkedinUrl: string | null
+    youtubeUrl: string | null
+    websiteUrl: string | null
   }, ExtArgs["result"]["club"]>
   composites: {}
 }
@@ -1951,6 +2256,11 @@ export interface ClubFieldRefs {
   readonly deletedAt: Prisma.FieldRef<"Club", 'DateTime'>
   readonly onHold: Prisma.FieldRef<"Club", 'Boolean'>
   readonly category: Prisma.FieldRef<"Club", 'String'>
+  readonly instagramUrl: Prisma.FieldRef<"Club", 'String'>
+  readonly twitterUrl: Prisma.FieldRef<"Club", 'String'>
+  readonly linkedinUrl: Prisma.FieldRef<"Club", 'String'>
+  readonly youtubeUrl: Prisma.FieldRef<"Club", 'String'>
+  readonly websiteUrl: Prisma.FieldRef<"Club", 'String'>
 }
     
 

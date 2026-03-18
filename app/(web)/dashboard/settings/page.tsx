@@ -3,18 +3,24 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CATEGORIES = ["Technology", "Cultural", "Sports", "Arts & Music", "Social Service", "Academic", "Photography", "Debate", "Other"];
 
 export default function SettingsPage() {
+    useEffect(() => {
+        getClub();
+    }, []);
     const [form, setForm] = useState({
         name: "VIT Robotics Club",
         description: "We build robots and solve real world problems through technology and innovation.",
         category: "Technology",
         logoUrl: "",
-        instagram: "",
-        website: "",
+        instagramUrl: "",
+        twitterUrl: "",
+        linkedinUrl: "",
+        youtubeUrl: "",
+        websiteUrl: "",
     });
     const [saved, setSaved] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -31,12 +37,14 @@ export default function SettingsPage() {
         }
         setLoading(true);
         try {
-            // 🔌 Hook your club update API here
-            await fetch("/api/club/settings", {
-                method: "PATCH",
+            const res = await fetch("/api/club/settings", {
+                method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),
             });
+            if (!res.ok) {
+                throw new Error("Failed to update club");
+            }
             setSaved(true);
             setTimeout(() => setSaved(false), 3000);
         } catch {
@@ -46,11 +54,21 @@ export default function SettingsPage() {
         }
     }
 
+    async function getClub() {
+        const res = await fetch("/api/club/settings/getClub", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include"
+        });
+        const data = await res.json();
+        setForm(data);
+    }
+
     const inputBase: React.CSSProperties = {
         background: "#13131a", border: "1px solid #1e1e2e",
         color: "#f0f0f8", fontFamily: "inherit", width: "100%",
     };
-    const inputClass = "px-4 py-3 rounded-lg text-sm outline-none transition-all duration-200";
+    const inputClass = "px-5 py-3 rounded-lg outline-none transition-all duration-200";
     const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         e.currentTarget.style.borderColor = "#ff6584";
         e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,101,132,0.1)";
@@ -61,14 +79,14 @@ export default function SettingsPage() {
     };
 
     return (
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto" style={{ padding: "10px" }}>
 
             <div className="fade-up mb-6">
                 <h2 className="font-display font-bold text-xl mb-1" style={{ letterSpacing: "-0.02em" }}>Club Settings</h2>
                 <p className="text-sm font-light" style={{ color: "var(--muted)" }}>Update your club profile and information</p>
             </div>
 
-            <div className="fade-up fade-up-1 rounded-2xl p-6" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+            <div className="fade-up flex flex-col gap-2 fade-up-1 rounded-2xl p-6" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
 
                 {/* Feedback */}
                 {error && (
@@ -85,12 +103,12 @@ export default function SettingsPage() {
                 )}
 
                 {/* Club profile section */}
-                <div className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--muted)" }}>
+                <div className="font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--muted)" }}>
                     Club Profile
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>Club Name</label>
+                    <label className="block font-medium mb-1.5" style={{ color: "var(--muted)" }}>Club Name</label>
                     <input type="text" value={form.name} onChange={upd("name")}
                         className={inputClass} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
                 </div>
@@ -119,23 +137,35 @@ export default function SettingsPage() {
 
                 <div className="mb-4">
                     <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>Instagram Handle</label>
-                    <div className="relative">
-                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm" style={{ color: "var(--muted)" }}>@</span>
-                        <input type="text" placeholder="yourclub" value={form.instagram} onChange={upd("instagram")}
-                            className={`${inputClass} pl-8`} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
-                    </div>
+                    <input type="text" placeholder="@yourclub" value={form.instagramUrl} onChange={upd("instagramUrl")}
+                        className={`${inputClass}`} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
                 </div>
 
                 <div className="mb-6">
+                    <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>Twitter Handle</label>
+                    <input type="url" placeholder="@yourclub" value={form.twitterUrl} onChange={upd("twitterUrl")}
+                        className={inputClass} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+                <div className="mb-6">
+                    <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>LinkedIn Handle</label>
+                    <input type="url" placeholder="@yourclub" value={form.linkedinUrl} onChange={upd("linkedinUrl")}
+                        className={inputClass} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+                <div className="mb-6">
+                    <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>Youtube Handle</label>
+                    <input type="url" placeholder="@yourclub" value={form.youtubeUrl} onChange={upd("youtubeUrl")}
+                        className={inputClass} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+                <div className="mb-6">
                     <label className="block text-xs font-medium mb-1.5" style={{ color: "var(--muted)" }}>Website URL</label>
-                    <input type="url" placeholder="https://yourclub.com" value={form.website} onChange={upd("website")}
+                    <input type="url" placeholder="https://yourclub.com" value={form.websiteUrl} onChange={upd("websiteUrl")}
                         className={inputClass} style={inputBase} onFocus={onFocus} onBlur={onBlur} />
                 </div>
 
                 {/* Save */}
                 <button onClick={handleSave} disabled={loading}
                     className="w-full py-3 rounded-lg text-sm font-semibold text-white transition-all duration-200"
-                    style={{ background: loading ? "#b34d62" : "#ff6584", border: "none", cursor: loading ? "not-allowed" : "pointer" }}
+                    style={{ background: loading ? "#b34d62" : "#ff6584", border: "none", cursor: loading ? "not-allowed" : "pointer", padding: "5px" }}
                     onMouseEnter={e => { if (!loading) { e.currentTarget.style.filter = "brightness(1.1)"; e.currentTarget.style.boxShadow = "0 8px 25px rgba(255,101,132,0.35)"; } }}
                     onMouseLeave={e => { e.currentTarget.style.filter = ""; e.currentTarget.style.boxShadow = "none"; }}>
                     {loading ? "Saving..." : "Save Changes"}

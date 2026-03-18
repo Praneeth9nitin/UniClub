@@ -6,14 +6,14 @@ import { DashboardSidebar } from "@/components/dasboard/DashboardSidebar";
 import { DashboardTopbar } from "@/components/dasboard/DashboardTopBar";
 
 export const metadata: Metadata = {
-    title: "Dashboard — UniClub",
-    robots: { index: false },
+  title: "Dashboard — UniClub",
+  robots: { index: false },
 };
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <>
-            <style>{`
+  return (
+    <>
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
         :root {
           --bg: #0a0a0f;
@@ -59,18 +59,18 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         .nav-item { transition: all 0.2s; }
       `}</style>
 
-            <div className="flex min-h-screen" style={{ background: "var(--bg)" }}>
-                {/* Sidebar */}
-                <DashboardSidebar />
+      <div className="flex min-h-screen" style={{ background: "var(--bg)" }}>
+        {/* Sidebar */}
+        <DashboardSidebar />
 
-                {/* Main content */}
-                <div className="flex-1 flex flex-col min-w-0">
-                    <DashboardTopbar />
-                    <main className="flex-1 p-6 overflow-y-auto">
-                        {children}
-                    </main>
-                </div>
-            </div>
-        </>
-    );
+        {/* Main content */}
+        <div className="flex-1 flex flex-col min-w-0">
+          <DashboardTopbar />
+          <main className="flex-1 overflow-y-auto">
+            {children}
+          </main>
+        </div>
+      </div>
+    </>
+  );
 }

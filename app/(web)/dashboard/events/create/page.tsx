@@ -76,6 +76,7 @@ function SectionDivider({ title }: { title: string }) {
 export default function CreateEventPage() {
     const router = useRouter();
     const [uploadPreview, setUploadPreview] = useState("")
+    const [fileToUpload, setFileToUpload] = useState<File | null>(null)
     const [form, setForm] = useState({
         name: "",
         description: "",
@@ -84,8 +85,8 @@ export default function CreateEventPage() {
         time: "",
         category: "",
         capacity: "",
-        banner: "",
         mode: "",
+        banner: "",
         registrationLink: "",
         registrationFee: "",
         registrationDeadline: "",
@@ -99,17 +100,16 @@ export default function CreateEventPage() {
 
     const overLimit = form.description.length > 500;
 
-    async function handleBannerUpload(e: React.ChangeEvent<HTMLInputElement>) {
-        setLoading(true);
+    const handleBanner = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]
         if (!file) return
-        const secure_url = await uploadToCloudinary(file)
-        setForm(p => ({ ...p, banner: secure_url }))
+        setFileToUpload(file)
         setUploadPreview(URL.createObjectURL(file))
     }
 
     async function handleSubmit() {
         setError("");
+        setLoading(true);
         const { name, description, venue, date, time, category, mode } = form;
         if (!name || !description || !venue || !date || !time || !category || !mode) {
             setError("Please fill in all required fields."); return;
@@ -117,6 +117,10 @@ export default function CreateEventPage() {
         if (overLimit) { setError("Description must be under 500 characters."); return; }
 
         try {
+            let secure_url = ""
+            if (fileToUpload) {
+                secure_url = await uploadToCloudinary(fileToUpload!)
+            }
             const res = await fetch("/api/club/event/create", {
                 method: "POST",
                 credentials: "include",
@@ -124,6 +128,7 @@ export default function CreateEventPage() {
                 body: JSON.stringify({
                     ...form,
                     date: new Date(`${date}T${time}`),
+                    banner: secure_url,
                     capacity: form.capacity ? parseInt(form.capacity) : null,
                     registrationFee: form.registrationFee ? parseInt(form.registrationFee) : null,
                     registrationDeadline: form.registrationDeadline ? new Date(form.registrationDeadline) : null,
@@ -131,9 +136,11 @@ export default function CreateEventPage() {
             });
 
             const data = await res.json();
+            console.log(data.banner)
             if (!res.ok) { setError(data.message ?? "Failed to create event."); return; }
             router.push("/dashboard/events?created=true");
-        } catch {
+        } catch (error) {
+            console.log(error)
             setError("Something went wrong. Please try again.");
         } finally {
             setLoading(false);
@@ -368,7 +375,7 @@ export default function CreateEventPage() {
                             )}
                             <input type="file" multiple={false} style={inputBase}
                                 placeholder="https://res.cloudinary.com/..."
-                                value={form.banner} onChange={upd("banner")}
+                                onChange={handleBanner}
                                 onFocus={onFocus} onBlur={onBlur} />
                             <p style={{ fontSize: "0.67rem", color: "#555570", marginTop: 5 }}>
                                 Upload to Cloudinary first, paste URL here
@@ -395,7 +402,7 @@ export default function CreateEventPage() {
                             >
                                 Cancel
                             </a>
-                            <button onClick={() => { handleBannerUpload; handleSubmit; }} disabled={loading} style={{
+                            <button onClick={() => handleSubmit()} disabled={loading} style={{
                                 flex: 1,
                                 padding: "0.7rem 1.25rem",
                                 borderRadius: "0.6rem",
