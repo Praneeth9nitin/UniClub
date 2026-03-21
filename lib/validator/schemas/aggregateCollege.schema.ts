@@ -1,0 +1,14 @@
+import type { Prisma } from '../../prisma/client';
+import * as z from 'zod';
+import { CollegeOrderByWithRelationInputObjectSchema as CollegeOrderByWithRelationInputObjectSchema } from './objects/CollegeOrderByWithRelationInput.schema';
+import { CollegeWhereInputObjectSchema as CollegeWhereInputObjectSchema } from './objects/CollegeWhereInput.schema';
+import { CollegeWhereUniqueInputObjectSchema as CollegeWhereUniqueInputObjectSchema } from './objects/CollegeWhereUniqueInput.schema';
+import { CollegeCountAggregateInputObjectSchema as CollegeCountAggregateInputObjectSchema } from './objects/CollegeCountAggregateInput.schema';
+import { CollegeMinAggregateInputObjectSchema as CollegeMinAggregateInputObjectSchema } from './objects/CollegeMinAggregateInput.schema';
+import { CollegeMaxAggregateInputObjectSchema as CollegeMaxAggregateInputObjectSchema } from './objects/CollegeMaxAggregateInput.schema';
+import { CollegeAvgAggregateInputObjectSchema as CollegeAvgAggregateInputObjectSchema } from './objects/CollegeAvgAggregateInput.schema';
+import { CollegeSumAggregateInputObjectSchema as CollegeSumAggregateInputObjectSchema } from './objects/CollegeSumAggregateInput.schema';
+
+export const CollegeAggregateSchema: z.ZodType<Prisma.CollegeAggregateArgs> = z.object({ orderBy: z.union([CollegeOrderByWithRelationInputObjectSchema, CollegeOrderByWithRelationInputObjectSchema.array()]).optional(), where: CollegeWhereInputObjectSchema.optional(), cursor: CollegeWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), CollegeCountAggregateInputObjectSchema ]).optional(), _min: CollegeMinAggregateInputObjectSchema.optional(), _max: CollegeMaxAggregateInputObjectSchema.optional(), _avg: CollegeAvgAggregateInputObjectSchema.optional(), _sum: CollegeSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.CollegeAggregateArgs>;
+
+export const CollegeAggregateZodSchema = z.object({ orderBy: z.union([CollegeOrderByWithRelationInputObjectSchema, CollegeOrderByWithRelationInputObjectSchema.array()]).optional(), where: CollegeWhereInputObjectSchema.optional(), cursor: CollegeWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), CollegeCountAggregateInputObjectSchema ]).optional(), _min: CollegeMinAggregateInputObjectSchema.optional(), _max: CollegeMaxAggregateInputObjectSchema.optional(), _avg: CollegeAvgAggregateInputObjectSchema.optional(), _sum: CollegeSumAggregateInputObjectSchema.optional() }).strict();

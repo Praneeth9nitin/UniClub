@@ -1,0 +1,15 @@
+import type { Prisma } from '../../prisma/client';
+import * as z from 'zod';
+import { CollegeWhereInputObjectSchema as CollegeWhereInputObjectSchema } from './objects/CollegeWhereInput.schema';
+import { CollegeOrderByWithAggregationInputObjectSchema as CollegeOrderByWithAggregationInputObjectSchema } from './objects/CollegeOrderByWithAggregationInput.schema';
+import { CollegeScalarWhereWithAggregatesInputObjectSchema as CollegeScalarWhereWithAggregatesInputObjectSchema } from './objects/CollegeScalarWhereWithAggregatesInput.schema';
+import { CollegeScalarFieldEnumSchema } from './enums/CollegeScalarFieldEnum.schema';
+import { CollegeCountAggregateInputObjectSchema as CollegeCountAggregateInputObjectSchema } from './objects/CollegeCountAggregateInput.schema';
+import { CollegeMinAggregateInputObjectSchema as CollegeMinAggregateInputObjectSchema } from './objects/CollegeMinAggregateInput.schema';
+import { CollegeMaxAggregateInputObjectSchema as CollegeMaxAggregateInputObjectSchema } from './objects/CollegeMaxAggregateInput.schema';
+import { CollegeAvgAggregateInputObjectSchema as CollegeAvgAggregateInputObjectSchema } from './objects/CollegeAvgAggregateInput.schema';
+import { CollegeSumAggregateInputObjectSchema as CollegeSumAggregateInputObjectSchema } from './objects/CollegeSumAggregateInput.schema';
+
+export const CollegeGroupBySchema: z.ZodType<Prisma.CollegeGroupByArgs> = z.object({ where: CollegeWhereInputObjectSchema.optional(), orderBy: z.union([CollegeOrderByWithAggregationInputObjectSchema, CollegeOrderByWithAggregationInputObjectSchema.array()]).optional(), having: CollegeScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(CollegeScalarFieldEnumSchema), _count: z.union([ z.literal(true), CollegeCountAggregateInputObjectSchema ]).optional(), _min: CollegeMinAggregateInputObjectSchema.optional(), _max: CollegeMaxAggregateInputObjectSchema.optional(), _avg: CollegeAvgAggregateInputObjectSchema.optional(), _sum: CollegeSumAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.CollegeGroupByArgs>;
+
+export const CollegeGroupByZodSchema = z.object({ where: CollegeWhereInputObjectSchema.optional(), orderBy: z.union([CollegeOrderByWithAggregationInputObjectSchema, CollegeOrderByWithAggregationInputObjectSchema.array()]).optional(), having: CollegeScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(CollegeScalarFieldEnumSchema), _count: z.union([ z.literal(true), CollegeCountAggregateInputObjectSchema ]).optional(), _min: CollegeMinAggregateInputObjectSchema.optional(), _max: CollegeMaxAggregateInputObjectSchema.optional(), _avg: CollegeAvgAggregateInputObjectSchema.optional(), _sum: CollegeSumAggregateInputObjectSchema.optional() }).strict();

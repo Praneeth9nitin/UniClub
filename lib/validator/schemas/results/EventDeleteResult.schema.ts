@@ -1,0 +1,26 @@
+import * as z from 'zod';
+export const EventDeleteResultSchema = z.nullable(z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  clubId: z.string(),
+  date: z.date(),
+  time: z.string(),
+  mode: z.unknown(),
+  registrationLink: z.string().optional(),
+  registrationFee: z.number().int().optional(),
+  registrationOpen: z.boolean(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+  deletedAt: z.date().optional(),
+  venue: z.string().optional(),
+  city: z.string().optional(),
+  banner: z.string().optional(),
+  capacity: z.number().int().optional(),
+  registrationDeadline: z.date().optional(),
+  status: z.unknown(),
+  isPublic: z.boolean(),
+  category: z.string(),
+  club: z.unknown(),
+  registrations: z.array(z.unknown())
+}));

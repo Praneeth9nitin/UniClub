@@ -191,7 +191,7 @@ export const getMe = async (id: string) => {
             followsClub: {
                 select: {
                     id: true, name: true, category: true,
-                    college: true, logoUrl: true,
+                    college: { select: { name: true } }, logoUrl: true,
                     _count: { select: { followers: true } }
                 }
             },
@@ -206,6 +206,7 @@ export const getMe = async (id: string) => {
                     event: {
                         select: {
                             id: true,
+                            name: true,
                             date: true,
                             venue: true,
                             mode: true,

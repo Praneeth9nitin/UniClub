@@ -1,0 +1,13 @@
+import type { Prisma } from '../../prisma/client';
+import * as z from 'zod';
+import { RoleInClubWhereInputObjectSchema as RoleInClubWhereInputObjectSchema } from './objects/RoleInClubWhereInput.schema';
+import { RoleInClubOrderByWithAggregationInputObjectSchema as RoleInClubOrderByWithAggregationInputObjectSchema } from './objects/RoleInClubOrderByWithAggregationInput.schema';
+import { RoleInClubScalarWhereWithAggregatesInputObjectSchema as RoleInClubScalarWhereWithAggregatesInputObjectSchema } from './objects/RoleInClubScalarWhereWithAggregatesInput.schema';
+import { RoleInClubScalarFieldEnumSchema } from './enums/RoleInClubScalarFieldEnum.schema';
+import { RoleInClubCountAggregateInputObjectSchema as RoleInClubCountAggregateInputObjectSchema } from './objects/RoleInClubCountAggregateInput.schema';
+import { RoleInClubMinAggregateInputObjectSchema as RoleInClubMinAggregateInputObjectSchema } from './objects/RoleInClubMinAggregateInput.schema';
+import { RoleInClubMaxAggregateInputObjectSchema as RoleInClubMaxAggregateInputObjectSchema } from './objects/RoleInClubMaxAggregateInput.schema';
+
+export const RoleInClubGroupBySchema: z.ZodType<Prisma.RoleInClubGroupByArgs> = z.object({ where: RoleInClubWhereInputObjectSchema.optional(), orderBy: z.union([RoleInClubOrderByWithAggregationInputObjectSchema, RoleInClubOrderByWithAggregationInputObjectSchema.array()]).optional(), having: RoleInClubScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(RoleInClubScalarFieldEnumSchema), _count: z.union([ z.literal(true), RoleInClubCountAggregateInputObjectSchema ]).optional(), _min: RoleInClubMinAggregateInputObjectSchema.optional(), _max: RoleInClubMaxAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.RoleInClubGroupByArgs>;
+
+export const RoleInClubGroupByZodSchema = z.object({ where: RoleInClubWhereInputObjectSchema.optional(), orderBy: z.union([RoleInClubOrderByWithAggregationInputObjectSchema, RoleInClubOrderByWithAggregationInputObjectSchema.array()]).optional(), having: RoleInClubScalarWhereWithAggregatesInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), by: z.array(RoleInClubScalarFieldEnumSchema), _count: z.union([ z.literal(true), RoleInClubCountAggregateInputObjectSchema ]).optional(), _min: RoleInClubMinAggregateInputObjectSchema.optional(), _max: RoleInClubMaxAggregateInputObjectSchema.optional() }).strict();

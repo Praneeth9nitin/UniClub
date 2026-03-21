@@ -1,0 +1,12 @@
+import type { Prisma } from '../../prisma/client';
+import * as z from 'zod';
+import { StudentInClubOrderByWithRelationInputObjectSchema as StudentInClubOrderByWithRelationInputObjectSchema } from './objects/StudentInClubOrderByWithRelationInput.schema';
+import { StudentInClubWhereInputObjectSchema as StudentInClubWhereInputObjectSchema } from './objects/StudentInClubWhereInput.schema';
+import { StudentInClubWhereUniqueInputObjectSchema as StudentInClubWhereUniqueInputObjectSchema } from './objects/StudentInClubWhereUniqueInput.schema';
+import { StudentInClubCountAggregateInputObjectSchema as StudentInClubCountAggregateInputObjectSchema } from './objects/StudentInClubCountAggregateInput.schema';
+import { StudentInClubMinAggregateInputObjectSchema as StudentInClubMinAggregateInputObjectSchema } from './objects/StudentInClubMinAggregateInput.schema';
+import { StudentInClubMaxAggregateInputObjectSchema as StudentInClubMaxAggregateInputObjectSchema } from './objects/StudentInClubMaxAggregateInput.schema';
+
+export const StudentInClubAggregateSchema: z.ZodType<Prisma.StudentInClubAggregateArgs> = z.object({ orderBy: z.union([StudentInClubOrderByWithRelationInputObjectSchema, StudentInClubOrderByWithRelationInputObjectSchema.array()]).optional(), where: StudentInClubWhereInputObjectSchema.optional(), cursor: StudentInClubWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), StudentInClubCountAggregateInputObjectSchema ]).optional(), _min: StudentInClubMinAggregateInputObjectSchema.optional(), _max: StudentInClubMaxAggregateInputObjectSchema.optional() }).strict() as unknown as z.ZodType<Prisma.StudentInClubAggregateArgs>;
+
+export const StudentInClubAggregateZodSchema = z.object({ orderBy: z.union([StudentInClubOrderByWithRelationInputObjectSchema, StudentInClubOrderByWithRelationInputObjectSchema.array()]).optional(), where: StudentInClubWhereInputObjectSchema.optional(), cursor: StudentInClubWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), _count: z.union([ z.literal(true), StudentInClubCountAggregateInputObjectSchema ]).optional(), _min: StudentInClubMinAggregateInputObjectSchema.optional(), _max: StudentInClubMaxAggregateInputObjectSchema.optional() }).strict();

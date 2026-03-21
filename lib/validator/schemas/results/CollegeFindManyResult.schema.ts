@@ -1,0 +1,42 @@
+import * as z from 'zod';
+export const CollegeFindManyResultSchema = z.object({
+  data: z.array(z.object({
+  id: z.string(),
+  name: z.string(),
+  city: z.string(),
+  state: z.string(),
+  collegeType: z.unknown().optional(),
+  logoUrl: z.string().optional(),
+  websiteUrl: z.string().optional(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+  country: z.string(),
+  accrediation: z.string().optional(),
+  address: z.string().optional(),
+  affiliatedUniversity: z.string().optional(),
+  deletedAt: z.date().optional(),
+  establisedYear: z.number().int().optional(),
+  latitude: z.string().optional(),
+  longitude: z.string().optional(),
+  officialEmail: z.string().optional(),
+  phone: z.string().optional(),
+  pincode: z.string().optional(),
+  regitrationNumber: z.string().optional(),
+  verificationNote: z.string().optional(),
+  verififedTime: z.date().optional(),
+  verified: z.unknown(),
+  clubs: z.array(z.unknown()),
+  admin: z.unknown().optional(),
+  faculty: z.array(z.unknown()),
+  students: z.array(z.unknown()),
+  followers: z.array(z.unknown())
+})),
+  pagination: z.object({
+  page: z.number().int().min(1),
+  pageSize: z.number().int().min(1),
+  total: z.number().int().min(0),
+  totalPages: z.number().int().min(0),
+  hasNext: z.boolean(),
+  hasPrev: z.boolean()
+})
+});
