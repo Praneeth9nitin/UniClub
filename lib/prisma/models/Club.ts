@@ -35,6 +35,7 @@ export type ClubMinAggregateOutputType = {
   deletedAt: Date | null
   onHold: boolean | null
   category: string | null
+  logoUrl: string | null
   instagramUrl: string | null
   twitterUrl: string | null
   linkedinUrl: string | null
@@ -53,6 +54,7 @@ export type ClubMaxAggregateOutputType = {
   deletedAt: Date | null
   onHold: boolean | null
   category: string | null
+  logoUrl: string | null
   instagramUrl: string | null
   twitterUrl: string | null
   linkedinUrl: string | null
@@ -71,6 +73,7 @@ export type ClubCountAggregateOutputType = {
   deletedAt: number
   onHold: number
   category: number
+  logoUrl: number
   instagramUrl: number
   twitterUrl: number
   linkedinUrl: number
@@ -91,6 +94,7 @@ export type ClubMinAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  logoUrl?: true
   instagramUrl?: true
   twitterUrl?: true
   linkedinUrl?: true
@@ -109,6 +113,7 @@ export type ClubMaxAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  logoUrl?: true
   instagramUrl?: true
   twitterUrl?: true
   linkedinUrl?: true
@@ -127,6 +132,7 @@ export type ClubCountAggregateInputType = {
   deletedAt?: true
   onHold?: true
   category?: true
+  logoUrl?: true
   instagramUrl?: true
   twitterUrl?: true
   linkedinUrl?: true
@@ -218,6 +224,7 @@ export type ClubGroupByOutputType = {
   deletedAt: Date | null
   onHold: boolean
   category: string
+  logoUrl: string | null
   instagramUrl: string | null
   twitterUrl: string | null
   linkedinUrl: string | null
@@ -257,6 +264,7 @@ export type ClubWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  logoUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
@@ -282,6 +290,7 @@ export type ClubOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -311,6 +320,7 @@ export type ClubWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  logoUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
@@ -336,6 +346,7 @@ export type ClubOrderByWithAggregationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   instagramUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   twitterUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -360,6 +371,7 @@ export type ClubScalarWhereWithAggregatesInput = {
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolWithAggregatesFilter<"Club"> | boolean
   category?: Prisma.StringWithAggregatesFilter<"Club"> | string
+  logoUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
   instagramUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
   twitterUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
   linkedinUrl?: Prisma.StringNullableWithAggregatesFilter<"Club"> | string | null
@@ -376,6 +388,7 @@ export type ClubCreateInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -401,6 +414,7 @@ export type ClubUncheckedCreateInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -422,6 +436,7 @@ export type ClubUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -447,6 +462,7 @@ export type ClubUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -470,6 +486,7 @@ export type ClubCreateManyInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -486,6 +503,7 @@ export type ClubUpdateManyMutationInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -504,6 +522,7 @@ export type ClubUncheckedUpdateManyInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -537,6 +556,7 @@ export type ClubCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
@@ -555,6 +575,7 @@ export type ClubMaxOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
@@ -573,6 +594,7 @@ export type ClubMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   onHold?: Prisma.SortOrder
   category?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
   instagramUrl?: Prisma.SortOrder
   twitterUrl?: Prisma.SortOrder
   linkedinUrl?: Prisma.SortOrder
@@ -776,6 +798,7 @@ export type ClubCreateWithoutCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -799,6 +822,7 @@ export type ClubUncheckedCreateWithoutCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -851,6 +875,7 @@ export type ClubScalarWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"Club"> | Date | string | null
   onHold?: Prisma.BoolFilter<"Club"> | boolean
   category?: Prisma.StringFilter<"Club"> | string
+  logoUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   instagramUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   twitterUrl?: Prisma.StringNullableFilter<"Club"> | string | null
   linkedinUrl?: Prisma.StringNullableFilter<"Club"> | string | null
@@ -867,6 +892,7 @@ export type ClubCreateWithoutFollowersInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -891,6 +917,7 @@ export type ClubUncheckedCreateWithoutFollowersInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -932,6 +959,7 @@ export type ClubCreateWithoutStudentsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -956,6 +984,7 @@ export type ClubUncheckedCreateWithoutStudentsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -992,6 +1021,7 @@ export type ClubUpdateWithoutStudentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1016,6 +1046,7 @@ export type ClubUncheckedUpdateWithoutStudentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1036,6 +1067,7 @@ export type ClubCreateWithoutCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1059,6 +1091,7 @@ export type ClubUncheckedCreateWithoutCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1106,6 +1139,7 @@ export type ClubCreateWithoutRoleInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1130,6 +1164,7 @@ export type ClubUncheckedCreateWithoutRoleInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1166,6 +1201,7 @@ export type ClubUpdateWithoutRoleInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1190,6 +1226,7 @@ export type ClubUncheckedUpdateWithoutRoleInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1210,6 +1247,7 @@ export type ClubCreateWithoutClubAdminInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1234,6 +1272,7 @@ export type ClubUncheckedCreateWithoutClubAdminInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1270,6 +1309,7 @@ export type ClubUpdateWithoutClubAdminInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1294,6 +1334,7 @@ export type ClubUncheckedUpdateWithoutClubAdminInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1314,6 +1355,7 @@ export type ClubCreateWithoutEventsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1338,6 +1380,7 @@ export type ClubUncheckedCreateWithoutEventsInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1374,6 +1417,7 @@ export type ClubUpdateWithoutEventsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1398,6 +1442,7 @@ export type ClubUncheckedUpdateWithoutEventsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1419,6 +1464,7 @@ export type ClubCreateManyCollegeInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1435,6 +1481,7 @@ export type ClubUpdateWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1458,6 +1505,7 @@ export type ClubUncheckedUpdateWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1480,6 +1528,7 @@ export type ClubUncheckedUpdateManyWithoutCollegeInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1496,6 +1545,7 @@ export type ClubUpdateWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1520,6 +1570,7 @@ export type ClubUncheckedUpdateWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1542,6 +1593,7 @@ export type ClubUncheckedUpdateManyWithoutFollowersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1559,6 +1611,7 @@ export type ClubCreateManyCoordinatorInput = {
   deletedAt?: Date | string | null
   onHold?: boolean
   category: string
+  logoUrl?: string | null
   instagramUrl?: string | null
   twitterUrl?: string | null
   linkedinUrl?: string | null
@@ -1575,6 +1628,7 @@ export type ClubUpdateWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1598,6 +1652,7 @@ export type ClubUncheckedUpdateWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1620,6 +1675,7 @@ export type ClubUncheckedUpdateManyWithoutCoordinatorInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   onHold?: Prisma.BoolFieldUpdateOperationsInput | boolean
   category?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   instagramUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   twitterUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1696,6 +1752,7 @@ export type ClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  logoUrl?: boolean
   instagramUrl?: boolean
   twitterUrl?: boolean
   linkedinUrl?: boolean
@@ -1722,6 +1779,7 @@ export type ClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  logoUrl?: boolean
   instagramUrl?: boolean
   twitterUrl?: boolean
   linkedinUrl?: boolean
@@ -1742,6 +1800,7 @@ export type ClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  logoUrl?: boolean
   instagramUrl?: boolean
   twitterUrl?: boolean
   linkedinUrl?: boolean
@@ -1762,6 +1821,7 @@ export type ClubSelectScalar = {
   deletedAt?: boolean
   onHold?: boolean
   category?: boolean
+  logoUrl?: boolean
   instagramUrl?: boolean
   twitterUrl?: boolean
   linkedinUrl?: boolean
@@ -1769,7 +1829,7 @@ export type ClubSelectScalar = {
   websiteUrl?: boolean
 }
 
-export type ClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "description" | "cordinatorId" | "createdAt" | "updatedAt" | "deletedAt" | "onHold" | "category" | "instagramUrl" | "twitterUrl" | "linkedinUrl" | "youtubeUrl" | "websiteUrl", ExtArgs["result"]["club"]>
+export type ClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "description" | "cordinatorId" | "createdAt" | "updatedAt" | "deletedAt" | "onHold" | "category" | "logoUrl" | "instagramUrl" | "twitterUrl" | "linkedinUrl" | "youtubeUrl" | "websiteUrl", ExtArgs["result"]["club"]>
 export type ClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   coordinator?: boolean | Prisma.Club$coordinatorArgs<ExtArgs>
@@ -1811,6 +1871,7 @@ export type $ClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     deletedAt: Date | null
     onHold: boolean
     category: string
+    logoUrl: string | null
     instagramUrl: string | null
     twitterUrl: string | null
     linkedinUrl: string | null
@@ -2256,6 +2317,7 @@ export interface ClubFieldRefs {
   readonly deletedAt: Prisma.FieldRef<"Club", 'DateTime'>
   readonly onHold: Prisma.FieldRef<"Club", 'Boolean'>
   readonly category: Prisma.FieldRef<"Club", 'String'>
+  readonly logoUrl: Prisma.FieldRef<"Club", 'String'>
   readonly instagramUrl: Prisma.FieldRef<"Club", 'String'>
   readonly twitterUrl: Prisma.FieldRef<"Club", 'String'>
   readonly linkedinUrl: Prisma.FieldRef<"Club", 'String'>

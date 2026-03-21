@@ -24,7 +24,7 @@ export default function RolesSection() {
                 Who&apos;s it for
             </p>
             <h2
-                className="font-display font-bold mb-14"
+                className="font-display font-bold mb-14 text-neutral-300"
                 style={{ fontSize: "clamp(2rem,4vw,3rem)", letterSpacing: "-0.02em" }}
             >
                 Built for students.<br />Powered by clubs.
@@ -108,7 +108,7 @@ export default function RolesSection() {
                         ))}
                     </ul>
                     <Link
-                        href="/club/signup"
+                        href="/signup"
                         className="inline-block px-6 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5"
                         style={{ background: "#ff6584" }}
                     >

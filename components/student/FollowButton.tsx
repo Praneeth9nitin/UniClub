@@ -19,14 +19,13 @@ export function FollowButton({
     async function toggle() {
         setLoading(true)
         try {
-            // 🔌 Follow / unfollow API
             const res = await fetch(
-                `/api/student/clubs/${clubId}/${following ? "unfollow" : "follow"}`,
-                { method: following ? "DELETE" : "POST", credentials: "include" }
+                `/api/student/getClubs/${clubId}/${following ? "unfollow" : "follow"}`,
+                { method: "POST", credentials: "include" }
             )
             if (res.ok) setFollowing(f => !f)
-        } catch {
-            // handle silently
+        } catch (error) {
+            console.log(error)
         } finally {
             setLoading(false)
         }

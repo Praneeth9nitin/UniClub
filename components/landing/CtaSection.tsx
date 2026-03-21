@@ -15,7 +15,7 @@ export default function CtaSection() {
                 aria-hidden="true"
             />
             <h2
-                className="font-display font-extrabold relative mb-4"
+                className="font-display font-extrabold relative mb-4 text-neutral-300"
                 style={{ fontSize: "clamp(2.5rem,5vw,4rem)", letterSpacing: "-0.03em" }}
             >
                 Your campus is{" "}

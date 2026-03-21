@@ -59,7 +59,7 @@ export default function HeroSection() {
 
                 {/* H1 — critical for SEO, rendered on server */}
                 <h1
-                    className="fade-up fade-up-1 font-display font-extrabold leading-tight tracking-tight mb-6"
+                    className="fade-up fade-up-1 font-display text-neutral-300 font-extrabold leading-tight tracking-tight mb-6"
                     style={{ fontSize: "clamp(3rem,7vw,5.5rem)", letterSpacing: "-0.03em" }}
                 >
                     Every Campus Club,{" "}

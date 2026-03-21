@@ -71,6 +71,7 @@ model Club {
   role         RoleInClub[]
   students     StudentInClub[]
   clubAdmin    clubAdmin?
+  logoUrl      String?
   instagramUrl String?
   twitterUrl   String?
   linkedinUrl  String?

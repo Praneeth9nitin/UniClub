@@ -20,7 +20,7 @@ export default function HowItWorks() {
                     How it works
                 </p>
                 <h2
-                    className="font-display font-bold mb-14"
+                    className="font-display font-bold mb-14 text-neutral-300"
                     style={{ fontSize: "clamp(2rem,4vw,3rem)", letterSpacing: "-0.02em" }}
                 >
                     Up and running in minutes

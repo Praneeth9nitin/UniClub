@@ -53,6 +53,7 @@ export const createClub = async (data: z.infer<typeof createClubSchema>) => {
 }
 
 export const adminLogin = async (email: string, password: string) => {
+    console.log(email, password)
     const clubAdmin = await prisma.clubAdmin.findUnique({
         where: {
             email

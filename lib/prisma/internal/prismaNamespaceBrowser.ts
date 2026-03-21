@@ -132,6 +132,7 @@ export const ClubScalarFieldEnum = {
   deletedAt: 'deletedAt',
   onHold: 'onHold',
   category: 'category',
+  logoUrl: 'logoUrl',
   instagramUrl: 'instagramUrl',
   twitterUrl: 'twitterUrl',
   linkedinUrl: 'linkedinUrl',

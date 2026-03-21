@@ -17,7 +17,7 @@ export default function FeaturesSection() {
                 Features
             </p>
             <h2
-                className="font-display font-bold mb-3"
+                className="font-display font-bold mb-3 text-neutral-300"
                 style={{ fontSize: "clamp(2rem,4vw,3rem)", letterSpacing: "-0.02em" }}
             >
                 Everything you need to<br />stay in the loop
