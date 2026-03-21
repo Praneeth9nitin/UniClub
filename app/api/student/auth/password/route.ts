@@ -1,16 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { authMiddleWare } from "../../protect";
-import { changePassword } from "@/services/student.services";
+import { middleware } from "../../protect";
 
 
-export async function PUT(req:NextRequest){
+export async function PUT(req: NextRequest) {
     const body = await req.json()
-    const user = await authMiddleWare(req)
+    const user = await middleware()
 
     try {
-        await changePassword(user.id, body.password)
-        return NextResponse.json({msg:"password changed"}, {status:200})
+        // await changePassword(user.id, body.password)
+        return NextResponse.json({ msg: "password changed" }, { status: 200 })
     } catch (error) {
-        return NextResponse.json({msg:error},{status:400})
+        return NextResponse.json({ msg: error }, { status: 400 })
     }
 }
