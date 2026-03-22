@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "generatorVersion": "0.1.0",
-  "generatedAt": "2026-03-19T11:35:02.321Z",
+  "generatedAt": "2026-03-22T04:41:00.116Z",
   "outputPath": "/Users/admin/Documents/UniClub/lib/validator",
   "files": [
     "schemas/enums/TransactionIsolationLevel.schema.ts",
