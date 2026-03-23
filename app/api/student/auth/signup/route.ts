@@ -1,4 +1,4 @@
-import { StudentCreateSchema } from "../../../../../lib/validator/schema";
+import { StudentCreateSchema } from "@/lib/validator/schema";
 import { signup } from "@/services/student.services";
 import { NextRequest, NextResponse } from "next/server";
 

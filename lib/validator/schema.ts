@@ -36,7 +36,7 @@ export const EventCreateSchema = z.object({
 
 export const ClubCreateSchema = z.object({
     name: z.string(),
-    descrption: z.string(),
+    description: z.string(),
     category: z.string(),
     instagramUrl: z.string().url().nullable().optional(),
     twitterUrl: z.string().url().nullable().optional(),

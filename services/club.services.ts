@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/singelton"
 import z from "zod"
 import bcrypt from "bcrypt"
-import { createClubSchema, EventCreateSchema, ClubCreateSchema } from "../lib/validator/schema"
+import { createClubSchema, EventCreateSchema, ClubCreateSchema } from "@/lib/validator/schema"
 
 
 
