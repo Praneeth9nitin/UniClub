@@ -1,7 +1,7 @@
 import { createClub } from "@/services/club.services";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken"
-import { createClubSchema } from "@/lib/validator/schema";
+import { createClubSchema } from "../../../../../lib/validator/schema";
 
 
 export async function POST(req: NextRequest) {

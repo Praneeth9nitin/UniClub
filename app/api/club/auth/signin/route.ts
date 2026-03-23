@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken"
 import { adminLogin } from "@/services/club.services";
-import { signinSchema } from "@/lib/validator/schema";
+import { signinSchema } from "../../../../../lib/validator/schema";
 
 
 
