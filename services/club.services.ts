@@ -1,8 +1,7 @@
 import { prisma } from "@/lib/singelton"
 import z from "zod"
 import bcrypt from "bcrypt"
-import { createClubSchema } from "@/app/api/club/auth/signup/route"
-import { ClubCreateWithoutFollowersInputObjectZodSchema, EventCreateWithoutClubInputObjectSchema } from '@/lib/validator/schemas'
+import { createClubSchema, EventCreateSchema, ClubCreateSchema } from "@/lib/validator/schema"
 
 
 
@@ -64,7 +63,7 @@ export const adminLogin = async (email: string, password: string) => {
     return clubAdmin
 }
 
-export const createEvent = async (data: z.infer<typeof EventCreateWithoutClubInputObjectSchema>, clubId: string) => {
+export const createEvent = async (data: z.infer<typeof EventCreateSchema>, clubId: string) => {
     const event = await prisma.event.create({
         data: {
             ...data,
@@ -127,7 +126,7 @@ export const deleteEvent = async (eventId: string, clubId: string) => {
     return event
 }
 
-export const updateEvent = async (clubId: string, eventId: string, data: z.infer<typeof EventCreateWithoutClubInputObjectSchema>) => {
+export const updateEvent = async (clubId: string, eventId: string, data: z.infer<typeof EventCreateSchema>) => {
     const event = await prisma.event.update({
         where: {
             id: eventId,
@@ -163,7 +162,7 @@ export const getRegistrations = async (clubId: string) => {
     return { registrations, events }
 }
 
-export const updateClub = async (clubId: string, data: z.infer<typeof ClubCreateWithoutFollowersInputObjectZodSchema>) => {
+export const updateClub = async (clubId: string, data: z.infer<typeof ClubCreateSchema>) => {
     console.log(data)
     const club = await prisma.club.update({
         where: {

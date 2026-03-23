@@ -1,20 +1,8 @@
 import { createClub } from "@/services/club.services";
 import { NextRequest, NextResponse } from "next/server";
-import z from "zod"
 import jwt from "jsonwebtoken"
+import { createClubSchema } from "@/lib/validator/schema";
 
-export const createClubSchema = z.object({
-    firstName: z.string(),
-    lastName: z.string(),
-    email: z.string(),
-    password: z.string(),
-    name: z.string(),
-    description: z.string(),
-    city: z.string(),
-    state: z.string(),
-    college: z.string(),
-    category: z.string()
-})
 
 export async function POST(req: NextRequest) {
     const body = await req.json()

@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import z from "zod"
 import jwt from "jsonwebtoken"
 import { adminLogin } from "@/services/club.services";
+import { signinSchema } from "@/lib/validator/schema";
 
-const signinSchema = z.object({
-    email: z.email(),
-    password: z.string()
-})
 
 
 export async function POST(req: NextRequest) {

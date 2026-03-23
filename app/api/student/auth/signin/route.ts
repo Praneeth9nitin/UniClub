@@ -1,3 +1,4 @@
+import { signinSchema } from "@/lib/validator/schema";
 import { signin } from "@/services/student.services";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -5,7 +6,11 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json()
-        const token = await signin(body)
+        const parse = signinSchema.safeParse(body)
+        if (!parse.success) {
+            throw new Error("Invalid credentials")
+        }
+        const token = await signin(parse.data)
         const response = NextResponse.json({ message: "user loggedin" }, { status: 200 })
         response.cookies.set({
             name: "student",

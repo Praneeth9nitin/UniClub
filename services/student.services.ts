@@ -1,13 +1,12 @@
 import { prisma } from '../lib/singelton'
 import z from 'zod'
-import { ClubGroupByResultSchema, StudentCreateInputObjectSchema } from '@/lib/validator/schemas'
+import { StudentCreateSchema } from '@/lib/validator/schema'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import { id } from 'zod/v4/locales'
 import { getCollege } from './club.services'
 import { mode, eventStatus } from '@/lib/prisma/enums'
 
-type student = z.infer<typeof StudentCreateInputObjectSchema>
+type student = z.infer<typeof StudentCreateSchema>
 
 export const signup = async (body: student) => {
     const check = await prisma.student.findFirst({
