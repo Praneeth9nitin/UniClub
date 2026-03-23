@@ -2,14 +2,14 @@ import z from 'zod'
 
 
 export const signinSchema = z.object({
-    email: z.email(),
+    email: z.string().email(),
     password: z.string()
 })
 
 export const createClubSchema = z.object({
     firstName: z.string(),
     lastName: z.string(),
-    email: z.string(),
+    email: z.string().email(),
     password: z.string(),
     name: z.string(),
     description: z.string(),
