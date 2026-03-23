@@ -3,11 +3,6 @@ generator client {
   output   = "../lib/prisma"
 }
 
-generator zod {
-  provider = "prisma-zod-generator"
-  output   = "../lib/validator"
-}
-
 datasource db {
   provider = "postgresql"
 }
