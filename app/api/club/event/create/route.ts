@@ -1,7 +1,7 @@
-import { EventCreateWithoutClubInputObjectSchema } from "@/lib/validator/schemas";
 import { NextRequest, NextResponse } from "next/server";
 import { middleware } from "../../authMiddleware";
 import { createEvent } from "@/services/club.services";
+import { EventCreateSchema } from "@/lib/validator/schema";
 
 
 export async function POST(req: NextRequest) {
@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
         const decoded = await middleware();
         console.log("kmvlksdvmv;m")
         const data = await req.json()
-        const parsed = EventCreateWithoutClubInputObjectSchema.safeParse(data)
+        const parsed = EventCreateSchema.safeParse(data)
         if (!parsed.success) {
             throw new Error(parsed.error.message)
         }

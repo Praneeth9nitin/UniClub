@@ -1,4 +1,4 @@
-import { signinSchema } from "../../../../../lib/validator/schema";
+import { signinSchema } from "@/lib/validator/schema";
 import { signin } from "@/services/student.services";
 import { NextRequest, NextResponse } from "next/server";
 
