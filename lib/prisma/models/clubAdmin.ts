@@ -31,6 +31,8 @@ export type ClubAdminMinAggregateOutputType = {
   email: string | null
   password: string | null
   clubId: string | null
+  otp: string | null
+  otpExpiry: Date | null
 }
 
 export type ClubAdminMaxAggregateOutputType = {
@@ -40,6 +42,8 @@ export type ClubAdminMaxAggregateOutputType = {
   email: string | null
   password: string | null
   clubId: string | null
+  otp: string | null
+  otpExpiry: Date | null
 }
 
 export type ClubAdminCountAggregateOutputType = {
@@ -49,6 +53,8 @@ export type ClubAdminCountAggregateOutputType = {
   email: number
   password: number
   clubId: number
+  otp: number
+  otpExpiry: number
   _all: number
 }
 
@@ -60,6 +66,8 @@ export type ClubAdminMinAggregateInputType = {
   email?: true
   password?: true
   clubId?: true
+  otp?: true
+  otpExpiry?: true
 }
 
 export type ClubAdminMaxAggregateInputType = {
@@ -69,6 +77,8 @@ export type ClubAdminMaxAggregateInputType = {
   email?: true
   password?: true
   clubId?: true
+  otp?: true
+  otpExpiry?: true
 }
 
 export type ClubAdminCountAggregateInputType = {
@@ -78,6 +88,8 @@ export type ClubAdminCountAggregateInputType = {
   email?: true
   password?: true
   clubId?: true
+  otp?: true
+  otpExpiry?: true
   _all?: true
 }
 
@@ -160,6 +172,8 @@ export type ClubAdminGroupByOutputType = {
   email: string
   password: string
   clubId: string
+  otp: string
+  otpExpiry: Date
   _count: ClubAdminCountAggregateOutputType | null
   _min: ClubAdminMinAggregateOutputType | null
   _max: ClubAdminMaxAggregateOutputType | null
@@ -190,6 +204,8 @@ export type clubAdminWhereInput = {
   email?: Prisma.StringFilter<"clubAdmin"> | string
   password?: Prisma.StringFilter<"clubAdmin"> | string
   clubId?: Prisma.StringFilter<"clubAdmin"> | string
+  otp?: Prisma.StringFilter<"clubAdmin"> | string
+  otpExpiry?: Prisma.DateTimeFilter<"clubAdmin"> | Date | string
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
 }
 
@@ -200,6 +216,8 @@ export type clubAdminOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
   club?: Prisma.ClubOrderByWithRelationInput
 }
 
@@ -213,6 +231,8 @@ export type clubAdminWhereUniqueInput = Prisma.AtLeast<{
   firstName?: Prisma.StringFilter<"clubAdmin"> | string
   lastName?: Prisma.StringFilter<"clubAdmin"> | string
   password?: Prisma.StringFilter<"clubAdmin"> | string
+  otp?: Prisma.StringFilter<"clubAdmin"> | string
+  otpExpiry?: Prisma.DateTimeFilter<"clubAdmin"> | Date | string
   club?: Prisma.XOR<Prisma.ClubScalarRelationFilter, Prisma.ClubWhereInput>
 }, "id" | "email" | "clubId">
 
@@ -223,6 +243,8 @@ export type clubAdminOrderByWithAggregationInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
   _count?: Prisma.clubAdminCountOrderByAggregateInput
   _max?: Prisma.clubAdminMaxOrderByAggregateInput
   _min?: Prisma.clubAdminMinOrderByAggregateInput
@@ -238,6 +260,8 @@ export type clubAdminScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
   password?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
   clubId?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
+  otp?: Prisma.StringWithAggregatesFilter<"clubAdmin"> | string
+  otpExpiry?: Prisma.DateTimeWithAggregatesFilter<"clubAdmin"> | Date | string
 }
 
 export type clubAdminCreateInput = {
@@ -246,6 +270,8 @@ export type clubAdminCreateInput = {
   lastName: string
   email: string
   password: string
+  otp: string
+  otpExpiry: Date | string
   club: Prisma.ClubCreateNestedOneWithoutClubAdminInput
 }
 
@@ -256,6 +282,8 @@ export type clubAdminUncheckedCreateInput = {
   email: string
   password: string
   clubId: string
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type clubAdminUpdateInput = {
@@ -264,6 +292,8 @@ export type clubAdminUpdateInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   club?: Prisma.ClubUpdateOneRequiredWithoutClubAdminNestedInput
 }
 
@@ -274,6 +304,8 @@ export type clubAdminUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type clubAdminCreateManyInput = {
@@ -283,6 +315,8 @@ export type clubAdminCreateManyInput = {
   email: string
   password: string
   clubId: string
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type clubAdminUpdateManyMutationInput = {
@@ -291,6 +325,8 @@ export type clubAdminUpdateManyMutationInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type clubAdminUncheckedUpdateManyInput = {
@@ -300,6 +336,8 @@ export type clubAdminUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   clubId?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ClubAdminNullableScalarRelationFilter = {
@@ -314,6 +352,8 @@ export type clubAdminCountOrderByAggregateInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type clubAdminMaxOrderByAggregateInput = {
@@ -323,6 +363,8 @@ export type clubAdminMaxOrderByAggregateInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type clubAdminMinOrderByAggregateInput = {
@@ -332,6 +374,8 @@ export type clubAdminMinOrderByAggregateInput = {
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   clubId?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type clubAdminCreateNestedOneWithoutClubInput = {
@@ -372,6 +416,8 @@ export type clubAdminCreateWithoutClubInput = {
   lastName: string
   email: string
   password: string
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type clubAdminUncheckedCreateWithoutClubInput = {
@@ -380,6 +426,8 @@ export type clubAdminUncheckedCreateWithoutClubInput = {
   lastName: string
   email: string
   password: string
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type clubAdminCreateOrConnectWithoutClubInput = {
@@ -404,6 +452,8 @@ export type clubAdminUpdateWithoutClubInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type clubAdminUncheckedUpdateWithoutClubInput = {
@@ -412,6 +462,8 @@ export type clubAdminUncheckedUpdateWithoutClubInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -423,6 +475,8 @@ export type clubAdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   email?: boolean
   password?: boolean
   clubId?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["clubAdmin"]>
 
@@ -433,6 +487,8 @@ export type clubAdminSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   email?: boolean
   password?: boolean
   clubId?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["clubAdmin"]>
 
@@ -443,6 +499,8 @@ export type clubAdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   email?: boolean
   password?: boolean
   clubId?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["clubAdmin"]>
 
@@ -453,9 +511,11 @@ export type clubAdminSelectScalar = {
   email?: boolean
   password?: boolean
   clubId?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
 }
 
-export type clubAdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "password" | "clubId", ExtArgs["result"]["clubAdmin"]>
+export type clubAdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "password" | "clubId" | "otp" | "otpExpiry", ExtArgs["result"]["clubAdmin"]>
 export type clubAdminInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   club?: boolean | Prisma.ClubDefaultArgs<ExtArgs>
 }
@@ -478,6 +538,8 @@ export type $clubAdminPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     email: string
     password: string
     clubId: string
+    otp: string
+    otpExpiry: Date
   }, ExtArgs["result"]["clubAdmin"]>
   composites: {}
 }
@@ -908,6 +970,8 @@ export interface clubAdminFieldRefs {
   readonly email: Prisma.FieldRef<"clubAdmin", 'String'>
   readonly password: Prisma.FieldRef<"clubAdmin", 'String'>
   readonly clubId: Prisma.FieldRef<"clubAdmin", 'String'>
+  readonly otp: Prisma.FieldRef<"clubAdmin", 'String'>
+  readonly otpExpiry: Prisma.FieldRef<"clubAdmin", 'DateTime'>
 }
     
 

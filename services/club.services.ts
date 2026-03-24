@@ -2,6 +2,7 @@ import { prisma } from "@/lib/singelton"
 import z from "zod"
 import bcrypt from "bcrypt"
 import { createClubSchema, EventCreateSchema, ClubCreateSchema } from "@/lib/validator/schema"
+import { sendotp } from "@/app/api/otpsender/sendotp"
 
 
 
@@ -36,16 +37,30 @@ export const createClub = async (data: z.infer<typeof createClubSchema>) => {
                 }
             }
         })
-
+        
+        const otp = Math.floor(100000 + Math.random() * 900000).toString()
         const clubAdmin = await tx.clubAdmin.create({
             data: {
                 firstName: data.firstName,
                 lastName: data.lastName,
                 email: data.email,
                 password: hashedPassword,
-                clubId: club.id
+                clubId: club.id,
+                otp:otp,
+                otpExpiry:new Date(Date.now() + 10 * 60 * 1000)
             }
         })
+
+        sendotp(data.email,otp);
+        const verifycation = await prisma.clubAdmin.update({
+            where:{
+                id : clubAdmin.id
+            },
+            data:{
+                verified:true
+            }
+        })
+
         return { club, clubAdmin }
     })
     return result

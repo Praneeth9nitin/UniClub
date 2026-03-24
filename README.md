@@ -1,36 +1,229 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UniClub
 
-## Getting Started
+> A platform that centralises college club events across Indian campuses — so students never miss out and clubs get the reach they deserve.
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/Live-Demo-6c63ff?style=for-the-badge)](https://uniclub.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://typescriptlang.org)
+[![Prisma](https://img.shields.io/badge/Prisma-7-2D3748?style=for-the-badge&logo=prisma)](https://prisma.io)
+
+---
+
+## 🎯 The Problem
+
+College clubs announce events on WhatsApp groups and Instagram stories. Students miss them. Potential participants who would have loved the event never find out it happened.
+
+There is no central place where a student can see everything happening across all clubs in their college.
+
+UniClub fixes that.
+
+---
+
+## ✨ Features
+
+### For Club Leaders
+- Create and manage club profile
+- Post events with full details — venue, date, mode, registration fee, deadline
+- Upload event banners via Cloudinary
+- View registrations and analytics
+- Email verified badge system
+
+### For Students
+- Browse and follow clubs across colleges
+- Personalised event feed from followed clubs
+- Register for events directly on the platform
+- Discover clubs by category and college
+- Profile with followed clubs and registered events
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Why |
+|-------|-----------|-----|
+| Framework | Next.js 16 (App Router) | Server components, SEO, full stack in one |
+| Language | TypeScript | Type safety across the entire codebase |
+| Database | PostgreSQL (Neon) | Serverless, scales to zero on free tier |
+| ORM | Prisma 7 | Type-safe DB queries, clean migrations |
+| Auth | Custom JWT + httpOnly cookies | No third party dependency, full control |
+| Storage | Cloudinary | Image uploads with CDN |
+| Styling | Tailwind CSS + shadcn/ui | Fast, consistent UI |
+| Email | Nodemailer | OTP verification emails |
+| Deployment | Vercel | Zero config Next.js deployment |
+
+---
+
+## 🏗️ Architecture Decisions
+
+**Why custom JWT auth instead of NextAuth?**
+Full control over token structure and cookie handling. Supports two separate roles (club admin + student) with different cookie names and payloads without fighting library conventions.
+
+**Why server components by default?**
+Pages that don't need interactivity — feed, club profiles, event details — are server components. This means faster page loads, better SEO for public pages, and direct DB access without an API call.
+
+**Why Neon over Supabase?**
+Neon's serverless architecture matches Vercel's serverless functions perfectly. Zero cold start penalties on the free tier for a product still finding users.
+
+**Why store-first OTP verification?**
+User record is created unverified before OTP is sent. This handles the edge case where a user closes the tab mid-flow — they can always request a new OTP without losing their data.
+
+---
+
+## 📁 Project Structure
+
+```
+uniclub/
+├── app/
+│   ├── (auth)/              # Login + signup pages
+│   ├── (dashboard)/         # Club admin dashboard
+│   │   └── dashboard/
+│   │       ├── page.tsx     # Overview
+│   │       ├── events/      # Event management
+│   │       ├── analytics/   # Club analytics
+│   │       └── settings/    # Club settings
+│   ├── (student)/           # Student facing app
+│   │   ├── feed/            # Personalised event feed
+│   │   ├── clubs/           # Browse + club profiles
+│   │   ├── events/[id]/     # Event detail + register
+│   │   └── profile/         # Student profile
+│   └── api/
+│       ├── club/            # Club admin API routes
+│       └── student/         # Student API routes
+├── components/
+│   ├── dashboard/           # Dashboard UI components
+│   └── student/             # Student UI components
+├── lib/           
+│   ├── singleton.ts         # Prisma client
+│   ├── email.ts             # Nodemailer setup
+│   └── validator/           # Zod schemas
+├── services/
+│   ├── club.services.ts     # Club business logic
+│   └── student.services.ts  # Student business logic
+└── prisma/
+    └── schema.prisma        # Database schema
+```
+
+---
+
+## 🗄️ Database Schema
+
+Key models and their relationships:
+
+```
+Student ──follows──> Club
+Student ──registers──> Event
+Club ──has many──> Event
+Club ──managed by──> ClubAdmin
+Event ──has many──> EventRegistration
+```
+
+Notable design decisions:
+- Soft deletes on events (`deletedAt` field)
+- Many-to-many follow system (implicit Prisma relation)
+- Unique constraint on `[eventId, studentId]` prevents double registration
+- OTP stored directly on student/clubAdmin record with expiry
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- PostgreSQL database (Neon recommended)
+- Cloudinary account
+- Gmail account for sending OTPs
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/uniclub.git
+cd uniclub
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+```
+
+### Environment Variables
+
+```bash
+# Database
+DATABASE_URL="postgresql://..."
+
+# Auth
+JWT_SECRET="your-secret-key-min-32-chars"
+
+# Cloudinary
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="your-cloud-name"
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET="your-preset-name"
+
+# Email
+EMAIL_USER="your-gmail@gmail.com"
+EMAIL_PASS="your-gmail-app-password"
+```
+
+### Database Setup
+
+```bash
+# Run migrations
+npx prisma migrate dev
+
+# Generate Prisma client
+npx prisma generate
+```
+
+### Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Both roles use separate JWT cookies (`clubAdmin` and `student`) with `httpOnly`, `sameSite: lax` flags.
 
-## Learn More
+Route protection is handled at two layers:
+1. `middleware.ts` — checks cookie exists before hitting protected routes
+2. `middleware()(In api/club)` / `middleware()(In api/student)` — decodes and validates JWT in server components
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Add screenshots here after deployment
 
-## Deploy on Vercel
+| Club Dashboard | Student Feed | Event Detail |
+|---------------|-------------|-------------|
+| ![dashboard]() | ![feed]() | ![event]() |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗺️ Roadmap
+
+- [x] Club admin dashboard
+- [x] Event CRUD
+- [x] Student feed
+- [x] Follow system
+- [x] Event registration
+- [x] Analytics dashboard for clubs
+- [ ] Email OTP verification
+- [ ] Push notifications
+- [ ] College admin verification
+- [ ] Event ticketing with payment (Razorpay)
+
+---
+
+## 👤 Author
+
+**Praneeth**
+- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+
+Built as a final year project — and a genuine attempt to solve a problem I experienced every semester.
+
+---

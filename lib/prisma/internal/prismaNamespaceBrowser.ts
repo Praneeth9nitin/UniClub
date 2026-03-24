@@ -153,7 +153,9 @@ export const StudentScalarFieldEnum = {
   collegeId: 'collegeId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  deletedAt: 'deletedAt'
+  deletedAt: 'deletedAt',
+  otp: 'otp',
+  otpExpiry: 'otpExpiry'
 } as const
 
 export type StudentScalarFieldEnum = (typeof StudentScalarFieldEnum)[keyof typeof StudentScalarFieldEnum]
@@ -199,7 +201,9 @@ export const ClubAdminScalarFieldEnum = {
   lastName: 'lastName',
   email: 'email',
   password: 'password',
-  clubId: 'clubId'
+  clubId: 'clubId',
+  otp: 'otp',
+  otpExpiry: 'otpExpiry'
 } as const
 
 export type ClubAdminScalarFieldEnum = (typeof ClubAdminScalarFieldEnum)[keyof typeof ClubAdminScalarFieldEnum]

@@ -35,6 +35,8 @@ export type StudentMinAggregateOutputType = {
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
+  otp: string | null
+  otpExpiry: Date | null
 }
 
 export type StudentMaxAggregateOutputType = {
@@ -48,6 +50,8 @@ export type StudentMaxAggregateOutputType = {
   createdAt: Date | null
   updatedAt: Date | null
   deletedAt: Date | null
+  otp: string | null
+  otpExpiry: Date | null
 }
 
 export type StudentCountAggregateOutputType = {
@@ -61,6 +65,8 @@ export type StudentCountAggregateOutputType = {
   createdAt: number
   updatedAt: number
   deletedAt: number
+  otp: number
+  otpExpiry: number
   _all: number
 }
 
@@ -76,6 +82,8 @@ export type StudentMinAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  otp?: true
+  otpExpiry?: true
 }
 
 export type StudentMaxAggregateInputType = {
@@ -89,6 +97,8 @@ export type StudentMaxAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  otp?: true
+  otpExpiry?: true
 }
 
 export type StudentCountAggregateInputType = {
@@ -102,6 +112,8 @@ export type StudentCountAggregateInputType = {
   createdAt?: true
   updatedAt?: true
   deletedAt?: true
+  otp?: true
+  otpExpiry?: true
   _all?: true
 }
 
@@ -188,6 +200,8 @@ export type StudentGroupByOutputType = {
   createdAt: Date
   updatedAt: Date
   deletedAt: Date | null
+  otp: string
+  otpExpiry: Date
   _count: StudentCountAggregateOutputType | null
   _min: StudentMinAggregateOutputType | null
   _max: StudentMaxAggregateOutputType | null
@@ -222,6 +236,8 @@ export type StudentWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Student"> | Date | string | null
+  otp?: Prisma.StringFilter<"Student"> | string
+  otpExpiry?: Prisma.DateTimeFilter<"Student"> | Date | string
   registrations?: Prisma.RegistrationsListRelationFilter
   college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
   clubs?: Prisma.StudentInClubListRelationFilter
@@ -240,6 +256,8 @@ export type StudentOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
   registrations?: Prisma.RegistrationsOrderByRelationAggregateInput
   college?: Prisma.CollegeOrderByWithRelationInput
   clubs?: Prisma.StudentInClubOrderByRelationAggregateInput
@@ -261,6 +279,8 @@ export type StudentWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Student"> | Date | string | null
+  otp?: Prisma.StringFilter<"Student"> | string
+  otpExpiry?: Prisma.DateTimeFilter<"Student"> | Date | string
   registrations?: Prisma.RegistrationsListRelationFilter
   college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
   clubs?: Prisma.StudentInClubListRelationFilter
@@ -279,6 +299,8 @@ export type StudentOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
   _count?: Prisma.StudentCountOrderByAggregateInput
   _max?: Prisma.StudentMaxOrderByAggregateInput
   _min?: Prisma.StudentMinOrderByAggregateInput
@@ -298,6 +320,8 @@ export type StudentScalarWhereWithAggregatesInput = {
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Student"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Student"> | Date | string
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Student"> | Date | string | null
+  otp?: Prisma.StringWithAggregatesFilter<"Student"> | string
+  otpExpiry?: Prisma.DateTimeWithAggregatesFilter<"Student"> | Date | string
 }
 
 export type StudentCreateInput = {
@@ -310,6 +334,8 @@ export type StudentCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutStudentInput
   college?: Prisma.CollegeCreateNestedOneWithoutStudentsInput
   clubs?: Prisma.StudentInClubCreateNestedManyWithoutStudentInput
@@ -328,6 +354,8 @@ export type StudentUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutStudentInput
   clubs?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeUncheckedCreateNestedManyWithoutFollowersInput
@@ -344,6 +372,8 @@ export type StudentUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutStudentNestedInput
   college?: Prisma.CollegeUpdateOneWithoutStudentsNestedInput
   clubs?: Prisma.StudentInClubUpdateManyWithoutStudentNestedInput
@@ -362,6 +392,8 @@ export type StudentUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutStudentNestedInput
   clubs?: Prisma.StudentInClubUncheckedUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUncheckedUpdateManyWithoutFollowersNestedInput
@@ -379,6 +411,8 @@ export type StudentCreateManyInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type StudentUpdateManyMutationInput = {
@@ -391,6 +425,8 @@ export type StudentUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type StudentUncheckedUpdateManyInput = {
@@ -404,6 +440,8 @@ export type StudentUncheckedUpdateManyInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type StudentListRelationFilter = {
@@ -427,6 +465,8 @@ export type StudentCountOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type StudentMaxOrderByAggregateInput = {
@@ -440,6 +480,8 @@ export type StudentMaxOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type StudentMinOrderByAggregateInput = {
@@ -453,6 +495,8 @@ export type StudentMinOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
+  otp?: Prisma.SortOrder
+  otpExpiry?: Prisma.SortOrder
 }
 
 export type StudentScalarRelationFilter = {
@@ -616,6 +660,8 @@ export type StudentCreateWithoutCollegeInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutStudentInput
   clubs?: Prisma.StudentInClubCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeCreateNestedManyWithoutFollowersInput
@@ -632,6 +678,8 @@ export type StudentUncheckedCreateWithoutCollegeInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutStudentInput
   clubs?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeUncheckedCreateNestedManyWithoutFollowersInput
@@ -658,6 +706,8 @@ export type StudentCreateWithoutFollowsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutStudentInput
   college?: Prisma.CollegeCreateNestedOneWithoutStudentsInput
   clubs?: Prisma.StudentInClubCreateNestedManyWithoutStudentInput
@@ -675,6 +725,8 @@ export type StudentUncheckedCreateWithoutFollowsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutStudentInput
   clubs?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutStudentInput
   followsClub?: Prisma.ClubUncheckedCreateNestedManyWithoutFollowersInput
@@ -715,6 +767,8 @@ export type StudentScalarWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Student"> | Date | string
   deletedAt?: Prisma.DateTimeNullableFilter<"Student"> | Date | string | null
+  otp?: Prisma.StringFilter<"Student"> | string
+  otpExpiry?: Prisma.DateTimeFilter<"Student"> | Date | string
 }
 
 export type StudentUpsertWithWhereUniqueWithoutFollowsInput = {
@@ -743,6 +797,8 @@ export type StudentCreateWithoutFollowsClubInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutStudentInput
   college?: Prisma.CollegeCreateNestedOneWithoutStudentsInput
   clubs?: Prisma.StudentInClubCreateNestedManyWithoutStudentInput
@@ -760,6 +816,8 @@ export type StudentUncheckedCreateWithoutFollowsClubInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutStudentInput
   clubs?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeUncheckedCreateNestedManyWithoutFollowersInput
@@ -796,6 +854,8 @@ export type StudentCreateWithoutClubsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsCreateNestedManyWithoutStudentInput
   college?: Prisma.CollegeCreateNestedOneWithoutStudentsInput
   follows?: Prisma.CollegeCreateNestedManyWithoutFollowersInput
@@ -813,6 +873,8 @@ export type StudentUncheckedCreateWithoutClubsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   registrations?: Prisma.RegistrationsUncheckedCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeUncheckedCreateNestedManyWithoutFollowersInput
   followsClub?: Prisma.ClubUncheckedCreateNestedManyWithoutFollowersInput
@@ -844,6 +906,8 @@ export type StudentUpdateWithoutClubsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutStudentNestedInput
   college?: Prisma.CollegeUpdateOneWithoutStudentsNestedInput
   follows?: Prisma.CollegeUpdateManyWithoutFollowersNestedInput
@@ -861,6 +925,8 @@ export type StudentUncheckedUpdateWithoutClubsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUncheckedUpdateManyWithoutFollowersNestedInput
   followsClub?: Prisma.ClubUncheckedUpdateManyWithoutFollowersNestedInput
@@ -876,6 +942,8 @@ export type StudentCreateWithoutRegistrationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   college?: Prisma.CollegeCreateNestedOneWithoutStudentsInput
   clubs?: Prisma.StudentInClubCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeCreateNestedManyWithoutFollowersInput
@@ -893,6 +961,8 @@ export type StudentUncheckedCreateWithoutRegistrationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
   clubs?: Prisma.StudentInClubUncheckedCreateNestedManyWithoutStudentInput
   follows?: Prisma.CollegeUncheckedCreateNestedManyWithoutFollowersInput
   followsClub?: Prisma.ClubUncheckedCreateNestedManyWithoutFollowersInput
@@ -924,6 +994,8 @@ export type StudentUpdateWithoutRegistrationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   college?: Prisma.CollegeUpdateOneWithoutStudentsNestedInput
   clubs?: Prisma.StudentInClubUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUpdateManyWithoutFollowersNestedInput
@@ -941,6 +1013,8 @@ export type StudentUncheckedUpdateWithoutRegistrationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   clubs?: Prisma.StudentInClubUncheckedUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUncheckedUpdateManyWithoutFollowersNestedInput
   followsClub?: Prisma.ClubUncheckedUpdateManyWithoutFollowersNestedInput
@@ -956,6 +1030,8 @@ export type StudentCreateManyCollegeInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   deletedAt?: Date | string | null
+  otp: string
+  otpExpiry: Date | string
 }
 
 export type StudentUpdateWithoutCollegeInput = {
@@ -968,6 +1044,8 @@ export type StudentUpdateWithoutCollegeInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutStudentNestedInput
   clubs?: Prisma.StudentInClubUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUpdateManyWithoutFollowersNestedInput
@@ -984,6 +1062,8 @@ export type StudentUncheckedUpdateWithoutCollegeInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutStudentNestedInput
   clubs?: Prisma.StudentInClubUncheckedUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUncheckedUpdateManyWithoutFollowersNestedInput
@@ -1000,6 +1080,8 @@ export type StudentUncheckedUpdateManyWithoutCollegeInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type StudentUpdateWithoutFollowsInput = {
@@ -1012,6 +1094,8 @@ export type StudentUpdateWithoutFollowsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutStudentNestedInput
   college?: Prisma.CollegeUpdateOneWithoutStudentsNestedInput
   clubs?: Prisma.StudentInClubUpdateManyWithoutStudentNestedInput
@@ -1029,6 +1113,8 @@ export type StudentUncheckedUpdateWithoutFollowsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutStudentNestedInput
   clubs?: Prisma.StudentInClubUncheckedUpdateManyWithoutStudentNestedInput
   followsClub?: Prisma.ClubUncheckedUpdateManyWithoutFollowersNestedInput
@@ -1045,6 +1131,8 @@ export type StudentUncheckedUpdateManyWithoutFollowsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type StudentUpdateWithoutFollowsClubInput = {
@@ -1057,6 +1145,8 @@ export type StudentUpdateWithoutFollowsClubInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUpdateManyWithoutStudentNestedInput
   college?: Prisma.CollegeUpdateOneWithoutStudentsNestedInput
   clubs?: Prisma.StudentInClubUpdateManyWithoutStudentNestedInput
@@ -1074,6 +1164,8 @@ export type StudentUncheckedUpdateWithoutFollowsClubInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   registrations?: Prisma.RegistrationsUncheckedUpdateManyWithoutStudentNestedInput
   clubs?: Prisma.StudentInClubUncheckedUpdateManyWithoutStudentNestedInput
   follows?: Prisma.CollegeUncheckedUpdateManyWithoutFollowersNestedInput
@@ -1090,6 +1182,8 @@ export type StudentUncheckedUpdateManyWithoutFollowsClubInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  otp?: Prisma.StringFieldUpdateOperationsInput | string
+  otpExpiry?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -1161,6 +1255,8 @@ export type StudentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   registrations?: boolean | Prisma.Student$registrationsArgs<ExtArgs>
   college?: boolean | Prisma.Student$collegeArgs<ExtArgs>
   clubs?: boolean | Prisma.Student$clubsArgs<ExtArgs>
@@ -1180,6 +1276,8 @@ export type StudentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   college?: boolean | Prisma.Student$collegeArgs<ExtArgs>
 }, ExtArgs["result"]["student"]>
 
@@ -1194,6 +1292,8 @@ export type StudentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
   college?: boolean | Prisma.Student$collegeArgs<ExtArgs>
 }, ExtArgs["result"]["student"]>
 
@@ -1208,9 +1308,11 @@ export type StudentSelectScalar = {
   createdAt?: boolean
   updatedAt?: boolean
   deletedAt?: boolean
+  otp?: boolean
+  otpExpiry?: boolean
 }
 
-export type StudentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "password" | "rollnumber" | "collegeId" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["student"]>
+export type StudentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "password" | "rollnumber" | "collegeId" | "createdAt" | "updatedAt" | "deletedAt" | "otp" | "otpExpiry", ExtArgs["result"]["student"]>
 export type StudentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   registrations?: boolean | Prisma.Student$registrationsArgs<ExtArgs>
   college?: boolean | Prisma.Student$collegeArgs<ExtArgs>
@@ -1246,6 +1348,8 @@ export type $StudentPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     createdAt: Date
     updatedAt: Date
     deletedAt: Date | null
+    otp: string
+    otpExpiry: Date
   }, ExtArgs["result"]["student"]>
   composites: {}
 }
@@ -1684,6 +1788,8 @@ export interface StudentFieldRefs {
   readonly createdAt: Prisma.FieldRef<"Student", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Student", 'DateTime'>
   readonly deletedAt: Prisma.FieldRef<"Student", 'DateTime'>
+  readonly otp: Prisma.FieldRef<"Student", 'String'>
+  readonly otpExpiry: Prisma.FieldRef<"Student", 'DateTime'>
 }
     
 
