@@ -155,7 +155,8 @@ export const StudentScalarFieldEnum = {
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt',
   otp: 'otp',
-  otpExpiry: 'otpExpiry'
+  otpExpiry: 'otpExpiry',
+  verified: 'verified'
 } as const
 
 export type StudentScalarFieldEnum = (typeof StudentScalarFieldEnum)[keyof typeof StudentScalarFieldEnum]
@@ -203,7 +204,8 @@ export const ClubAdminScalarFieldEnum = {
   password: 'password',
   clubId: 'clubId',
   otp: 'otp',
-  otpExpiry: 'otpExpiry'
+  otpExpiry: 'otpExpiry',
+  verified: 'verified'
 } as const
 
 export type ClubAdminScalarFieldEnum = (typeof ClubAdminScalarFieldEnum)[keyof typeof ClubAdminScalarFieldEnum]

@@ -221,8 +221,8 @@ Route protection is handled at two layers:
 ## 👤 Author
 
 **Praneeth**
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- Twitter: [@praneeth__gupta)](https://x.com/praneeth__gupta)
+- LinkedIn: [linkedin.com/in/praneethnitin](https://www.linkedin.com/in/praneethnitin/)
 
 Built as a final year project — and a genuine attempt to solve a problem I experienced every semester.
 

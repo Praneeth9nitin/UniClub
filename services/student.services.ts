@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { getCollege } from './club.services'
 import { mode, eventStatus } from '@/lib/prisma/enums'
+import { sendotp } from '@/app/api/otpsender/sendotp'
 
 type student = z.infer<typeof StudentCreateSchema>
 
@@ -18,8 +19,22 @@ export const signup = async (body: student) => {
         throw new Error("user alreay exist")
     }
     body.password = await bcrypt.hash(body.password, 10)
+    const otp = Math.floor(100000 + Math.random() * 900000).toString()
     const user = await prisma.student.create({
-        data: body
+        data: {
+            ...body,
+            otp: otp,
+            otpExpiry: new Date(Date.now() + 10 * 60 * 1000)
+        }
+    })
+    sendotp(body.email, otp)
+    const verifycation = await prisma.student.update({
+        where: {
+            id: user.id
+        },
+        data: {
+            verified: true
+        }
     })
     const token = jwt.sign({ id: user.id }, `${process.env.JWT_SECRET}`, { expiresIn: "7d" })
     return token
