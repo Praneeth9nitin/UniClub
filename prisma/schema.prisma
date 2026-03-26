@@ -88,8 +88,8 @@ model Student {
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   deletedAt     DateTime?
-  otp           String
-  otpExpiry     DateTime
+  otp           String?
+  otpExpiry     DateTime?
   verified      Boolean         @default(false)
   registrations Registrations[]
   college       College?        @relation(fields: [collegeId], references: [id])
@@ -135,16 +135,16 @@ model RoleInClub {
 }
 
 model clubAdmin {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   firstName String
   lastName  String
-  email     String   @unique
+  email     String    @unique
   password  String
-  clubId    String   @unique
-  otp       String
-  otpExpiry DateTime
-  verified  Boolean  @default(false)
-  club      Club     @relation(fields: [clubId], references: [id])
+  clubId    String    @unique
+  otp       String?
+  otpExpiry DateTime?
+  verified  Boolean   @default(false)
+  club      Club      @relation(fields: [clubId], references: [id])
 }
 
 model Event {

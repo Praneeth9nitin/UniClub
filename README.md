@@ -188,7 +188,7 @@ Open [http://localhost:3000](http://localhost:3000)
 Both roles use separate JWT cookies (`clubAdmin` and `student`) with `httpOnly`, `sameSite: lax` flags.
 
 Route protection is handled at two layers:
-1. `middleware.ts` — checks cookie exists before hitting protected routes
+1. `proxy.ts` — checks cookie exists before hitting protected routes
 2. `middleware()(In api/club)` / `middleware()(In api/student)` — decodes and validates JWT in server components
 
 ---

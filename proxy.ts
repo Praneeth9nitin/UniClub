@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import * as jose from "jose"
+import { cookies } from "next/headers"
 
 const secret = new TextEncoder().encode(process.env.JWT_SECRET!)
 
@@ -12,13 +13,16 @@ async function verifyToken(token: string): Promise<boolean> {
     }
 }
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
     const path = req.nextUrl.pathname
     if (
         path.startsWith("/dashboard") ||
-        path.startsWith("/api/club")
+        (path.startsWith("/api/club") && !path.startsWith("/api/club/auth"))
     ) {
-        const token = req.cookies.get("clubAdmin")?.value
+        const cookieStore = await cookies()
+        console.log(cookieStore.getAll())
+        const token = cookieStore.get("clubAdmin")?.value
+        console.log(token)
 
         if (!token) {
             if (path.startsWith("/api")) {
@@ -49,7 +53,7 @@ export async function middleware(req: NextRequest) {
         path.startsWith("/clubs") ||
         path.startsWith("/events") ||
         path.startsWith("/profile") ||
-        path.startsWith("/api/student")
+        (path.startsWith("/api/student") && !path.startsWith("/api/student/auth"))
     ) {
         const token = req.cookies.get("student")?.value
 
